@@ -1,0 +1,1436 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EXPERIMENT 2 -- OPAQUE, FINITE-PRECISION CREDENCE DEFERENCE
+;;
+;; The expert and laypeople use the same prior, likelihood, Bayesian update,
+;; and Thompson-sampling rule. The expert's only advantage is 125 research
+;; opportunities in rounds 1--25. After round 25, laypeople see only one of ten
+;; coarse credence categories. They never see the expert's exact credence,
+;; chosen arms, outcomes, sample path, or raw evidence.
+;;
+;; A frozen calibration table maps each category to a testimonial log
+;; likelihood ratio. C-Preemption replaces the pre-message epistemic basis;
+;; C-Total Evidence retains the local basis and adds the message contribution.
+;; Exact-C-* policies exist only for the Experiment-1 regression test.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+breed [experts expert]
+breed [laypeople layperson]
+
+undirected-link-breed [cycle-links cycle-link]
+undirected-link-breed [spoke-links spoke-link]
+
+globals [
+  ;; Fixed design constants
+  laypeople-fixed
+  total-ticks-fixed
+  expert-active-ticks-fixed
+  expert-pulls-per-tick-fixed
+  final-window-fixed
+  p-a
+  p-b-good
+  p-b-bad
+  p-b
+  llr-unit
+  shared-prior-llr
+  report-llr-table
+  report-table-version
+
+  ;; Run state
+  actual-seed
+  hidden-world
+  duplicate-message-count
+
+  ;; Snapshot after 25 learning ticks and delivery of tick-25 peer messages,
+  ;; immediately before the 26th lay action.
+  expertise-snapshot-recorded?
+  expert-truth-mass-at-25
+  expert-recommendation-score-at-25
+  expert-informative-observations-at-25
+  mean-lay-truth-mass-at-25
+  mean-lay-llr-at-25
+  mean-lay-recommendation-score-at-25
+  mean-lay-informative-observations-at-25
+  mean-lay-archive-size-at-25
+  mean-lay-cumulative-regret-at-25
+  mean-lay-correct-pulls-at-25
+  mean-lay-b-pulls-at-25
+  mean-lay-reward-at-25
+
+  ;; One-category opaque credence intervention and immediate snapshot.
+  deference-intervention-complete?
+  private-expert-q-at-intervention
+  private-expert-llr-at-intervention
+  broadcast-message-bin
+  broadcast-message-midpoint
+  broadcast-message-llr
+  broadcast-message-mode
+  credence-message-count
+  expert-raw-items-transmitted
+  inbox-empty-at-intervention?
+  maximum-message-bin-copy-error
+  maximum-message-llr-copy-error
+  maximum-immediate-policy-formula-error
+  mean-received-message-bin-post-intervention
+  received-bin-dispersion-post-intervention
+  mean-received-message-llr-post-intervention
+  received-message-llr-dispersion-post-intervention
+  mean-credence-items-received-post-intervention
+  mean-lay-truth-mass-post-intervention
+  mean-lay-recommendation-score-post-intervention
+  lay-q-dispersion-post-intervention
+  mean-lay-local-archive-size-post-intervention
+  mean-lay-active-decision-inputs-post-intervention
+]
+turtles-own [
+  belief-llr
+  total-pulls
+  a-pulls
+  b-pulls
+  a-successes
+  b-successes
+  evidence-b-successes
+  evidence-b-failures
+  archive-b-successes
+  archive-b-failures
+  correct-pulls
+  cumulative-reward
+  cumulative-expected-regret
+]
+
+experts-own [
+  last-chose-b?
+  last-reward
+]
+
+laypeople-own [
+  chose-b?
+  current-reward
+
+  ;; Messages created in tick t are processed at the beginning of tick t + 1.
+  next-inbox
+  seen-evidence-ids
+  peer-messages-received
+
+  ;; Main-experiment testimony contains one category and its frozen semantics.
+  ;; It never contains the expert's exact q, outcomes, or provenance IDs.
+  received-message-bin
+  received-message-llr
+  credence-items-received
+  received-credence-message?
+  deference-applied?
+
+  ;; The active posterior is decision-base plus later local evidence.
+  pre-intervention-local-llr
+  decision-base-llr
+  post-intervention-local-llr
+  pre-intervention-local-item-count
+  decision-base-input-count
+  post-intervention-local-item-count
+
+  ;; Rounds 26--50: the prespecified early adaptation window.
+  early-window-pulls
+  early-window-wrong-pulls
+  early-window-b-pulls
+
+  ;; Finite-horizon persistence diagnostic for the final 50 ticks.
+  final-window-pulls
+  final-window-wrong-pulls
+]
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SETUP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to setup
+  clear-all
+  setup-fixed-constants
+
+  if not member? credence-policy
+      ["No Deference" "C-Preemption" "C-Total Evidence"
+       "Exact-C-Preemption" "Exact-C-Total Evidence"] [
+    error (word "Unknown credence-policy: " credence-policy)
+  ]
+
+  set actual-seed round run-seed
+  random-seed actual-seed
+
+  setup-hidden-world
+  setup-royal-family
+  set duplicate-message-count 0
+  set expertise-snapshot-recorded? false
+  set expert-truth-mass-at-25 0
+  set expert-recommendation-score-at-25 0
+  set expert-informative-observations-at-25 0
+  set mean-lay-truth-mass-at-25 0
+  set mean-lay-llr-at-25 0
+  set mean-lay-recommendation-score-at-25 0
+  set mean-lay-informative-observations-at-25 0
+  set mean-lay-archive-size-at-25 0
+  set mean-lay-cumulative-regret-at-25 0
+  set mean-lay-correct-pulls-at-25 0
+  set mean-lay-b-pulls-at-25 0
+  set mean-lay-reward-at-25 0
+
+  set deference-intervention-complete? false
+  set private-expert-q-at-intervention 0.5
+  set private-expert-llr-at-intervention 0
+  set broadcast-message-bin 5
+  set broadcast-message-midpoint 0.55
+  set broadcast-message-llr 0
+  set broadcast-message-mode "Coarse"
+  set credence-message-count 0
+  set expert-raw-items-transmitted 0
+  set inbox-empty-at-intervention? false
+  set maximum-message-bin-copy-error 0
+  set maximum-message-llr-copy-error 0
+  set maximum-immediate-policy-formula-error 0
+  set mean-received-message-bin-post-intervention 5
+  set received-bin-dispersion-post-intervention 0
+  set mean-received-message-llr-post-intervention 0
+  set received-message-llr-dispersion-post-intervention 0
+  set mean-credence-items-received-post-intervention 0
+  set mean-lay-truth-mass-post-intervention 0
+  set mean-lay-recommendation-score-post-intervention 0
+  set lay-q-dispersion-post-intervention 0
+  set mean-lay-local-archive-size-post-intervention 0
+  set mean-lay-active-decision-inputs-post-intervention 0
+
+  reset-ticks
+  update-display
+end
+
+
+;; Expert-only calibration reproduces the expert's prior, likelihood,
+;; Thompson rule, sequential updating, and 25 x 5 opportunity schedule. It is
+;; deliberately isolated from the formal network runs and never estimates the
+;; table online.
+to setup-expert-calibration
+  clear-all
+  setup-fixed-constants
+  set actual-seed round run-seed
+  random-seed actual-seed
+  setup-hidden-world
+  create-experts 1 [
+    setxy 0 0
+    initialize-learner
+    set last-chose-b? false
+    set last-reward 0
+  ]
+  reset-ticks
+end
+
+
+to go-expert-calibration
+  if ticks >= expert-active-ticks-fixed [stop]
+  ask expert 0 [
+    foreach (range expert-pulls-per-tick-fixed) [pull-id ->
+      expert-pull pull-id
+    ]
+  ]
+  tick
+end
+
+
+to-report calibration-expert-q
+  report [posterior-q belief-llr] of expert 0
+end
+
+
+to-report calibration-message-bin
+  report credence-bin calibration-expert-q
+end
+
+
+to setup-fixed-constants
+  set laypeople-fixed 10
+  set total-ticks-fixed 500
+  set expert-active-ticks-fixed 25
+  set expert-pulls-per-tick-fixed 5
+  set final-window-fixed 50
+
+  set p-a 0.50
+  set p-b-good 0.55
+  set p-b-bad 0.45
+  set llr-unit ln (p-b-good / p-b-bad)
+  set shared-prior-llr 0
+  ;; This placeholder is replaced by the frozen calibration table before
+  ;; formal runs. Entries correspond to [0,.1), ... [.9,1].
+  set report-llr-table (list -2.4785927002857799 -1.6745763041439099 -1.0743671775227901 -0.75240943634695201 -0.332834215328142 0.22540972210660301 0.72936018239423905 1.04564132622468 1.7014474388196099 3.2631815429217501)
+  set report-table-version "sha256:2708886b9a088082"
+end
+
+
+to setup-hidden-world
+  if world-mode = "Random" [
+    ifelse random-float 1 < 0.5
+      [set hidden-world "B-good"]
+      [set hidden-world "B-bad"]
+  ]
+
+  if world-mode = "B-good" [set hidden-world "B-good"]
+  if world-mode = "B-bad" [set hidden-world "B-bad"]
+
+  if not member? hidden-world ["B-good" "B-bad"] [
+    error "world-mode must be Random, B-good, or B-bad"
+  ]
+
+  set p-b ifelse-value (hidden-world = "B-good")
+    [p-b-good]
+    [p-b-bad]
+end
+
+
+to setup-royal-family
+  create-experts 1 [
+    setxy 0 0
+    set shape "star"
+    set size 2.8
+    set color violet + 1
+    set label "expert"
+    initialize-learner
+    set last-chose-b? false
+    set last-reward 0
+  ]
+
+  create-laypeople laypeople-fixed [
+    set shape "circle"
+    set size 1.6
+    set color gray + 1
+    set label ""
+    initialize-learner
+    set chose-b? false
+    set current-reward 0
+    set next-inbox []
+    set seen-evidence-ids []
+    set peer-messages-received 0
+    set received-message-bin -1
+    set received-message-llr 0
+    set credence-items-received 0
+    set received-credence-message? false
+    set deference-applied? false
+    set pre-intervention-local-llr 0
+    set decision-base-llr 0
+    set post-intervention-local-llr 0
+    set pre-intervention-local-item-count 0
+    set decision-base-input-count 0
+    set post-intervention-local-item-count 0
+    set early-window-pulls 0
+    set early-window-wrong-pulls 0
+    set early-window-b-pulls 0
+    set final-window-pulls 0
+    set final-window-wrong-pulls 0
+  ]
+
+  layout-circle (sort laypeople) 12
+
+  let ordered-laypeople sort laypeople
+  foreach (range laypeople-fixed) [index ->
+    ask item index ordered-laypeople [
+      let next-layperson
+        item ((index + 1) mod laypeople-fixed) ordered-laypeople
+      create-cycle-link-with next-layperson
+    ]
+  ]
+
+  ask expert 0 [create-spoke-links-with laypeople]
+
+  ask cycle-links [
+    set color gray + 1
+    set thickness 0.18
+  ]
+  ask spoke-links [
+    set color violet + 3
+    set thickness 0.10
+  ]
+end
+
+
+to initialize-learner
+  set belief-llr shared-prior-llr
+  set total-pulls 0
+  set a-pulls 0
+  set b-pulls 0
+  set a-successes 0
+  set b-successes 0
+  set evidence-b-successes 0
+  set evidence-b-failures 0
+  set archive-b-successes 0
+  set archive-b-failures 0
+  set correct-pulls 0
+  set cumulative-reward 0
+  set cumulative-expected-regret 0
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DYNAMIC BANDIT LOOP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to go
+  if ticks >= total-ticks-fixed [stop]
+
+  ;; The scalar credence is processed after all round-25 peer messages have arrived,
+  ;; but before any round-26 action is chosen.
+  if ticks = expert-active-ticks-fixed [
+    apply-credence-intervention
+  ]
+
+  ;; The expert's five research pulls are sequential: each reward immediately
+  ;; changes the posterior used for the next pull.
+  if ticks < expert-active-ticks-fixed [
+    ask expert 0 [
+      foreach (range expert-pulls-per-tick-fixed) [pull-id ->
+        expert-pull pull-id
+      ]
+    ]
+  ]
+
+  ;; Laypeople act once, update on their own result, and then send that
+  ;; first-hand observation to their two ring neighbors.
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [layperson-pull]
+  ]
+  queue-first-hand-messages
+
+  tick
+  ;; Delivery occurs after tick t's actions and before tick t + 1's actions.
+  ;; It therefore cannot affect the action that generated the message.
+  if ticks < total-ticks-fixed [deliver-peer-messages]
+  if ticks = expert-active-ticks-fixed [
+    record-expertise-snapshot
+  ]
+  update-display
+end
+
+
+to record-expertise-snapshot
+  if expertise-snapshot-recorded? [stop]
+
+  set expert-truth-mass-at-25
+    [posterior-truth-mass belief-llr] of expert 0
+  set expert-recommendation-score-at-25
+    [recommendation-correct-score belief-llr] of expert 0
+  set expert-informative-observations-at-25
+    [evidence-b-successes + evidence-b-failures] of expert 0
+
+  let ordered-laypeople sort laypeople
+  set mean-lay-truth-mass-at-25 mean map
+    [a-layperson -> [posterior-truth-mass belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-llr-at-25 mean map
+    [a-layperson -> [belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-recommendation-score-at-25 mean map
+    [a-layperson -> [recommendation-correct-score belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-informative-observations-at-25 mean map
+    [a-layperson ->
+      [evidence-b-successes + evidence-b-failures] of a-layperson]
+    ordered-laypeople
+  set mean-lay-archive-size-at-25 mean map
+    [a-layperson -> [length seen-evidence-ids] of a-layperson]
+    ordered-laypeople
+  set mean-lay-cumulative-regret-at-25 mean map
+    [a-layperson -> [cumulative-expected-regret] of a-layperson]
+    ordered-laypeople
+  set mean-lay-correct-pulls-at-25 mean map
+    [a-layperson -> [correct-pulls] of a-layperson]
+    ordered-laypeople
+  set mean-lay-b-pulls-at-25 mean map
+    [a-layperson -> [b-pulls] of a-layperson]
+    ordered-laypeople
+  set mean-lay-reward-at-25 mean map
+    [a-layperson -> [cumulative-reward] of a-layperson]
+    ordered-laypeople
+
+  set expertise-snapshot-recorded? true
+end
+
+
+to run-full-experiment
+  setup
+  while [ticks < total-ticks-fixed] [go]
+end
+
+
+to expert-pull [pull-id]  ;; expert context
+  let q posterior-q belief-llr
+  let thompson-draw random-float 1
+  let reward-a-draw random-float 1
+  let reward-b-draw random-float 1
+  set last-chose-b? (thompson-draw < q)
+  set last-reward reward-from-potential-draws
+    last-chose-b? reward-a-draw reward-b-draw
+
+  set total-pulls total-pulls + 1
+  set cumulative-reward cumulative-reward + last-reward
+
+  ifelse last-chose-b?
+    [
+      set b-pulls b-pulls + 1
+      if last-reward = 1 [set b-successes b-successes + 1]
+    ]
+    [
+      set a-pulls a-pulls + 1
+      if last-reward = 1 [set a-successes a-successes + 1]
+    ]
+  if action-correct? last-chose-b? [
+    set correct-pulls correct-pulls + 1
+  ]
+  if not action-correct? last-chose-b? [
+    set cumulative-expected-regret
+      cumulative-expected-regret + abs (p-b - p-a)
+  ]
+
+  ;; No raw expert record is constructed or made available to laypeople.
+  observe-new-evidence last-chose-b? last-reward
+end
+
+
+to layperson-pull  ;; layperson context
+  let q posterior-q belief-llr
+  let thompson-draw random-float 1
+  let reward-a-draw random-float 1
+  let reward-b-draw random-float 1
+  set chose-b? (thompson-draw < q)
+  set current-reward reward-from-potential-draws
+    chose-b? reward-a-draw reward-b-draw
+
+  set total-pulls total-pulls + 1
+  set cumulative-reward cumulative-reward + current-reward
+
+  ifelse chose-b?
+    [
+      set b-pulls b-pulls + 1
+      if current-reward = 1 [set b-successes b-successes + 1]
+    ]
+    [
+      set a-pulls a-pulls + 1
+      if current-reward = 1 [set a-successes a-successes + 1]
+    ]
+  ifelse action-correct? chose-b?
+    [set correct-pulls correct-pulls + 1]
+    [set cumulative-expected-regret
+      cumulative-expected-regret + abs (p-b - p-a)]
+
+  if ticks >= (total-ticks-fixed - final-window-fixed) [
+    set final-window-pulls final-window-pulls + 1
+    if not action-correct? chose-b? [
+      set final-window-wrong-pulls final-window-wrong-pulls + 1
+    ]
+  ]
+
+  ;; ticks 25--49 are actions in rounds 26--50.
+  if ticks >= expert-active-ticks-fixed and ticks < 50 [
+    set early-window-pulls early-window-pulls + 1
+    if chose-b? [set early-window-b-pulls early-window-b-pulls + 1]
+    if not action-correct? chose-b? [
+      set early-window-wrong-pulls early-window-wrong-pulls + 1
+    ]
+  ]
+
+  let evidence-id (list who ticks 0)
+  if member? evidence-id seen-evidence-ids [
+    error "A layperson generated a duplicate first-hand evidence ID"
+  ]
+  set seen-evidence-ids lput evidence-id seen-evidence-ids
+  observe-new-evidence chose-b? current-reward
+end
+
+
+to deliver-peer-messages
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [
+      let delivered next-inbox
+      set next-inbox []
+
+      if peer-sharing? [
+        foreach delivered [message ->
+          let evidence-id item 0 message
+          let message-chose-b? item 1 message
+          let message-reward item 2 message
+
+          ifelse member? evidence-id seen-evidence-ids
+            [set duplicate-message-count duplicate-message-count + 1]
+            [
+              set seen-evidence-ids lput evidence-id seen-evidence-ids
+              set peer-messages-received peer-messages-received + 1
+              observe-new-evidence message-chose-b? message-reward
+            ]
+        ]
+      ]
+    ]
+  ]
+end
+
+
+to queue-first-hand-messages
+  if peer-sharing? [
+    foreach (sort laypeople) [a-layperson ->
+      ask a-layperson [
+        let message
+          (list (list who ticks 0) chose-b? current-reward)
+        foreach (sort cycle-link-neighbors) [a-neighbor ->
+          ask a-neighbor [
+            set next-inbox lput message next-inbox
+          ]
+        ]
+      ]
+    ]
+  ]
+end
+
+
+to observe-new-evidence [played-b? reward]
+  let belief-before-update belief-llr
+  archive-evidence-result played-b? reward
+  update-decision-belief-from-result played-b? reward
+
+  if is-layperson? self [
+    if deference-applied? [
+      set post-intervention-local-item-count
+        post-intervention-local-item-count + 1
+      set post-intervention-local-llr
+        post-intervention-local-llr + (belief-llr - belief-before-update)
+    ]
+  ]
+end
+
+
+to archive-evidence-result [played-b? reward]
+  if played-b? [
+    ifelse reward = 1
+      [set archive-b-successes archive-b-successes + 1]
+      [set archive-b-failures archive-b-failures + 1]
+  ]
+end
+
+
+to update-decision-belief-from-result [played-b? reward]
+  if played-b? [
+    ifelse reward = 1
+      [
+        set evidence-b-successes evidence-b-successes + 1
+        set belief-llr belief-llr + llr-unit
+      ]
+      [
+        set evidence-b-failures evidence-b-failures + 1
+        set belief-llr belief-llr - llr-unit
+      ]
+  ]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ONE-TIME OPAQUE CREDENCE-CATEGORY INTERVENTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to apply-credence-intervention
+  if deference-intervention-complete? [stop]
+  if not expertise-snapshot-recorded? [
+    error "The pre-intervention snapshot must be recorded first"
+  ]
+  if ticks != expert-active-ticks-fixed [
+    error "Credence intervention must occur immediately before round 26"
+  ]
+
+  set private-expert-llr-at-intervention [belief-llr] of expert 0
+  set private-expert-q-at-intervention
+    posterior-q private-expert-llr-at-intervention
+  set broadcast-message-bin credence-bin private-expert-q-at-intervention
+  set broadcast-message-midpoint 0.05 + (0.10 * broadcast-message-bin)
+  set broadcast-message-mode "Coarse"
+  set broadcast-message-llr
+    item broadcast-message-bin report-llr-table
+
+  ;; Exact policies are a code-regression boundary only. They are never part
+  ;; of the 3,000-run main experiment.
+  if member? credence-policy
+      ["Exact-C-Preemption" "Exact-C-Total Evidence"] [
+    set broadcast-message-mode "Exact validation"
+    set broadcast-message-llr
+      private-expert-llr-at-intervention - shared-prior-llr
+  ]
+
+  if broadcast-message-mode = "Coarse" and
+      report-table-version = "UNFROZEN" [
+    error "Formal coarse-message runs require a frozen calibration table"
+  ]
+
+  set maximum-message-bin-copy-error 0
+  set maximum-message-llr-copy-error 0
+  set maximum-immediate-policy-formula-error 0
+  set expert-raw-items-transmitted 0
+
+  set inbox-empty-at-intervention? all? laypeople [empty? next-inbox]
+  if not inbox-empty-at-intervention? [
+    error "A peer message was still pending at the intervention"
+  ]
+
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [
+      let pre-intervention-llr belief-llr
+      set pre-intervention-local-llr belief-llr
+      set pre-intervention-local-item-count length seen-evidence-ids
+
+      ;; These are the only testimony fields available to a layperson in the
+      ;; main model. The private q remains global audit state and is never read
+      ;; inside this ask block.
+      set received-message-bin broadcast-message-bin
+      set received-message-llr broadcast-message-llr
+      set credence-items-received credence-items-received + 1
+      set received-credence-message? true
+      set maximum-message-bin-copy-error max
+        (list maximum-message-bin-copy-error
+          abs (received-message-bin - broadcast-message-bin))
+      set maximum-message-llr-copy-error max
+        (list maximum-message-llr-copy-error
+          abs (received-message-llr - broadcast-message-llr))
+
+      let payload-llr received-message-llr
+      set post-intervention-local-llr 0
+      set post-intervention-local-item-count 0
+
+      let expected-base-llr pre-intervention-llr
+      if credence-policy = "No Deference" [
+        set decision-base-llr pre-intervention-llr
+        set decision-base-input-count pre-intervention-local-item-count
+        set expected-base-llr pre-intervention-llr
+      ]
+      if member? credence-policy
+          ["C-Preemption" "Exact-C-Preemption"] [
+        set decision-base-llr shared-prior-llr + payload-llr
+        set decision-base-input-count 1
+        set expected-base-llr shared-prior-llr + payload-llr
+      ]
+      if member? credence-policy
+          ["C-Total Evidence" "Exact-C-Total Evidence"] [
+        set decision-base-llr pre-intervention-llr + payload-llr
+        set decision-base-input-count pre-intervention-local-item-count + 1
+        set expected-base-llr pre-intervention-llr + payload-llr
+      ]
+
+      set belief-llr decision-base-llr
+      set maximum-immediate-policy-formula-error max
+        (list maximum-immediate-policy-formula-error
+          abs (decision-base-llr - expected-base-llr)
+          abs (belief-llr -
+            (decision-base-llr + post-intervention-local-llr)))
+      set deference-applied? true
+    ]
+  ]
+
+  let ordered-laypeople sort laypeople
+  set mean-received-message-bin-post-intervention mean map
+    [a-layperson -> [received-message-bin] of a-layperson]
+    ordered-laypeople
+  set received-bin-dispersion-post-intervention standard-deviation map
+    [a-layperson -> [received-message-bin] of a-layperson]
+    ordered-laypeople
+  set mean-received-message-llr-post-intervention mean map
+    [a-layperson -> [received-message-llr] of a-layperson]
+    ordered-laypeople
+  set received-message-llr-dispersion-post-intervention standard-deviation map
+    [a-layperson -> [received-message-llr] of a-layperson]
+    ordered-laypeople
+  set mean-credence-items-received-post-intervention mean map
+    [a-layperson -> [credence-items-received] of a-layperson]
+    ordered-laypeople
+  set mean-lay-truth-mass-post-intervention mean map
+    [a-layperson -> [posterior-truth-mass belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-recommendation-score-post-intervention mean map
+    [a-layperson -> [recommendation-correct-score belief-llr] of a-layperson]
+    ordered-laypeople
+  set lay-q-dispersion-post-intervention standard-deviation map
+    [a-layperson -> [posterior-q belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-local-archive-size-post-intervention mean map
+    [a-layperson -> [length seen-evidence-ids] of a-layperson]
+    ordered-laypeople
+  set mean-lay-active-decision-inputs-post-intervention mean map
+    [a-layperson ->
+      [decision-base-input-count + post-intervention-local-item-count]
+        of a-layperson]
+    ordered-laypeople
+
+  set credence-message-count credence-message-count + 1
+  set deference-intervention-complete? true
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DISPLAY;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to update-display
+  ask expert 0 [
+    let q posterior-q belief-llr
+    set color ifelse-value (recommendation-correct-score belief-llr = 1)
+      [violet + 1]
+      [red + 1]
+    set label (word "E q=" precision q 2 " n=" total-pulls)
+  ]
+
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [
+      let q posterior-q belief-llr
+      ifelse ticks = 0
+        [set color gray + 1]
+        [set color ifelse-value (action-correct? chose-b?)
+          [green + 1]
+          [orange + 1]]
+      set label (word precision q 2)
+    ]
+  ]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CORE REPORTERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to-report posterior-q [llr]
+  report 1 / (1 + exp (0 - llr))
+end
+
+
+to-report probability-to-llr [q]
+  if q <= 0 or q >= 1 [
+    error "A credence converted to log odds must be in (0, 1)"
+  ]
+  report ln (q / (1 - q))
+end
+
+
+to-report credence-bin [q]
+  if q <= 0 [report 0]
+  if q >= 1 [report 9]
+  report min (list 9 (floor (10 * q)))
+end
+
+
+to-report credence-bin-boundaries-valid?
+  report (credence-bin 0 = 0) and
+    (credence-bin 0.099999999 = 0) and
+    (credence-bin 0.1 = 1) and
+    (credence-bin 0.9 = 9) and
+    (credence-bin 1 = 9)
+end
+
+
+to-report frozen-report-table-valid?
+  if report-table-version = "UNFROZEN" [report false]
+  if length report-llr-table != 10 [report false]
+  let valid? true
+  foreach (range 9) [index ->
+    if item index report-llr-table >
+        item (index + 1) report-llr-table [
+      set valid? false
+    ]
+  ]
+  report valid?
+end
+
+
+to-report message-update-sentinel-valid?
+  let prior 0.3
+  let local 1.1
+  let testimony -0.4
+  let preemption prior + testimony
+  let total-evidence local + testimony
+  report (abs (preemption - -0.1) < 1.0e-12) and
+    (abs (total-evidence - 0.7) < 1.0e-12)
+end
+
+
+to-report reward-from-potential-draws [played-b? reward-a-draw reward-b-draw]
+  if played-b? [
+    report ifelse-value (reward-b-draw < p-b) [1] [0]
+  ]
+  report ifelse-value (reward-a-draw < p-a) [1] [0]
+end
+
+
+to-report action-correct? [played-b?]
+  if hidden-world = "B-good" [report played-b?]
+  report not played-b?
+end
+
+
+to-report posterior-truth-mass [llr]
+  let q posterior-q llr
+  report ifelse-value (hidden-world = "B-good") [q] [1 - q]
+end
+
+
+to-report recommendation-correct-score [llr]
+  if abs llr < 1.0e-12 [report 0.5]
+  report ifelse-value (action-correct? (llr > 0)) [1] [0]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EXPERIMENT METRICS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to-report current-lay-correct-choice-rate
+  if ticks = 0 [report 0]
+  let result 0
+  with-local-randomness [
+    set result count laypeople with [action-correct? chose-b?]
+  ]
+  report result / laypeople-fixed
+end
+
+
+to-report current-lay-b-share
+  if ticks = 0 [report 0]
+  let result 0
+  with-local-randomness [set result count laypeople with [chose-b?]]
+  report result / laypeople-fixed
+end
+
+
+to-report cumulative-lay-correct-choice-rate
+  let pulls 0
+  let correct 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set correct sum [correct-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report correct / pulls
+end
+
+
+to-report mean-lay-posterior-truth-mass
+  let result 0
+  with-local-randomness [
+    set result mean [posterior-truth-mass belief-llr] of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-lay-final-brier-score
+  let truth ifelse-value (hidden-world = "B-good") [1] [0]
+  let result 0
+  with-local-randomness [
+    set result mean [((posterior-q belief-llr) - truth) ^ 2]
+      of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-lay-q
+  let result 0
+  with-local-randomness [set result mean [posterior-q belief-llr] of laypeople]
+  report result
+end
+
+
+to-report lay-q-dispersion
+  let result 0
+  with-local-randomness [
+    set result standard-deviation [posterior-q belief-llr] of laypeople
+  ]
+  report result
+end
+
+
+to-report expert-posterior-truth-mass
+  report [posterior-truth-mass belief-llr] of expert 0
+end
+
+
+to-report expert-recommendation-accuracy
+  report [recommendation-correct-score belief-llr] of expert 0
+end
+
+
+to-report expert-report-direction-accuracy
+  if abs broadcast-message-llr < 1.0e-12 [report 0.5]
+  report ifelse-value
+    (action-correct? (broadcast-message-llr > 0)) [1] [0]
+end
+
+
+to-report expert-thompson-correct-rate
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [correct-pulls / total-pulls] of expert 0
+end
+
+
+to-report mean-lay-realized-payoff
+  let pulls 0
+  let rewards 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set rewards sum [cumulative-reward] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report rewards / pulls
+end
+
+
+to-report expert-realized-payoff
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [cumulative-reward / total-pulls] of expert 0
+end
+
+
+to-report mean-lay-cumulative-regret
+  let result 0
+  with-local-randomness [
+    set result mean [cumulative-expected-regret] of laypeople
+  ]
+  report result
+end
+
+
+to-report expert-cumulative-regret
+  report [cumulative-expected-regret] of expert 0
+end
+
+
+to-report mean-lay-b-pull-rate
+  let pulls 0
+  let b-count 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set b-count sum [b-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report b-count / pulls
+end
+
+
+to-report mean-lay-b-pulls
+  let result 0
+  with-local-randomness [set result mean [b-pulls] of laypeople]
+  report result
+end
+
+
+to-report mean-lay-informative-observations
+  let result 0
+  with-local-randomness [
+    set result mean [evidence-b-successes + evidence-b-failures]
+      of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-lay-active-decision-inputs
+  let result 0
+  with-local-randomness [
+    ifelse deference-intervention-complete?
+      [set result mean
+        [decision-base-input-count + post-intervention-local-item-count]
+        of laypeople]
+      [set result mean [length seen-evidence-ids] of laypeople]
+  ]
+  report result
+end
+
+
+to-report mean-lay-local-archive-size
+  let result 0
+  with-local-randomness [
+    set result mean [length seen-evidence-ids] of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-credence-items-received
+  let result 0
+  with-local-randomness [
+    set result mean [credence-items-received] of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-lay-post-intervention-regret
+  if ticks <= expert-active-ticks-fixed [report 0]
+  report mean-lay-cumulative-regret - mean-lay-cumulative-regret-at-25
+end
+
+
+to-report mean-lay-post-intervention-b-pulls
+  if ticks <= expert-active-ticks-fixed [report 0]
+  report mean-lay-b-pulls - mean-lay-b-pulls-at-25
+end
+
+
+to-report post-intervention-correct-choice-rate
+  let post-pulls total-lay-pulls -
+    (laypeople-fixed * expert-active-ticks-fixed)
+  if post-pulls <= 0 [report 0]
+  let correct-after 0
+  with-local-randomness [
+    set correct-after (sum [correct-pulls] of laypeople) -
+      (laypeople-fixed * mean-lay-correct-pulls-at-25)
+  ]
+  report correct-after / post-pulls
+end
+
+
+to-report post-intervention-realized-payoff
+  let post-pulls total-lay-pulls -
+    (laypeople-fixed * expert-active-ticks-fixed)
+  if post-pulls <= 0 [report 0]
+  let rewards-after 0
+  with-local-randomness [
+    set rewards-after (sum [cumulative-reward] of laypeople) -
+      (laypeople-fixed * mean-lay-reward-at-25)
+  ]
+  report rewards-after / post-pulls
+end
+
+
+to-report early-window-wrong-choice-rate
+  let pulls 0
+  let wrong 0
+  with-local-randomness [
+    set pulls sum [early-window-pulls] of laypeople
+    set wrong sum [early-window-wrong-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report wrong / pulls
+end
+
+
+to-report early-window-correct-choice-rate
+  if ticks <= expert-active-ticks-fixed [report 0]
+  report 1 - early-window-wrong-choice-rate
+end
+
+
+to-report early-window-b-share
+  let pulls 0
+  let b-count 0
+  with-local-randomness [
+    set pulls sum [early-window-pulls] of laypeople
+    set b-count sum [early-window-b-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report b-count / pulls
+end
+
+
+to-report current-lay-wrong-posterior-share
+  let wrong 0
+  with-local-randomness [
+    set wrong count laypeople with [
+      recommendation-correct-score belief-llr = 0
+    ]
+  ]
+  report wrong / laypeople-fixed
+end
+
+
+to-report expert-b-pull-rate
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [b-pulls / total-pulls] of expert 0
+end
+
+
+to-report lay-a-reward-rate
+  let pulls 0
+  let successes 0
+  with-local-randomness [
+    set pulls sum [a-pulls] of laypeople
+    set successes sum [a-successes] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report successes / pulls
+end
+
+
+to-report lay-b-reward-rate
+  let pulls 0
+  let successes 0
+  with-local-randomness [
+    set pulls sum [b-pulls] of laypeople
+    set successes sum [b-successes] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report successes / pulls
+end
+
+
+to-report expert-a-reward-rate
+  let n [a-pulls] of expert 0
+  if n = 0 [report 0]
+  report [a-successes / a-pulls] of expert 0
+end
+
+
+to-report expert-b-reward-rate
+  let n [b-pulls] of expert 0
+  if n = 0 [report 0]
+  report [b-successes / b-pulls] of expert 0
+end
+
+
+to-report maximum-local-ledger-identity-error
+  let expert-error 0
+  let lay-error 0
+  with-local-randomness [
+    set expert-error abs
+      ([belief-llr -
+        (shared-prior-llr +
+          (archive-b-successes - archive-b-failures) * llr-unit)]
+        of expert 0)
+    ifelse deference-intervention-complete?
+      [set lay-error max
+        [abs ((pre-intervention-local-llr +
+          post-intervention-local-llr) -
+          (shared-prior-llr +
+            (archive-b-successes - archive-b-failures) * llr-unit))]
+        of laypeople]
+      [set lay-error max
+        [abs (belief-llr -
+          (shared-prior-llr +
+            (archive-b-successes - archive-b-failures) * llr-unit))]
+        of laypeople]
+  ]
+  report max (list expert-error lay-error)
+end
+
+
+to-report maximum-regret-identity-error
+  let result 0
+  with-local-randomness [
+    set result max [abs (cumulative-expected-regret -
+      ((total-pulls - correct-pulls) * abs (p-b - p-a)))] of turtles
+  ]
+  report result
+end
+
+
+to-report maximum-decision-decomposition-error
+  if not deference-intervention-complete? [report 0]
+  let result 0
+  with-local-randomness [
+    set result max [abs (belief-llr -
+      (decision-base-llr + post-intervention-local-llr))]
+      of laypeople
+  ]
+  report result
+end
+
+
+to-report credence-payload-valid?
+  if not deference-intervention-complete? [report false]
+  let result false
+  with-local-randomness [
+    set result
+      (private-expert-q-at-intervention > 0) and
+      (private-expert-q-at-intervention < 1) and
+      (broadcast-message-bin >= 0) and
+      (broadcast-message-bin <= 9) and
+      (broadcast-message-bin = floor broadcast-message-bin) and
+      (credence-message-count = 1) and
+      (expert-raw-items-transmitted = 0) and
+      inbox-empty-at-intervention? and
+      credence-bin-boundaries-valid? and
+      frozen-report-table-valid? and
+      (maximum-message-bin-copy-error < 1.0e-12) and
+      (maximum-message-llr-copy-error < 1.0e-12) and
+      (abs (mean-received-message-bin-post-intervention -
+        broadcast-message-bin) < 1.0e-12) and
+      (received-bin-dispersion-post-intervention < 1.0e-12) and
+      (abs (mean-received-message-llr-post-intervention -
+        broadcast-message-llr) < 1.0e-12) and
+      (received-message-llr-dispersion-post-intervention < 1.0e-12) and
+      (all? laypeople [
+        credence-items-received = 1 and
+        received-credence-message?
+      ])
+  ]
+  report result
+end
+
+
+to-report credence-intervention-valid?
+  if not deference-intervention-complete? [report false]
+  let expected-active-inputs mean-lay-archive-size-at-25
+  if member? credence-policy
+      ["C-Preemption" "Exact-C-Preemption"] [
+    set expected-active-inputs 1
+  ]
+  if member? credence-policy
+      ["C-Total Evidence" "Exact-C-Total Evidence"] [
+    set expected-active-inputs mean-lay-archive-size-at-25 + 1
+  ]
+
+  let immediate-valid?
+    (maximum-immediate-policy-formula-error < 1.0e-12) and
+    (abs (mean-lay-active-decision-inputs-post-intervention -
+      expected-active-inputs) < 1.0e-12)
+
+  if credence-policy = "No Deference" [
+    set immediate-valid? immediate-valid? and
+      (abs (mean-lay-truth-mass-post-intervention -
+        mean-lay-truth-mass-at-25) < 1.0e-12)
+  ]
+  if member? credence-policy
+      ["C-Preemption" "Exact-C-Preemption"] [
+    set immediate-valid? immediate-valid? and
+      (lay-q-dispersion-post-intervention < 1.0e-12)
+  ]
+
+  if credence-policy = "Exact-C-Preemption" [
+    set immediate-valid? immediate-valid? and
+      (abs (mean-lay-truth-mass-post-intervention -
+        expert-truth-mass-at-25) < 1.0e-12)
+  ]
+
+  report credence-payload-valid? and
+    message-update-sentinel-valid? and
+    immediate-valid? and
+    (abs (mean-lay-archive-size-at-25 - 75) < 1.0e-12) and
+    (abs (mean-lay-local-archive-size-post-intervention -
+      mean-lay-archive-size-at-25) < 1.0e-12) and
+    (maximum-decision-decomposition-error < 1.0e-12) and
+    (all? laypeople [deference-applied?])
+end
+
+
+to-report evidence-provenance-valid?
+  let valid? true
+  foreach (sort laypeople) [a-layperson ->
+    let peer-set [cycle-link-neighbors] of a-layperson
+    let allowed-sources sentence
+      (list [who] of a-layperson)
+      (sort [who] of peer-set)
+    let archive [seen-evidence-ids] of a-layperson
+    foreach archive [evidence-id ->
+      if not member? (item 0 evidence-id) allowed-sources [
+        set valid? false
+      ]
+    ]
+  ]
+  report valid?
+end
+
+
+to-report mean-peer-messages-received
+  let result 0
+  with-local-randomness [set result mean [peer-messages-received] of laypeople]
+  report result
+end
+
+
+to-report mean-unique-evidence-count
+  let result 0
+  with-local-randomness [
+    set result mean [length seen-evidence-ids] of laypeople
+  ]
+  report result
+end
+
+
+to-report final-window-wrong-choice-rate
+  let pulls 0
+  let wrong 0
+  with-local-randomness [
+    set pulls sum [final-window-pulls] of laypeople
+    set wrong sum [final-window-wrong-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report wrong / pulls
+end
+
+
+to-report final-window-correct-choice-rate
+  report 1 - final-window-wrong-choice-rate
+end
+
+
+to-report finite-horizon-error-persistence-rate
+  let eligible 0
+  let persistent 0
+  with-local-randomness [
+    set eligible count laypeople with [final-window-pulls > 0]
+    set persistent count laypeople with [
+      final-window-wrong-pulls > (final-window-pulls / 2)
+    ]
+  ]
+  if eligible = 0 [report 0]
+  report persistent / laypeople-fixed
+end
+
+
+to-report run-finite-horizon-persistent-error?
+  let pulls 0
+  with-local-randomness [
+    set pulls sum [final-window-pulls] of laypeople
+  ]
+  if pulls = 0 [report false]
+  report final-window-wrong-choice-rate > 0.5
+end
+
+
+to-report expert-total-pulls
+  report [total-pulls] of expert 0
+end
+
+
+to-report total-lay-pulls
+  let result 0
+  with-local-randomness [set result sum [total-pulls] of laypeople]
+  report result
+end
+
+
+to-report network-structure-valid?
+  let result false
+  with-local-randomness [
+    set result ((count experts = 1) and
+                (count laypeople = laypeople-fixed) and
+                (count cycle-links = laypeople-fixed) and
+                (count spoke-links = laypeople-fixed) and
+                (all? laypeople [count cycle-link-neighbors = 2]) and
+                (all? laypeople [count spoke-link-neighbors = 1]))
+  ]
+  report result
+end
+
+
+to-report message-accounting-valid?
+  if ticks = 0 [report true]
+  let expected-peer-messages
+    ifelse-value peer-sharing?
+      [2 * ifelse-value (ticks < total-ticks-fixed) [ticks] [ticks - 1]]
+      [0]
+  let result false
+  with-local-randomness [
+    set result ((duplicate-message-count = 0) and
+                (all? laypeople [
+                  peer-messages-received = expected-peer-messages
+                ]) and
+                (all? laypeople [
+                  length seen-evidence-ids =
+                    total-pulls + peer-messages-received
+                ]))
+  ]
+  report result
+end
+
+
+to-report model-status
+  if ticks = 0 [
+    report (word "Ready — " hidden-world ", seed " actual-seed)
+  ]
+  if ticks >= total-ticks-fixed [
+    report (word "Complete — " ticks " ticks")
+  ]
+  report (word "Running — tick " ticks " / " total-ticks-fixed)
+end

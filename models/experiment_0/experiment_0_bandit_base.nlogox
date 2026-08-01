@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model version="NetLogo 7.0.3" snapToGrid="false">
+  <code><![CDATA[
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EXPERIMENT 0 — DYNAMIC BANDIT BASE
+;;
+;; One expert and ten laypeople learn in a two-world Bernoulli bandit.
+;; There is no deference in this experiment. The expert never sends evidence,
+;; credence, or an inferential structure to laypeople.
+;;
+;; The expert's epistemic advantage is endogenous: during ticks 1–25 it has
+;; five sequential research pulls per tick. Each layperson has one pull per
+;; tick for 500 ticks and receives first-hand results from its two ring
+;; neighbors with a one-tick delay. Actions use binary Thompson sampling.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+breed [experts expert]
+breed [laypeople layperson]
+
+undirected-link-breed [cycle-links cycle-link]
+undirected-link-breed [spoke-links spoke-link]
+
+globals [
+  ;; Fixed design constants
+  laypeople-fixed
+  total-ticks-fixed
+  expert-active-ticks-fixed
+  expert-pulls-per-tick-fixed
+  final-window-fixed
+  p-a
+  p-b-good
+  p-b-bad
+  p-b
+  llr-unit
+
+  ;; Run state
+  actual-seed
+  hidden-world
+  duplicate-message-count
+
+  ;; Snapshot after 25 learning ticks and delivery of tick-25 peer messages,
+  ;; immediately before the 26th lay action.
+  expertise-snapshot-recorded?
+  expert-truth-mass-at-25
+  expert-recommendation-score-at-25
+  expert-informative-observations-at-25
+  mean-lay-truth-mass-at-25
+  mean-lay-recommendation-score-at-25
+  mean-lay-informative-observations-at-25
+  mean-lay-archive-size-at-25
+]
+
+turtles-own [
+  belief-llr
+  total-pulls
+  a-pulls
+  b-pulls
+  a-successes
+  b-successes
+  evidence-b-successes
+  evidence-b-failures
+  correct-pulls
+  cumulative-reward
+  cumulative-expected-regret
+]
+
+experts-own [
+  last-chose-b?
+  last-reward
+]
+
+laypeople-own [
+  chose-b?
+  current-reward
+
+  ;; Messages created in tick t are processed at the beginning of tick t + 1.
+  next-inbox
+  seen-evidence-ids
+  peer-messages-received
+
+  ;; Finite-horizon persistence diagnostic for the final 50 ticks.
+  final-window-pulls
+  final-window-wrong-pulls
+]
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SETUP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to setup
+  clear-all
+  setup-fixed-constants
+
+  set actual-seed round run-seed
+  random-seed actual-seed
+
+  setup-hidden-world
+  setup-royal-family
+  set duplicate-message-count 0
+  set expertise-snapshot-recorded? false
+  set expert-truth-mass-at-25 0
+  set expert-recommendation-score-at-25 0
+  set expert-informative-observations-at-25 0
+  set mean-lay-truth-mass-at-25 0
+  set mean-lay-recommendation-score-at-25 0
+  set mean-lay-informative-observations-at-25 0
+  set mean-lay-archive-size-at-25 0
+
+  reset-ticks
+  update-display
+end
+
+
+to setup-fixed-constants
+  set laypeople-fixed 10
+  set total-ticks-fixed 500
+  set expert-active-ticks-fixed 25
+  set expert-pulls-per-tick-fixed 5
+  set final-window-fixed 50
+
+  set p-a 0.50
+  set p-b-good 0.55
+  set p-b-bad 0.45
+  set llr-unit ln (p-b-good / p-b-bad)
+end
+
+
+to setup-hidden-world
+  if world-mode = "Random" [
+    ifelse random-float 1 < 0.5
+      [set hidden-world "B-good"]
+      [set hidden-world "B-bad"]
+  ]
+
+  if world-mode = "B-good" [set hidden-world "B-good"]
+  if world-mode = "B-bad" [set hidden-world "B-bad"]
+
+  if not member? hidden-world ["B-good" "B-bad"] [
+    error "world-mode must be Random, B-good, or B-bad"
+  ]
+
+  set p-b ifelse-value (hidden-world = "B-good")
+    [p-b-good]
+    [p-b-bad]
+end
+
+
+to setup-royal-family
+  create-experts 1 [
+    setxy 0 0
+    set shape "star"
+    set size 2.8
+    set color violet + 1
+    set label "expert"
+    initialize-learner
+    set last-chose-b? false
+    set last-reward 0
+  ]
+
+  create-laypeople laypeople-fixed [
+    set shape "circle"
+    set size 1.6
+    set color gray + 1
+    set label ""
+    initialize-learner
+    set chose-b? false
+    set current-reward 0
+    set next-inbox []
+    set seen-evidence-ids []
+    set peer-messages-received 0
+    set final-window-pulls 0
+    set final-window-wrong-pulls 0
+  ]
+
+  layout-circle (sort laypeople) 12
+
+  let ordered-laypeople sort laypeople
+  foreach (range laypeople-fixed) [index ->
+    ask item index ordered-laypeople [
+      let next-layperson
+        item ((index + 1) mod laypeople-fixed) ordered-laypeople
+      create-cycle-link-with next-layperson
+    ]
+  ]
+
+  ask expert 0 [
+    create-spoke-links-with laypeople
+  ]
+
+  ask cycle-links [
+    set color gray + 1
+    set thickness 0.18
+  ]
+  ask spoke-links [
+    set color violet + 3
+    set thickness 0.10
+  ]
+end
+
+
+to initialize-learner
+  set belief-llr 0
+  set total-pulls 0
+  set a-pulls 0
+  set b-pulls 0
+  set a-successes 0
+  set b-successes 0
+  set evidence-b-successes 0
+  set evidence-b-failures 0
+  set correct-pulls 0
+  set cumulative-reward 0
+  set cumulative-expected-regret 0
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DYNAMIC BANDIT LOOP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to go
+  if ticks >= total-ticks-fixed [stop]
+
+  ;; The expert's five research pulls are sequential: each reward immediately
+  ;; changes the posterior used for the next pull.
+  if ticks < expert-active-ticks-fixed [
+    ask expert 0 [
+      repeat expert-pulls-per-tick-fixed [
+        expert-pull
+      ]
+    ]
+  ]
+
+  ;; Laypeople act once, update on their own result, and then send that
+  ;; first-hand observation to their two ring neighbors.
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [layperson-pull]
+  ]
+  queue-first-hand-messages
+
+  tick
+  ;; Delivery occurs after tick t's actions and before tick t + 1's actions.
+  ;; It therefore cannot affect the action that generated the message.
+  if ticks < total-ticks-fixed [deliver-peer-messages]
+  if ticks = expert-active-ticks-fixed [record-expertise-snapshot]
+  update-display
+end
+
+
+to record-expertise-snapshot
+  if expertise-snapshot-recorded? [stop]
+
+  set expert-truth-mass-at-25
+    [posterior-truth-mass belief-llr] of expert 0
+  set expert-recommendation-score-at-25
+    [recommendation-correct-score belief-llr] of expert 0
+  set expert-informative-observations-at-25
+    [evidence-b-successes + evidence-b-failures] of expert 0
+
+  let ordered-laypeople sort laypeople
+  set mean-lay-truth-mass-at-25 mean map
+    [a-layperson -> [posterior-truth-mass belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-recommendation-score-at-25 mean map
+    [a-layperson -> [recommendation-correct-score belief-llr] of a-layperson]
+    ordered-laypeople
+  set mean-lay-informative-observations-at-25 mean map
+    [a-layperson ->
+      [evidence-b-successes + evidence-b-failures] of a-layperson]
+    ordered-laypeople
+  set mean-lay-archive-size-at-25 mean map
+    [a-layperson -> [length seen-evidence-ids] of a-layperson]
+    ordered-laypeople
+
+  set expertise-snapshot-recorded? true
+end
+
+
+to run-full-experiment
+  setup
+  while [ticks < total-ticks-fixed] [go]
+end
+
+
+to expert-pull  ;; expert context
+  let q posterior-q belief-llr
+  let thompson-draw random-float 1
+  let reward-a-draw random-float 1
+  let reward-b-draw random-float 1
+  set last-chose-b? (thompson-draw < q)
+  set last-reward reward-from-potential-draws
+    last-chose-b? reward-a-draw reward-b-draw
+
+  set total-pulls total-pulls + 1
+  set cumulative-reward cumulative-reward + last-reward
+
+  ifelse last-chose-b?
+    [
+      set b-pulls b-pulls + 1
+      if last-reward = 1 [set b-successes b-successes + 1]
+    ]
+    [
+      set a-pulls a-pulls + 1
+      if last-reward = 1 [set a-successes a-successes + 1]
+    ]
+  if action-correct? last-chose-b? [
+    set correct-pulls correct-pulls + 1
+  ]
+  if not action-correct? last-chose-b? [
+    set cumulative-expected-regret
+      cumulative-expected-regret + abs (p-b - p-a)
+  ]
+
+  update-belief-from-result last-chose-b? last-reward
+end
+
+
+to layperson-pull  ;; layperson context
+  let q posterior-q belief-llr
+  let thompson-draw random-float 1
+  let reward-a-draw random-float 1
+  let reward-b-draw random-float 1
+  set chose-b? (thompson-draw < q)
+  set current-reward reward-from-potential-draws
+    chose-b? reward-a-draw reward-b-draw
+
+  set total-pulls total-pulls + 1
+  set cumulative-reward cumulative-reward + current-reward
+
+  ifelse chose-b?
+    [
+      set b-pulls b-pulls + 1
+      if current-reward = 1 [set b-successes b-successes + 1]
+    ]
+    [
+      set a-pulls a-pulls + 1
+      if current-reward = 1 [set a-successes a-successes + 1]
+    ]
+  ifelse action-correct? chose-b?
+    [set correct-pulls correct-pulls + 1]
+    [set cumulative-expected-regret
+      cumulative-expected-regret + abs (p-b - p-a)]
+
+  if ticks >= (total-ticks-fixed - final-window-fixed) [
+    set final-window-pulls final-window-pulls + 1
+    if not action-correct? chose-b? [
+      set final-window-wrong-pulls final-window-wrong-pulls + 1
+    ]
+  ]
+
+  let evidence-id (list who ticks 0)
+  if member? evidence-id seen-evidence-ids [
+    error "A layperson generated a duplicate first-hand evidence ID"
+  ]
+  set seen-evidence-ids lput evidence-id seen-evidence-ids
+  update-belief-from-result chose-b? current-reward
+end
+
+
+to deliver-peer-messages
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [
+      let delivered next-inbox
+      set next-inbox []
+
+      if peer-sharing? [
+        foreach delivered [message ->
+          let evidence-id item 0 message
+          let message-chose-b? item 1 message
+          let message-reward item 2 message
+
+          ifelse member? evidence-id seen-evidence-ids
+            [set duplicate-message-count duplicate-message-count + 1]
+            [
+              set seen-evidence-ids lput evidence-id seen-evidence-ids
+              set peer-messages-received peer-messages-received + 1
+              update-belief-from-result message-chose-b? message-reward
+            ]
+        ]
+      ]
+    ]
+  ]
+end
+
+
+to queue-first-hand-messages
+  if peer-sharing? [
+    foreach (sort laypeople) [a-layperson ->
+      ask a-layperson [
+        let message
+          (list (list who ticks 0) chose-b? current-reward)
+        foreach (sort cycle-link-neighbors) [a-neighbor ->
+          ask a-neighbor [
+            set next-inbox lput message next-inbox
+          ]
+        ]
+      ]
+    ]
+  ]
+end
+
+
+to update-belief-from-result [played-b? reward]
+  if played-b? [
+    ifelse reward = 1
+      [
+        set evidence-b-successes evidence-b-successes + 1
+        set belief-llr belief-llr + llr-unit
+      ]
+      [
+        set evidence-b-failures evidence-b-failures + 1
+        set belief-llr belief-llr - llr-unit
+      ]
+  ]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DISPLAY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to update-display
+  ask expert 0 [
+    let q posterior-q belief-llr
+    set color ifelse-value (recommendation-correct-score belief-llr = 1)
+      [violet + 1]
+      [red + 1]
+    set label (word "E q=" precision q 2 " n=" total-pulls)
+  ]
+
+  foreach (sort laypeople) [a-layperson ->
+    ask a-layperson [
+      let q posterior-q belief-llr
+      ifelse ticks = 0
+        [set color gray + 1]
+        [set color ifelse-value (action-correct? chose-b?)
+          [green + 1]
+          [orange + 1]]
+      set label (word precision q 2)
+    ]
+  ]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CORE REPORTERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to-report posterior-q [llr]
+  report 1 / (1 + exp (0 - llr))
+end
+
+
+to-report reward-from-potential-draws [played-b? reward-a-draw reward-b-draw]
+  if played-b? [
+    report ifelse-value (reward-b-draw < p-b) [1] [0]
+  ]
+  report ifelse-value (reward-a-draw < p-a) [1] [0]
+end
+
+
+to-report action-correct? [played-b?]
+  if hidden-world = "B-good" [report played-b?]
+  report not played-b?
+end
+
+
+to-report posterior-truth-mass [llr]
+  let q posterior-q llr
+  report ifelse-value (hidden-world = "B-good") [q] [1 - q]
+end
+
+
+to-report recommendation-correct-score [llr]
+  if abs llr < 1.0e-12 [report 0.5]
+  report ifelse-value (action-correct? (llr > 0)) [1] [0]
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EXPERIMENT METRICS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to-report current-lay-correct-choice-rate
+  if ticks = 0 [report 0]
+  let result 0
+  with-local-randomness [
+    set result count laypeople with [action-correct? chose-b?]
+  ]
+  report result / laypeople-fixed
+end
+
+
+to-report current-lay-b-share
+  if ticks = 0 [report 0]
+  let result 0
+  with-local-randomness [set result count laypeople with [chose-b?]]
+  report result / laypeople-fixed
+end
+
+
+to-report cumulative-lay-correct-choice-rate
+  let pulls 0
+  let correct 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set correct sum [correct-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report correct / pulls
+end
+
+
+to-report mean-lay-posterior-truth-mass
+  let result 0
+  with-local-randomness [
+    set result mean [posterior-truth-mass belief-llr] of laypeople
+  ]
+  report result
+end
+
+
+to-report mean-lay-q
+  let result 0
+  with-local-randomness [set result mean [posterior-q belief-llr] of laypeople]
+  report result
+end
+
+
+to-report lay-q-dispersion
+  let result 0
+  with-local-randomness [
+    set result standard-deviation [posterior-q belief-llr] of laypeople
+  ]
+  report result
+end
+
+
+to-report expert-posterior-truth-mass
+  report [posterior-truth-mass belief-llr] of expert 0
+end
+
+
+to-report expert-recommendation-accuracy
+  report [recommendation-correct-score belief-llr] of expert 0
+end
+
+
+to-report expert-thompson-correct-rate
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [correct-pulls / total-pulls] of expert 0
+end
+
+
+to-report mean-lay-realized-payoff
+  let pulls 0
+  let rewards 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set rewards sum [cumulative-reward] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report rewards / pulls
+end
+
+
+to-report expert-realized-payoff
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [cumulative-reward / total-pulls] of expert 0
+end
+
+
+to-report mean-lay-cumulative-regret
+  let result 0
+  with-local-randomness [
+    set result mean [cumulative-expected-regret] of laypeople
+  ]
+  report result
+end
+
+
+to-report expert-cumulative-regret
+  report [cumulative-expected-regret] of expert 0
+end
+
+
+to-report mean-lay-b-pull-rate
+  let pulls 0
+  let b-count 0
+  with-local-randomness [
+    set pulls sum [total-pulls] of laypeople
+    set b-count sum [b-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report b-count / pulls
+end
+
+
+to-report mean-lay-b-pulls
+  let result 0
+  with-local-randomness [set result mean [b-pulls] of laypeople]
+  report result
+end
+
+
+to-report mean-lay-informative-observations
+  let result 0
+  with-local-randomness [
+    set result mean [evidence-b-successes + evidence-b-failures]
+      of laypeople
+  ]
+  report result
+end
+
+
+to-report expert-b-pull-rate
+  let n [total-pulls] of expert 0
+  if n = 0 [report 0]
+  report [b-pulls / total-pulls] of expert 0
+end
+
+
+to-report lay-a-reward-rate
+  let pulls 0
+  let successes 0
+  with-local-randomness [
+    set pulls sum [a-pulls] of laypeople
+    set successes sum [a-successes] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report successes / pulls
+end
+
+
+to-report lay-b-reward-rate
+  let pulls 0
+  let successes 0
+  with-local-randomness [
+    set pulls sum [b-pulls] of laypeople
+    set successes sum [b-successes] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report successes / pulls
+end
+
+
+to-report expert-a-reward-rate
+  let n [a-pulls] of expert 0
+  if n = 0 [report 0]
+  report [a-successes / a-pulls] of expert 0
+end
+
+
+to-report expert-b-reward-rate
+  let n [b-pulls] of expert 0
+  if n = 0 [report 0]
+  report [b-successes / b-pulls] of expert 0
+end
+
+
+to-report maximum-belief-identity-error
+  let result 0
+  with-local-randomness [
+    set result max [abs (belief-llr -
+      ((evidence-b-successes - evidence-b-failures) * llr-unit))]
+      of turtles
+  ]
+  report result
+end
+
+
+to-report maximum-regret-identity-error
+  let result 0
+  with-local-randomness [
+    set result max [abs (cumulative-expected-regret -
+      ((total-pulls - correct-pulls) * abs (p-b - p-a)))] of turtles
+  ]
+  report result
+end
+
+
+to-report evidence-provenance-valid?
+  let valid? true
+  foreach (sort laypeople) [a-layperson ->
+    let peer-set [cycle-link-neighbors] of a-layperson
+    let allowed-sources sentence
+      (list [who] of a-layperson)
+      (sort [who] of peer-set)
+    let archive [seen-evidence-ids] of a-layperson
+    foreach archive [evidence-id ->
+      if not member? (item 0 evidence-id) allowed-sources [
+        set valid? false
+      ]
+    ]
+  ]
+  report valid?
+end
+
+
+to-report mean-peer-messages-received
+  let result 0
+  with-local-randomness [set result mean [peer-messages-received] of laypeople]
+  report result
+end
+
+
+to-report mean-unique-evidence-count
+  let result 0
+  with-local-randomness [
+    set result mean [length seen-evidence-ids] of laypeople
+  ]
+  report result
+end
+
+
+to-report final-window-wrong-choice-rate
+  let pulls 0
+  let wrong 0
+  with-local-randomness [
+    set pulls sum [final-window-pulls] of laypeople
+    set wrong sum [final-window-wrong-pulls] of laypeople
+  ]
+  if pulls = 0 [report 0]
+  report wrong / pulls
+end
+
+
+to-report finite-horizon-error-persistence-rate
+  let eligible 0
+  let persistent 0
+  with-local-randomness [
+    set eligible count laypeople with [final-window-pulls > 0]
+    set persistent count laypeople with [
+      final-window-wrong-pulls > (final-window-pulls / 2)
+    ]
+  ]
+  if eligible = 0 [report 0]
+  report persistent / laypeople-fixed
+end
+
+
+to-report run-finite-horizon-persistent-error?
+  let pulls 0
+  with-local-randomness [
+    set pulls sum [final-window-pulls] of laypeople
+  ]
+  if pulls = 0 [report false]
+  report final-window-wrong-choice-rate > 0.5
+end
+
+
+to-report expert-total-pulls
+  report [total-pulls] of expert 0
+end
+
+
+to-report total-lay-pulls
+  let result 0
+  with-local-randomness [set result sum [total-pulls] of laypeople]
+  report result
+end
+
+
+to-report network-structure-valid?
+  let result false
+  with-local-randomness [
+    set result ((count experts = 1) and
+                (count laypeople = laypeople-fixed) and
+                (count cycle-links = laypeople-fixed) and
+                (count spoke-links = laypeople-fixed) and
+                (all? laypeople [count cycle-link-neighbors = 2]) and
+                (all? laypeople [count spoke-link-neighbors = 1]))
+  ]
+  report result
+end
+
+
+to-report message-accounting-valid?
+  if ticks = 0 [report true]
+  let expected-peer-messages
+    ifelse-value peer-sharing?
+      [2 * ifelse-value (ticks < total-ticks-fixed) [ticks] [ticks - 1]]
+      [0]
+  let result false
+  with-local-randomness [
+    set result ((duplicate-message-count = 0) and
+                (all? laypeople [
+                  peer-messages-received = expected-peer-messages
+                ]) and
+                (all? laypeople [
+                  length seen-evidence-ids =
+                    total-pulls + peer-messages-received
+                ]))
+  ]
+  report result
+end
+
+
+to-report model-status
+  if ticks = 0 [
+    report (word "Ready — " hidden-world ", seed " actual-seed)
+  ]
+  if ticks >= total-ticks-fixed [
+    report (word "Complete — " ticks " ticks")
+  ]
+  report (word "Running — tick " ticks " / " total-ticks-fixed)
+end
+
+]]></code>
+
+  <widgets>
+    <view x="430" wrappingAllowedX="false" y="15" frameRate="30.0" minPycor="-16" height="490" showTickCounter="true" patchSize="14.0" fontSize="10" wrappingAllowedY="false" width="490" tickCounterLabel="ticks" maxPycor="16" updateMode="0" maxPxcor="16" minPxcor="-16"></view>
+
+    <button x="10" y="15" height="40" disableUntilTicks="false" forever="false" kind="Observer" display="SETUP" width="125">setup</button>
+    <button x="145" y="15" height="40" disableUntilTicks="false" forever="false" kind="Observer" display="STEP" width="125">go</button>
+    <button x="280" y="15" height="40" disableUntilTicks="false" forever="true" kind="Observer" display="GO" width="125">go</button>
+    <button x="10" y="65" height="40" disableUntilTicks="false" forever="false" kind="Observer" display="RUN 500 TICKS" width="395">run-full-experiment</button>
+
+    <input x="10" multiline="false" y="120" height="60" variable="run-seed" type="number" width="190">300001</input>
+    <chooser x="215" y="120" height="60" variable="world-mode" current="0" display="World" width="190">
+      <choice type="string" value="Random"></choice>
+      <choice type="string" value="B-good"></choice>
+      <choice type="string" value="B-bad"></choice>
+    </chooser>
+    <switch x="10" y="190" height="40" on="true" variable="peer-sharing?" display="peer-sharing?" width="190"></switch>
+
+    <monitor x="215" precision="17" y="190" height="55" fontSize="11" width="190" display="Status">model-status</monitor>
+    <monitor x="10" precision="3" y="255" height="55" fontSize="11" width="190" display="Expert truth mass">expert-posterior-truth-mass</monitor>
+    <monitor x="215" precision="3" y="255" height="55" fontSize="11" width="190" display="Lay mean truth mass">mean-lay-posterior-truth-mass</monitor>
+    <monitor x="10" precision="3" y="320" height="55" fontSize="11" width="190" display="Current correct share">current-lay-correct-choice-rate</monitor>
+    <monitor x="215" precision="3" y="320" height="55" fontSize="11" width="190" display="Current B share">current-lay-b-share</monitor>
+    <monitor x="10" precision="3" y="385" height="55" fontSize="11" width="190" display="Mean regret">mean-lay-cumulative-regret</monitor>
+    <monitor x="215" precision="3" y="385" height="55" fontSize="11" width="190" display="Late wrong share">final-window-wrong-choice-rate</monitor>
+    <monitor x="10" precision="17" y="450" height="55" fontSize="11" width="190" display="Network valid?">network-structure-valid?</monitor>
+    <monitor x="215" precision="17" y="450" height="55" fontSize="11" width="190" display="Messages valid?">message-accounting-valid?</monitor>
+
+    <plot x="940" autoPlotX="true" yMax="1.0" autoPlotY="false" y="15" xMin="0.0" height="235" legend="true" xMax="500.0" yMin="0.0" display="Posterior truth mass" width="560" xAxis="tick" yAxis="truth mass">
+      <setup>set-plot-x-range 0 total-ticks-fixed</setup>
+      <update></update>
+      <pen interval="1.0" mode="0" display="Expert" color="-8630108" legend="true"><setup></setup><update>plotxy ticks expert-posterior-truth-mass</update></pen>
+      <pen interval="1.0" mode="0" display="Lay mean" color="-7500403" legend="true"><setup></setup><update>plotxy ticks mean-lay-posterior-truth-mass</update></pen>
+    </plot>
+
+    <plot x="940" autoPlotX="true" yMax="1.0" autoPlotY="false" y="265" xMin="0.0" height="235" legend="true" xMax="500.0" yMin="0.0" display="Lay action shares" width="560" xAxis="tick" yAxis="share">
+      <setup>set-plot-x-range 0 total-ticks-fixed</setup>
+      <update></update>
+      <pen interval="1.0" mode="0" display="Correct arm" color="-10899396" legend="true"><setup></setup><update>plotxy ticks current-lay-correct-choice-rate</update></pen>
+      <pen interval="1.0" mode="0" display="B arm" color="-13345367" legend="true"><setup></setup><update>plotxy ticks current-lay-b-share</update></pen>
+    </plot>
+
+    <plot x="940" autoPlotX="true" yMax="25.0" autoPlotY="false" y="515" xMin="0.0" height="185" legend="false" xMax="500.0" yMin="0.0" display="Mean cumulative expected regret" width="560" xAxis="tick" yAxis="regret">
+      <setup>set-plot-x-range 0 total-ticks-fixed</setup>
+      <update></update>
+      <pen interval="1.0" mode="0" display="Laypeople" color="-2674135" legend="true"><setup></setup><update>plotxy ticks mean-lay-cumulative-regret</update></pen>
+    </plot>
+  </widgets>
+
+  <info><![CDATA[# Experiment 0: Dynamic Bandit Base
+
+## PURPOSE
+
+This is the validation model for the later deference experiments. It does not compare Preemption and Total Evidence, and the expert sends no testimony.
+
+## ENVIRONMENT
+
+Arm A has known success probability 0.50. In a B-good world, B succeeds with probability 0.55; in a B-bad world, B succeeds with probability 0.45. The world stays fixed for the full run.
+
+## LEARNING
+
+Agents maintain the log odds that the world is B-good. B success adds ln(0.55 / 0.45), B failure subtracts the same amount, and A outcomes do not change the belief. Binary Thompson sampling selects B with probability equal to the current posterior probability that the world is B-good.
+
+## AGENTS AND NETWORK
+
+There is one expert and ten laypeople. The expert has five sequential private research pulls per tick for the first 25 ticks and then stops. Each layperson has one pull per tick for 500 ticks. Laypeople form a ring and, when peer-sharing? is on, send each first-hand result only to their two immediate neighbors. A result generated in tick t can affect neighbors only after that tick's actions and before tick t+1 actions. Messages are never forwarded.
+
+The central spokes display the authority relation but carry no content in Experiment 0.
+
+## INTERPRETING OUTPUTS
+
+Posterior truth mass is q in B-good and 1-q in B-bad. Expected regret increases by 0.05 whenever an agent chooses the inferior arm. The final-window diagnostic describes erroneous persistence during the last 50 ticks; Thompson sampling has no absorbing lock-in state.
+
+This model can validate dynamic expertise, selective sampling, and local evidence transmission. It cannot support a conclusion about either deference rule.]]></info>
+
+  <turtleShapes>
+    <shape name="default" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="5"></point>
+        <point x="40" y="250"></point>
+        <point x="150" y="205"></point>
+        <point x="260" y="250"></point>
+      </polygon>
+    </shape>
+    <shape name="circle" rotatable="false" editableColorIndex="0">
+      <circle x="0" y="0" marked="true" color="-1920102913" diameter="300" filled="true"></circle>
+    </shape>
+    <shape name="star" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="151" y="1"></point>
+        <point x="185" y="108"></point>
+        <point x="298" y="108"></point>
+        <point x="207" y="175"></point>
+        <point x="242" y="282"></point>
+        <point x="151" y="216"></point>
+        <point x="59" y="282"></point>
+        <point x="94" y="175"></point>
+        <point x="3" y="108"></point>
+        <point x="116" y="108"></point>
+      </polygon>
+    </shape>
+  </turtleShapes>
+
+  <linkShapes>
+    <shape name="default" curviness="0.0">
+      <lines>
+        <line x="-0.2" visible="false">
+          <dash value="0.0"></dash>
+          <dash value="1.0"></dash>
+        </line>
+        <line x="0.0" visible="true">
+          <dash value="1.0"></dash>
+          <dash value="0.0"></dash>
+        </line>
+        <line x="0.2" visible="false">
+          <dash value="0.0"></dash>
+          <dash value="1.0"></dash>
+        </line>
+      </lines>
+      <indicator>
+        <shape name="link direction" rotatable="true" editableColorIndex="0">
+          <line endX="90" startY="150" marked="true" color="-1920102913" endY="180" startX="150"></line>
+          <line endX="210" startY="150" marked="true" color="-1920102913" endY="180" startX="150"></line>
+        </shape>
+      </indicator>
+    </shape>
+  </linkShapes>
+
+  <previewCommands>setup repeat 20 [ go ]</previewCommands>
+
+  <experiments>
+    <experiment name="experiment-0-bandit-smoke" repetitions="1" sequentialRunOrder="true" runMetricsEveryStep="false" timeLimit="600">
+      <setup>setup</setup>
+      <go>go</go>
+      <exitCondition>ticks &gt;= total-ticks-fixed</exitCondition>
+      <metrics>
+        <metric>actual-seed</metric>
+        <metric>hidden-world</metric>
+        <metric>ticks</metric>
+        <metric>expert-total-pulls</metric>
+        <metric>total-lay-pulls</metric>
+        <metric>expert-truth-mass-at-25</metric>
+        <metric>expert-recommendation-score-at-25</metric>
+        <metric>expert-informative-observations-at-25</metric>
+        <metric>mean-lay-truth-mass-at-25</metric>
+        <metric>mean-lay-recommendation-score-at-25</metric>
+        <metric>mean-lay-informative-observations-at-25</metric>
+        <metric>mean-lay-archive-size-at-25</metric>
+        <metric>mean-lay-posterior-truth-mass</metric>
+        <metric>cumulative-lay-correct-choice-rate</metric>
+        <metric>mean-lay-cumulative-regret</metric>
+        <metric>mean-lay-realized-payoff</metric>
+        <metric>mean-lay-b-pulls</metric>
+        <metric>mean-lay-informative-observations</metric>
+        <metric>final-window-wrong-choice-rate</metric>
+        <metric>finite-horizon-error-persistence-rate</metric>
+        <metric>run-finite-horizon-persistent-error?</metric>
+        <metric>expert-posterior-truth-mass</metric>
+        <metric>expert-recommendation-accuracy</metric>
+        <metric>expert-thompson-correct-rate</metric>
+        <metric>expert-cumulative-regret</metric>
+        <metric>expert-b-pull-rate</metric>
+        <metric>lay-a-reward-rate</metric>
+        <metric>lay-b-reward-rate</metric>
+        <metric>expert-a-reward-rate</metric>
+        <metric>expert-b-reward-rate</metric>
+        <metric>mean-peer-messages-received</metric>
+        <metric>mean-unique-evidence-count</metric>
+        <metric>duplicate-message-count</metric>
+        <metric>maximum-belief-identity-error</metric>
+        <metric>maximum-regret-identity-error</metric>
+        <metric>network-structure-valid?</metric>
+        <metric>message-accounting-valid?</metric>
+        <metric>evidence-provenance-valid?</metric>      </metrics>
+      <constants>
+        <enumeratedValueSet variable="run-seed">
+          <value value="310001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="world-mode">
+          <value value="&quot;B-good&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="peer-sharing?">
+          <value value="true"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+
+    <experiment name="experiment-0-bandit-main-final" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="false" timeLimit="600">
+      <setup>setup</setup>
+      <go>go</go>
+      <exitCondition>ticks &gt;= total-ticks-fixed</exitCondition>
+      <metrics>
+        <metric>actual-seed</metric>
+        <metric>hidden-world</metric>
+        <metric>ticks</metric>
+        <metric>expert-total-pulls</metric>
+        <metric>total-lay-pulls</metric>
+        <metric>expert-truth-mass-at-25</metric>
+        <metric>expert-recommendation-score-at-25</metric>
+        <metric>expert-informative-observations-at-25</metric>
+        <metric>mean-lay-truth-mass-at-25</metric>
+        <metric>mean-lay-recommendation-score-at-25</metric>
+        <metric>mean-lay-informative-observations-at-25</metric>
+        <metric>mean-lay-archive-size-at-25</metric>
+        <metric>mean-lay-posterior-truth-mass</metric>
+        <metric>cumulative-lay-correct-choice-rate</metric>
+        <metric>mean-lay-cumulative-regret</metric>
+        <metric>mean-lay-realized-payoff</metric>
+        <metric>mean-lay-b-pulls</metric>
+        <metric>mean-lay-informative-observations</metric>
+        <metric>final-window-wrong-choice-rate</metric>
+        <metric>finite-horizon-error-persistence-rate</metric>
+        <metric>run-finite-horizon-persistent-error?</metric>
+        <metric>expert-posterior-truth-mass</metric>
+        <metric>expert-recommendation-accuracy</metric>
+        <metric>expert-thompson-correct-rate</metric>
+        <metric>expert-cumulative-regret</metric>
+        <metric>expert-b-pull-rate</metric>
+        <metric>lay-a-reward-rate</metric>
+        <metric>lay-b-reward-rate</metric>
+        <metric>expert-a-reward-rate</metric>
+        <metric>expert-b-reward-rate</metric>
+        <metric>mean-peer-messages-received</metric>
+        <metric>mean-unique-evidence-count</metric>
+        <metric>duplicate-message-count</metric>
+        <metric>maximum-belief-identity-error</metric>
+        <metric>maximum-regret-identity-error</metric>
+        <metric>network-structure-valid?</metric>
+        <metric>message-accounting-valid?</metric>
+        <metric>evidence-provenance-valid?</metric>      </metrics>
+      <constants>
+        <enumeratedValueSet variable="run-seed">
+          <value value="310001"></value>
+          <value value="310002"></value>
+          <value value="310003"></value>
+          <value value="310004"></value>
+          <value value="310005"></value>
+          <value value="310006"></value>
+          <value value="310007"></value>
+          <value value="310008"></value>
+          <value value="310009"></value>
+          <value value="310010"></value>
+          <value value="310011"></value>
+          <value value="310012"></value>
+          <value value="310013"></value>
+          <value value="310014"></value>
+          <value value="310015"></value>
+          <value value="310016"></value>
+          <value value="310017"></value>
+          <value value="310018"></value>
+          <value value="310019"></value>
+          <value value="310020"></value>
+          <value value="310021"></value>
+          <value value="310022"></value>
+          <value value="310023"></value>
+          <value value="310024"></value>
+          <value value="310025"></value>
+          <value value="310026"></value>
+          <value value="310027"></value>
+          <value value="310028"></value>
+          <value value="310029"></value>
+          <value value="310030"></value>
+          <value value="310031"></value>
+          <value value="310032"></value>
+          <value value="310033"></value>
+          <value value="310034"></value>
+          <value value="310035"></value>
+          <value value="310036"></value>
+          <value value="310037"></value>
+          <value value="310038"></value>
+          <value value="310039"></value>
+          <value value="310040"></value>
+          <value value="310041"></value>
+          <value value="310042"></value>
+          <value value="310043"></value>
+          <value value="310044"></value>
+          <value value="310045"></value>
+          <value value="310046"></value>
+          <value value="310047"></value>
+          <value value="310048"></value>
+          <value value="310049"></value>
+          <value value="310050"></value>
+          <value value="310051"></value>
+          <value value="310052"></value>
+          <value value="310053"></value>
+          <value value="310054"></value>
+          <value value="310055"></value>
+          <value value="310056"></value>
+          <value value="310057"></value>
+          <value value="310058"></value>
+          <value value="310059"></value>
+          <value value="310060"></value>
+          <value value="310061"></value>
+          <value value="310062"></value>
+          <value value="310063"></value>
+          <value value="310064"></value>
+          <value value="310065"></value>
+          <value value="310066"></value>
+          <value value="310067"></value>
+          <value value="310068"></value>
+          <value value="310069"></value>
+          <value value="310070"></value>
+          <value value="310071"></value>
+          <value value="310072"></value>
+          <value value="310073"></value>
+          <value value="310074"></value>
+          <value value="310075"></value>
+          <value value="310076"></value>
+          <value value="310077"></value>
+          <value value="310078"></value>
+          <value value="310079"></value>
+          <value value="310080"></value>
+          <value value="310081"></value>
+          <value value="310082"></value>
+          <value value="310083"></value>
+          <value value="310084"></value>
+          <value value="310085"></value>
+          <value value="310086"></value>
+          <value value="310087"></value>
+          <value value="310088"></value>
+          <value value="310089"></value>
+          <value value="310090"></value>
+          <value value="310091"></value>
+          <value value="310092"></value>
+          <value value="310093"></value>
+          <value value="310094"></value>
+          <value value="310095"></value>
+          <value value="310096"></value>
+          <value value="310097"></value>
+          <value value="310098"></value>
+          <value value="310099"></value>
+          <value value="310100"></value>
+          <value value="310101"></value>
+          <value value="310102"></value>
+          <value value="310103"></value>
+          <value value="310104"></value>
+          <value value="310105"></value>
+          <value value="310106"></value>
+          <value value="310107"></value>
+          <value value="310108"></value>
+          <value value="310109"></value>
+          <value value="310110"></value>
+          <value value="310111"></value>
+          <value value="310112"></value>
+          <value value="310113"></value>
+          <value value="310114"></value>
+          <value value="310115"></value>
+          <value value="310116"></value>
+          <value value="310117"></value>
+          <value value="310118"></value>
+          <value value="310119"></value>
+          <value value="310120"></value>
+          <value value="310121"></value>
+          <value value="310122"></value>
+          <value value="310123"></value>
+          <value value="310124"></value>
+          <value value="310125"></value>
+          <value value="310126"></value>
+          <value value="310127"></value>
+          <value value="310128"></value>
+          <value value="310129"></value>
+          <value value="310130"></value>
+          <value value="310131"></value>
+          <value value="310132"></value>
+          <value value="310133"></value>
+          <value value="310134"></value>
+          <value value="310135"></value>
+          <value value="310136"></value>
+          <value value="310137"></value>
+          <value value="310138"></value>
+          <value value="310139"></value>
+          <value value="310140"></value>
+          <value value="310141"></value>
+          <value value="310142"></value>
+          <value value="310143"></value>
+          <value value="310144"></value>
+          <value value="310145"></value>
+          <value value="310146"></value>
+          <value value="310147"></value>
+          <value value="310148"></value>
+          <value value="310149"></value>
+          <value value="310150"></value>
+          <value value="310151"></value>
+          <value value="310152"></value>
+          <value value="310153"></value>
+          <value value="310154"></value>
+          <value value="310155"></value>
+          <value value="310156"></value>
+          <value value="310157"></value>
+          <value value="310158"></value>
+          <value value="310159"></value>
+          <value value="310160"></value>
+          <value value="310161"></value>
+          <value value="310162"></value>
+          <value value="310163"></value>
+          <value value="310164"></value>
+          <value value="310165"></value>
+          <value value="310166"></value>
+          <value value="310167"></value>
+          <value value="310168"></value>
+          <value value="310169"></value>
+          <value value="310170"></value>
+          <value value="310171"></value>
+          <value value="310172"></value>
+          <value value="310173"></value>
+          <value value="310174"></value>
+          <value value="310175"></value>
+          <value value="310176"></value>
+          <value value="310177"></value>
+          <value value="310178"></value>
+          <value value="310179"></value>
+          <value value="310180"></value>
+          <value value="310181"></value>
+          <value value="310182"></value>
+          <value value="310183"></value>
+          <value value="310184"></value>
+          <value value="310185"></value>
+          <value value="310186"></value>
+          <value value="310187"></value>
+          <value value="310188"></value>
+          <value value="310189"></value>
+          <value value="310190"></value>
+          <value value="310191"></value>
+          <value value="310192"></value>
+          <value value="310193"></value>
+          <value value="310194"></value>
+          <value value="310195"></value>
+          <value value="310196"></value>
+          <value value="310197"></value>
+          <value value="310198"></value>
+          <value value="310199"></value>
+          <value value="310200"></value>
+          <value value="310201"></value>
+          <value value="310202"></value>
+          <value value="310203"></value>
+          <value value="310204"></value>
+          <value value="310205"></value>
+          <value value="310206"></value>
+          <value value="310207"></value>
+          <value value="310208"></value>
+          <value value="310209"></value>
+          <value value="310210"></value>
+          <value value="310211"></value>
+          <value value="310212"></value>
+          <value value="310213"></value>
+          <value value="310214"></value>
+          <value value="310215"></value>
+          <value value="310216"></value>
+          <value value="310217"></value>
+          <value value="310218"></value>
+          <value value="310219"></value>
+          <value value="310220"></value>
+          <value value="310221"></value>
+          <value value="310222"></value>
+          <value value="310223"></value>
+          <value value="310224"></value>
+          <value value="310225"></value>
+          <value value="310226"></value>
+          <value value="310227"></value>
+          <value value="310228"></value>
+          <value value="310229"></value>
+          <value value="310230"></value>
+          <value value="310231"></value>
+          <value value="310232"></value>
+          <value value="310233"></value>
+          <value value="310234"></value>
+          <value value="310235"></value>
+          <value value="310236"></value>
+          <value value="310237"></value>
+          <value value="310238"></value>
+          <value value="310239"></value>
+          <value value="310240"></value>
+          <value value="310241"></value>
+          <value value="310242"></value>
+          <value value="310243"></value>
+          <value value="310244"></value>
+          <value value="310245"></value>
+          <value value="310246"></value>
+          <value value="310247"></value>
+          <value value="310248"></value>
+          <value value="310249"></value>
+          <value value="310250"></value>
+          <value value="310251"></value>
+          <value value="310252"></value>
+          <value value="310253"></value>
+          <value value="310254"></value>
+          <value value="310255"></value>
+          <value value="310256"></value>
+          <value value="310257"></value>
+          <value value="310258"></value>
+          <value value="310259"></value>
+          <value value="310260"></value>
+          <value value="310261"></value>
+          <value value="310262"></value>
+          <value value="310263"></value>
+          <value value="310264"></value>
+          <value value="310265"></value>
+          <value value="310266"></value>
+          <value value="310267"></value>
+          <value value="310268"></value>
+          <value value="310269"></value>
+          <value value="310270"></value>
+          <value value="310271"></value>
+          <value value="310272"></value>
+          <value value="310273"></value>
+          <value value="310274"></value>
+          <value value="310275"></value>
+          <value value="310276"></value>
+          <value value="310277"></value>
+          <value value="310278"></value>
+          <value value="310279"></value>
+          <value value="310280"></value>
+          <value value="310281"></value>
+          <value value="310282"></value>
+          <value value="310283"></value>
+          <value value="310284"></value>
+          <value value="310285"></value>
+          <value value="310286"></value>
+          <value value="310287"></value>
+          <value value="310288"></value>
+          <value value="310289"></value>
+          <value value="310290"></value>
+          <value value="310291"></value>
+          <value value="310292"></value>
+          <value value="310293"></value>
+          <value value="310294"></value>
+          <value value="310295"></value>
+          <value value="310296"></value>
+          <value value="310297"></value>
+          <value value="310298"></value>
+          <value value="310299"></value>
+          <value value="310300"></value>
+          <value value="310301"></value>
+          <value value="310302"></value>
+          <value value="310303"></value>
+          <value value="310304"></value>
+          <value value="310305"></value>
+          <value value="310306"></value>
+          <value value="310307"></value>
+          <value value="310308"></value>
+          <value value="310309"></value>
+          <value value="310310"></value>
+          <value value="310311"></value>
+          <value value="310312"></value>
+          <value value="310313"></value>
+          <value value="310314"></value>
+          <value value="310315"></value>
+          <value value="310316"></value>
+          <value value="310317"></value>
+          <value value="310318"></value>
+          <value value="310319"></value>
+          <value value="310320"></value>
+          <value value="310321"></value>
+          <value value="310322"></value>
+          <value value="310323"></value>
+          <value value="310324"></value>
+          <value value="310325"></value>
+          <value value="310326"></value>
+          <value value="310327"></value>
+          <value value="310328"></value>
+          <value value="310329"></value>
+          <value value="310330"></value>
+          <value value="310331"></value>
+          <value value="310332"></value>
+          <value value="310333"></value>
+          <value value="310334"></value>
+          <value value="310335"></value>
+          <value value="310336"></value>
+          <value value="310337"></value>
+          <value value="310338"></value>
+          <value value="310339"></value>
+          <value value="310340"></value>
+          <value value="310341"></value>
+          <value value="310342"></value>
+          <value value="310343"></value>
+          <value value="310344"></value>
+          <value value="310345"></value>
+          <value value="310346"></value>
+          <value value="310347"></value>
+          <value value="310348"></value>
+          <value value="310349"></value>
+          <value value="310350"></value>
+          <value value="310351"></value>
+          <value value="310352"></value>
+          <value value="310353"></value>
+          <value value="310354"></value>
+          <value value="310355"></value>
+          <value value="310356"></value>
+          <value value="310357"></value>
+          <value value="310358"></value>
+          <value value="310359"></value>
+          <value value="310360"></value>
+          <value value="310361"></value>
+          <value value="310362"></value>
+          <value value="310363"></value>
+          <value value="310364"></value>
+          <value value="310365"></value>
+          <value value="310366"></value>
+          <value value="310367"></value>
+          <value value="310368"></value>
+          <value value="310369"></value>
+          <value value="310370"></value>
+          <value value="310371"></value>
+          <value value="310372"></value>
+          <value value="310373"></value>
+          <value value="310374"></value>
+          <value value="310375"></value>
+          <value value="310376"></value>
+          <value value="310377"></value>
+          <value value="310378"></value>
+          <value value="310379"></value>
+          <value value="310380"></value>
+          <value value="310381"></value>
+          <value value="310382"></value>
+          <value value="310383"></value>
+          <value value="310384"></value>
+          <value value="310385"></value>
+          <value value="310386"></value>
+          <value value="310387"></value>
+          <value value="310388"></value>
+          <value value="310389"></value>
+          <value value="310390"></value>
+          <value value="310391"></value>
+          <value value="310392"></value>
+          <value value="310393"></value>
+          <value value="310394"></value>
+          <value value="310395"></value>
+          <value value="310396"></value>
+          <value value="310397"></value>
+          <value value="310398"></value>
+          <value value="310399"></value>
+          <value value="310400"></value>
+          <value value="310401"></value>
+          <value value="310402"></value>
+          <value value="310403"></value>
+          <value value="310404"></value>
+          <value value="310405"></value>
+          <value value="310406"></value>
+          <value value="310407"></value>
+          <value value="310408"></value>
+          <value value="310409"></value>
+          <value value="310410"></value>
+          <value value="310411"></value>
+          <value value="310412"></value>
+          <value value="310413"></value>
+          <value value="310414"></value>
+          <value value="310415"></value>
+          <value value="310416"></value>
+          <value value="310417"></value>
+          <value value="310418"></value>
+          <value value="310419"></value>
+          <value value="310420"></value>
+          <value value="310421"></value>
+          <value value="310422"></value>
+          <value value="310423"></value>
+          <value value="310424"></value>
+          <value value="310425"></value>
+          <value value="310426"></value>
+          <value value="310427"></value>
+          <value value="310428"></value>
+          <value value="310429"></value>
+          <value value="310430"></value>
+          <value value="310431"></value>
+          <value value="310432"></value>
+          <value value="310433"></value>
+          <value value="310434"></value>
+          <value value="310435"></value>
+          <value value="310436"></value>
+          <value value="310437"></value>
+          <value value="310438"></value>
+          <value value="310439"></value>
+          <value value="310440"></value>
+          <value value="310441"></value>
+          <value value="310442"></value>
+          <value value="310443"></value>
+          <value value="310444"></value>
+          <value value="310445"></value>
+          <value value="310446"></value>
+          <value value="310447"></value>
+          <value value="310448"></value>
+          <value value="310449"></value>
+          <value value="310450"></value>
+          <value value="310451"></value>
+          <value value="310452"></value>
+          <value value="310453"></value>
+          <value value="310454"></value>
+          <value value="310455"></value>
+          <value value="310456"></value>
+          <value value="310457"></value>
+          <value value="310458"></value>
+          <value value="310459"></value>
+          <value value="310460"></value>
+          <value value="310461"></value>
+          <value value="310462"></value>
+          <value value="310463"></value>
+          <value value="310464"></value>
+          <value value="310465"></value>
+          <value value="310466"></value>
+          <value value="310467"></value>
+          <value value="310468"></value>
+          <value value="310469"></value>
+          <value value="310470"></value>
+          <value value="310471"></value>
+          <value value="310472"></value>
+          <value value="310473"></value>
+          <value value="310474"></value>
+          <value value="310475"></value>
+          <value value="310476"></value>
+          <value value="310477"></value>
+          <value value="310478"></value>
+          <value value="310479"></value>
+          <value value="310480"></value>
+          <value value="310481"></value>
+          <value value="310482"></value>
+          <value value="310483"></value>
+          <value value="310484"></value>
+          <value value="310485"></value>
+          <value value="310486"></value>
+          <value value="310487"></value>
+          <value value="310488"></value>
+          <value value="310489"></value>
+          <value value="310490"></value>
+          <value value="310491"></value>
+          <value value="310492"></value>
+          <value value="310493"></value>
+          <value value="310494"></value>
+          <value value="310495"></value>
+          <value value="310496"></value>
+          <value value="310497"></value>
+          <value value="310498"></value>
+          <value value="310499"></value>
+          <value value="310500"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="world-mode">
+          <value value="&quot;B-good&quot;"></value>
+          <value value="&quot;B-bad&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="peer-sharing?">
+          <value value="true"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+
+    <experiment name="experiment-0-bandit-trajectories" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="true" timeLimit="600">
+      <setup>setup</setup>
+      <go>go</go>
+      <exitCondition>ticks &gt;= total-ticks-fixed</exitCondition>
+      <metrics>
+        <metric>actual-seed</metric>
+        <metric>hidden-world</metric>
+        <metric>ticks</metric>
+        <metric>current-lay-correct-choice-rate</metric>
+        <metric>current-lay-b-share</metric>
+        <metric>mean-lay-q</metric>
+        <metric>mean-lay-posterior-truth-mass</metric>
+        <metric>lay-q-dispersion</metric>
+        <metric>mean-lay-cumulative-regret</metric>
+        <metric>mean-lay-b-pulls</metric>
+        <metric>expert-posterior-truth-mass</metric>
+        <metric>expert-total-pulls</metric>
+        <metric>maximum-belief-identity-error</metric>
+        <metric>message-accounting-valid?</metric>      </metrics>
+      <constants>
+        <enumeratedValueSet variable="run-seed">
+          <value value="310001"></value>
+          <value value="310002"></value>
+          <value value="310003"></value>
+          <value value="310004"></value>
+          <value value="310005"></value>
+          <value value="310006"></value>
+          <value value="310007"></value>
+          <value value="310008"></value>
+          <value value="310009"></value>
+          <value value="310010"></value>
+          <value value="310011"></value>
+          <value value="310012"></value>
+          <value value="310013"></value>
+          <value value="310014"></value>
+          <value value="310015"></value>
+          <value value="310016"></value>
+          <value value="310017"></value>
+          <value value="310018"></value>
+          <value value="310019"></value>
+          <value value="310020"></value>
+          <value value="310021"></value>
+          <value value="310022"></value>
+          <value value="310023"></value>
+          <value value="310024"></value>
+          <value value="310025"></value>
+          <value value="310026"></value>
+          <value value="310027"></value>
+          <value value="310028"></value>
+          <value value="310029"></value>
+          <value value="310030"></value>
+          <value value="310031"></value>
+          <value value="310032"></value>
+          <value value="310033"></value>
+          <value value="310034"></value>
+          <value value="310035"></value>
+          <value value="310036"></value>
+          <value value="310037"></value>
+          <value value="310038"></value>
+          <value value="310039"></value>
+          <value value="310040"></value>
+          <value value="310041"></value>
+          <value value="310042"></value>
+          <value value="310043"></value>
+          <value value="310044"></value>
+          <value value="310045"></value>
+          <value value="310046"></value>
+          <value value="310047"></value>
+          <value value="310048"></value>
+          <value value="310049"></value>
+          <value value="310050"></value>
+          <value value="310051"></value>
+          <value value="310052"></value>
+          <value value="310053"></value>
+          <value value="310054"></value>
+          <value value="310055"></value>
+          <value value="310056"></value>
+          <value value="310057"></value>
+          <value value="310058"></value>
+          <value value="310059"></value>
+          <value value="310060"></value>
+          <value value="310061"></value>
+          <value value="310062"></value>
+          <value value="310063"></value>
+          <value value="310064"></value>
+          <value value="310065"></value>
+          <value value="310066"></value>
+          <value value="310067"></value>
+          <value value="310068"></value>
+          <value value="310069"></value>
+          <value value="310070"></value>
+          <value value="310071"></value>
+          <value value="310072"></value>
+          <value value="310073"></value>
+          <value value="310074"></value>
+          <value value="310075"></value>
+          <value value="310076"></value>
+          <value value="310077"></value>
+          <value value="310078"></value>
+          <value value="310079"></value>
+          <value value="310080"></value>
+          <value value="310081"></value>
+          <value value="310082"></value>
+          <value value="310083"></value>
+          <value value="310084"></value>
+          <value value="310085"></value>
+          <value value="310086"></value>
+          <value value="310087"></value>
+          <value value="310088"></value>
+          <value value="310089"></value>
+          <value value="310090"></value>
+          <value value="310091"></value>
+          <value value="310092"></value>
+          <value value="310093"></value>
+          <value value="310094"></value>
+          <value value="310095"></value>
+          <value value="310096"></value>
+          <value value="310097"></value>
+          <value value="310098"></value>
+          <value value="310099"></value>
+          <value value="310100"></value>
+          <value value="310101"></value>
+          <value value="310102"></value>
+          <value value="310103"></value>
+          <value value="310104"></value>
+          <value value="310105"></value>
+          <value value="310106"></value>
+          <value value="310107"></value>
+          <value value="310108"></value>
+          <value value="310109"></value>
+          <value value="310110"></value>
+          <value value="310111"></value>
+          <value value="310112"></value>
+          <value value="310113"></value>
+          <value value="310114"></value>
+          <value value="310115"></value>
+          <value value="310116"></value>
+          <value value="310117"></value>
+          <value value="310118"></value>
+          <value value="310119"></value>
+          <value value="310120"></value>
+          <value value="310121"></value>
+          <value value="310122"></value>
+          <value value="310123"></value>
+          <value value="310124"></value>
+          <value value="310125"></value>
+          <value value="310126"></value>
+          <value value="310127"></value>
+          <value value="310128"></value>
+          <value value="310129"></value>
+          <value value="310130"></value>
+          <value value="310131"></value>
+          <value value="310132"></value>
+          <value value="310133"></value>
+          <value value="310134"></value>
+          <value value="310135"></value>
+          <value value="310136"></value>
+          <value value="310137"></value>
+          <value value="310138"></value>
+          <value value="310139"></value>
+          <value value="310140"></value>
+          <value value="310141"></value>
+          <value value="310142"></value>
+          <value value="310143"></value>
+          <value value="310144"></value>
+          <value value="310145"></value>
+          <value value="310146"></value>
+          <value value="310147"></value>
+          <value value="310148"></value>
+          <value value="310149"></value>
+          <value value="310150"></value>
+          <value value="310151"></value>
+          <value value="310152"></value>
+          <value value="310153"></value>
+          <value value="310154"></value>
+          <value value="310155"></value>
+          <value value="310156"></value>
+          <value value="310157"></value>
+          <value value="310158"></value>
+          <value value="310159"></value>
+          <value value="310160"></value>
+          <value value="310161"></value>
+          <value value="310162"></value>
+          <value value="310163"></value>
+          <value value="310164"></value>
+          <value value="310165"></value>
+          <value value="310166"></value>
+          <value value="310167"></value>
+          <value value="310168"></value>
+          <value value="310169"></value>
+          <value value="310170"></value>
+          <value value="310171"></value>
+          <value value="310172"></value>
+          <value value="310173"></value>
+          <value value="310174"></value>
+          <value value="310175"></value>
+          <value value="310176"></value>
+          <value value="310177"></value>
+          <value value="310178"></value>
+          <value value="310179"></value>
+          <value value="310180"></value>
+          <value value="310181"></value>
+          <value value="310182"></value>
+          <value value="310183"></value>
+          <value value="310184"></value>
+          <value value="310185"></value>
+          <value value="310186"></value>
+          <value value="310187"></value>
+          <value value="310188"></value>
+          <value value="310189"></value>
+          <value value="310190"></value>
+          <value value="310191"></value>
+          <value value="310192"></value>
+          <value value="310193"></value>
+          <value value="310194"></value>
+          <value value="310195"></value>
+          <value value="310196"></value>
+          <value value="310197"></value>
+          <value value="310198"></value>
+          <value value="310199"></value>
+          <value value="310200"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="world-mode">
+          <value value="&quot;B-good&quot;"></value>
+          <value value="&quot;B-bad&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="peer-sharing?">
+          <value value="true"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+
+    <experiment name="experiment-0-bandit-peer-check" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="false" timeLimit="600">
+      <setup>setup</setup>
+      <go>go</go>
+      <exitCondition>ticks &gt;= total-ticks-fixed</exitCondition>
+      <metrics>
+        <metric>actual-seed</metric>
+        <metric>hidden-world</metric>
+        <metric>ticks</metric>
+        <metric>expert-total-pulls</metric>
+        <metric>total-lay-pulls</metric>
+        <metric>expert-truth-mass-at-25</metric>
+        <metric>expert-recommendation-score-at-25</metric>
+        <metric>expert-informative-observations-at-25</metric>
+        <metric>mean-lay-truth-mass-at-25</metric>
+        <metric>mean-lay-recommendation-score-at-25</metric>
+        <metric>mean-lay-informative-observations-at-25</metric>
+        <metric>mean-lay-archive-size-at-25</metric>
+        <metric>mean-lay-posterior-truth-mass</metric>
+        <metric>cumulative-lay-correct-choice-rate</metric>
+        <metric>mean-lay-cumulative-regret</metric>
+        <metric>mean-lay-realized-payoff</metric>
+        <metric>mean-lay-b-pulls</metric>
+        <metric>mean-lay-informative-observations</metric>
+        <metric>final-window-wrong-choice-rate</metric>
+        <metric>finite-horizon-error-persistence-rate</metric>
+        <metric>run-finite-horizon-persistent-error?</metric>
+        <metric>expert-posterior-truth-mass</metric>
+        <metric>expert-recommendation-accuracy</metric>
+        <metric>expert-thompson-correct-rate</metric>
+        <metric>expert-cumulative-regret</metric>
+        <metric>expert-b-pull-rate</metric>
+        <metric>lay-a-reward-rate</metric>
+        <metric>lay-b-reward-rate</metric>
+        <metric>expert-a-reward-rate</metric>
+        <metric>expert-b-reward-rate</metric>
+        <metric>mean-peer-messages-received</metric>
+        <metric>mean-unique-evidence-count</metric>
+        <metric>duplicate-message-count</metric>
+        <metric>maximum-belief-identity-error</metric>
+        <metric>maximum-regret-identity-error</metric>
+        <metric>network-structure-valid?</metric>
+        <metric>message-accounting-valid?</metric>
+        <metric>evidence-provenance-valid?</metric>      </metrics>
+      <constants>
+        <enumeratedValueSet variable="run-seed">
+          <value value="310001"></value>
+          <value value="310002"></value>
+          <value value="310003"></value>
+          <value value="310004"></value>
+          <value value="310005"></value>
+          <value value="310006"></value>
+          <value value="310007"></value>
+          <value value="310008"></value>
+          <value value="310009"></value>
+          <value value="310010"></value>
+          <value value="310011"></value>
+          <value value="310012"></value>
+          <value value="310013"></value>
+          <value value="310014"></value>
+          <value value="310015"></value>
+          <value value="310016"></value>
+          <value value="310017"></value>
+          <value value="310018"></value>
+          <value value="310019"></value>
+          <value value="310020"></value>
+          <value value="310021"></value>
+          <value value="310022"></value>
+          <value value="310023"></value>
+          <value value="310024"></value>
+          <value value="310025"></value>
+          <value value="310026"></value>
+          <value value="310027"></value>
+          <value value="310028"></value>
+          <value value="310029"></value>
+          <value value="310030"></value>
+          <value value="310031"></value>
+          <value value="310032"></value>
+          <value value="310033"></value>
+          <value value="310034"></value>
+          <value value="310035"></value>
+          <value value="310036"></value>
+          <value value="310037"></value>
+          <value value="310038"></value>
+          <value value="310039"></value>
+          <value value="310040"></value>
+          <value value="310041"></value>
+          <value value="310042"></value>
+          <value value="310043"></value>
+          <value value="310044"></value>
+          <value value="310045"></value>
+          <value value="310046"></value>
+          <value value="310047"></value>
+          <value value="310048"></value>
+          <value value="310049"></value>
+          <value value="310050"></value>
+          <value value="310051"></value>
+          <value value="310052"></value>
+          <value value="310053"></value>
+          <value value="310054"></value>
+          <value value="310055"></value>
+          <value value="310056"></value>
+          <value value="310057"></value>
+          <value value="310058"></value>
+          <value value="310059"></value>
+          <value value="310060"></value>
+          <value value="310061"></value>
+          <value value="310062"></value>
+          <value value="310063"></value>
+          <value value="310064"></value>
+          <value value="310065"></value>
+          <value value="310066"></value>
+          <value value="310067"></value>
+          <value value="310068"></value>
+          <value value="310069"></value>
+          <value value="310070"></value>
+          <value value="310071"></value>
+          <value value="310072"></value>
+          <value value="310073"></value>
+          <value value="310074"></value>
+          <value value="310075"></value>
+          <value value="310076"></value>
+          <value value="310077"></value>
+          <value value="310078"></value>
+          <value value="310079"></value>
+          <value value="310080"></value>
+          <value value="310081"></value>
+          <value value="310082"></value>
+          <value value="310083"></value>
+          <value value="310084"></value>
+          <value value="310085"></value>
+          <value value="310086"></value>
+          <value value="310087"></value>
+          <value value="310088"></value>
+          <value value="310089"></value>
+          <value value="310090"></value>
+          <value value="310091"></value>
+          <value value="310092"></value>
+          <value value="310093"></value>
+          <value value="310094"></value>
+          <value value="310095"></value>
+          <value value="310096"></value>
+          <value value="310097"></value>
+          <value value="310098"></value>
+          <value value="310099"></value>
+          <value value="310100"></value>
+          <value value="310101"></value>
+          <value value="310102"></value>
+          <value value="310103"></value>
+          <value value="310104"></value>
+          <value value="310105"></value>
+          <value value="310106"></value>
+          <value value="310107"></value>
+          <value value="310108"></value>
+          <value value="310109"></value>
+          <value value="310110"></value>
+          <value value="310111"></value>
+          <value value="310112"></value>
+          <value value="310113"></value>
+          <value value="310114"></value>
+          <value value="310115"></value>
+          <value value="310116"></value>
+          <value value="310117"></value>
+          <value value="310118"></value>
+          <value value="310119"></value>
+          <value value="310120"></value>
+          <value value="310121"></value>
+          <value value="310122"></value>
+          <value value="310123"></value>
+          <value value="310124"></value>
+          <value value="310125"></value>
+          <value value="310126"></value>
+          <value value="310127"></value>
+          <value value="310128"></value>
+          <value value="310129"></value>
+          <value value="310130"></value>
+          <value value="310131"></value>
+          <value value="310132"></value>
+          <value value="310133"></value>
+          <value value="310134"></value>
+          <value value="310135"></value>
+          <value value="310136"></value>
+          <value value="310137"></value>
+          <value value="310138"></value>
+          <value value="310139"></value>
+          <value value="310140"></value>
+          <value value="310141"></value>
+          <value value="310142"></value>
+          <value value="310143"></value>
+          <value value="310144"></value>
+          <value value="310145"></value>
+          <value value="310146"></value>
+          <value value="310147"></value>
+          <value value="310148"></value>
+          <value value="310149"></value>
+          <value value="310150"></value>
+          <value value="310151"></value>
+          <value value="310152"></value>
+          <value value="310153"></value>
+          <value value="310154"></value>
+          <value value="310155"></value>
+          <value value="310156"></value>
+          <value value="310157"></value>
+          <value value="310158"></value>
+          <value value="310159"></value>
+          <value value="310160"></value>
+          <value value="310161"></value>
+          <value value="310162"></value>
+          <value value="310163"></value>
+          <value value="310164"></value>
+          <value value="310165"></value>
+          <value value="310166"></value>
+          <value value="310167"></value>
+          <value value="310168"></value>
+          <value value="310169"></value>
+          <value value="310170"></value>
+          <value value="310171"></value>
+          <value value="310172"></value>
+          <value value="310173"></value>
+          <value value="310174"></value>
+          <value value="310175"></value>
+          <value value="310176"></value>
+          <value value="310177"></value>
+          <value value="310178"></value>
+          <value value="310179"></value>
+          <value value="310180"></value>
+          <value value="310181"></value>
+          <value value="310182"></value>
+          <value value="310183"></value>
+          <value value="310184"></value>
+          <value value="310185"></value>
+          <value value="310186"></value>
+          <value value="310187"></value>
+          <value value="310188"></value>
+          <value value="310189"></value>
+          <value value="310190"></value>
+          <value value="310191"></value>
+          <value value="310192"></value>
+          <value value="310193"></value>
+          <value value="310194"></value>
+          <value value="310195"></value>
+          <value value="310196"></value>
+          <value value="310197"></value>
+          <value value="310198"></value>
+          <value value="310199"></value>
+          <value value="310200"></value>
+          <value value="310201"></value>
+          <value value="310202"></value>
+          <value value="310203"></value>
+          <value value="310204"></value>
+          <value value="310205"></value>
+          <value value="310206"></value>
+          <value value="310207"></value>
+          <value value="310208"></value>
+          <value value="310209"></value>
+          <value value="310210"></value>
+          <value value="310211"></value>
+          <value value="310212"></value>
+          <value value="310213"></value>
+          <value value="310214"></value>
+          <value value="310215"></value>
+          <value value="310216"></value>
+          <value value="310217"></value>
+          <value value="310218"></value>
+          <value value="310219"></value>
+          <value value="310220"></value>
+          <value value="310221"></value>
+          <value value="310222"></value>
+          <value value="310223"></value>
+          <value value="310224"></value>
+          <value value="310225"></value>
+          <value value="310226"></value>
+          <value value="310227"></value>
+          <value value="310228"></value>
+          <value value="310229"></value>
+          <value value="310230"></value>
+          <value value="310231"></value>
+          <value value="310232"></value>
+          <value value="310233"></value>
+          <value value="310234"></value>
+          <value value="310235"></value>
+          <value value="310236"></value>
+          <value value="310237"></value>
+          <value value="310238"></value>
+          <value value="310239"></value>
+          <value value="310240"></value>
+          <value value="310241"></value>
+          <value value="310242"></value>
+          <value value="310243"></value>
+          <value value="310244"></value>
+          <value value="310245"></value>
+          <value value="310246"></value>
+          <value value="310247"></value>
+          <value value="310248"></value>
+          <value value="310249"></value>
+          <value value="310250"></value>
+          <value value="310251"></value>
+          <value value="310252"></value>
+          <value value="310253"></value>
+          <value value="310254"></value>
+          <value value="310255"></value>
+          <value value="310256"></value>
+          <value value="310257"></value>
+          <value value="310258"></value>
+          <value value="310259"></value>
+          <value value="310260"></value>
+          <value value="310261"></value>
+          <value value="310262"></value>
+          <value value="310263"></value>
+          <value value="310264"></value>
+          <value value="310265"></value>
+          <value value="310266"></value>
+          <value value="310267"></value>
+          <value value="310268"></value>
+          <value value="310269"></value>
+          <value value="310270"></value>
+          <value value="310271"></value>
+          <value value="310272"></value>
+          <value value="310273"></value>
+          <value value="310274"></value>
+          <value value="310275"></value>
+          <value value="310276"></value>
+          <value value="310277"></value>
+          <value value="310278"></value>
+          <value value="310279"></value>
+          <value value="310280"></value>
+          <value value="310281"></value>
+          <value value="310282"></value>
+          <value value="310283"></value>
+          <value value="310284"></value>
+          <value value="310285"></value>
+          <value value="310286"></value>
+          <value value="310287"></value>
+          <value value="310288"></value>
+          <value value="310289"></value>
+          <value value="310290"></value>
+          <value value="310291"></value>
+          <value value="310292"></value>
+          <value value="310293"></value>
+          <value value="310294"></value>
+          <value value="310295"></value>
+          <value value="310296"></value>
+          <value value="310297"></value>
+          <value value="310298"></value>
+          <value value="310299"></value>
+          <value value="310300"></value>
+          <value value="310301"></value>
+          <value value="310302"></value>
+          <value value="310303"></value>
+          <value value="310304"></value>
+          <value value="310305"></value>
+          <value value="310306"></value>
+          <value value="310307"></value>
+          <value value="310308"></value>
+          <value value="310309"></value>
+          <value value="310310"></value>
+          <value value="310311"></value>
+          <value value="310312"></value>
+          <value value="310313"></value>
+          <value value="310314"></value>
+          <value value="310315"></value>
+          <value value="310316"></value>
+          <value value="310317"></value>
+          <value value="310318"></value>
+          <value value="310319"></value>
+          <value value="310320"></value>
+          <value value="310321"></value>
+          <value value="310322"></value>
+          <value value="310323"></value>
+          <value value="310324"></value>
+          <value value="310325"></value>
+          <value value="310326"></value>
+          <value value="310327"></value>
+          <value value="310328"></value>
+          <value value="310329"></value>
+          <value value="310330"></value>
+          <value value="310331"></value>
+          <value value="310332"></value>
+          <value value="310333"></value>
+          <value value="310334"></value>
+          <value value="310335"></value>
+          <value value="310336"></value>
+          <value value="310337"></value>
+          <value value="310338"></value>
+          <value value="310339"></value>
+          <value value="310340"></value>
+          <value value="310341"></value>
+          <value value="310342"></value>
+          <value value="310343"></value>
+          <value value="310344"></value>
+          <value value="310345"></value>
+          <value value="310346"></value>
+          <value value="310347"></value>
+          <value value="310348"></value>
+          <value value="310349"></value>
+          <value value="310350"></value>
+          <value value="310351"></value>
+          <value value="310352"></value>
+          <value value="310353"></value>
+          <value value="310354"></value>
+          <value value="310355"></value>
+          <value value="310356"></value>
+          <value value="310357"></value>
+          <value value="310358"></value>
+          <value value="310359"></value>
+          <value value="310360"></value>
+          <value value="310361"></value>
+          <value value="310362"></value>
+          <value value="310363"></value>
+          <value value="310364"></value>
+          <value value="310365"></value>
+          <value value="310366"></value>
+          <value value="310367"></value>
+          <value value="310368"></value>
+          <value value="310369"></value>
+          <value value="310370"></value>
+          <value value="310371"></value>
+          <value value="310372"></value>
+          <value value="310373"></value>
+          <value value="310374"></value>
+          <value value="310375"></value>
+          <value value="310376"></value>
+          <value value="310377"></value>
+          <value value="310378"></value>
+          <value value="310379"></value>
+          <value value="310380"></value>
+          <value value="310381"></value>
+          <value value="310382"></value>
+          <value value="310383"></value>
+          <value value="310384"></value>
+          <value value="310385"></value>
+          <value value="310386"></value>
+          <value value="310387"></value>
+          <value value="310388"></value>
+          <value value="310389"></value>
+          <value value="310390"></value>
+          <value value="310391"></value>
+          <value value="310392"></value>
+          <value value="310393"></value>
+          <value value="310394"></value>
+          <value value="310395"></value>
+          <value value="310396"></value>
+          <value value="310397"></value>
+          <value value="310398"></value>
+          <value value="310399"></value>
+          <value value="310400"></value>
+          <value value="310401"></value>
+          <value value="310402"></value>
+          <value value="310403"></value>
+          <value value="310404"></value>
+          <value value="310405"></value>
+          <value value="310406"></value>
+          <value value="310407"></value>
+          <value value="310408"></value>
+          <value value="310409"></value>
+          <value value="310410"></value>
+          <value value="310411"></value>
+          <value value="310412"></value>
+          <value value="310413"></value>
+          <value value="310414"></value>
+          <value value="310415"></value>
+          <value value="310416"></value>
+          <value value="310417"></value>
+          <value value="310418"></value>
+          <value value="310419"></value>
+          <value value="310420"></value>
+          <value value="310421"></value>
+          <value value="310422"></value>
+          <value value="310423"></value>
+          <value value="310424"></value>
+          <value value="310425"></value>
+          <value value="310426"></value>
+          <value value="310427"></value>
+          <value value="310428"></value>
+          <value value="310429"></value>
+          <value value="310430"></value>
+          <value value="310431"></value>
+          <value value="310432"></value>
+          <value value="310433"></value>
+          <value value="310434"></value>
+          <value value="310435"></value>
+          <value value="310436"></value>
+          <value value="310437"></value>
+          <value value="310438"></value>
+          <value value="310439"></value>
+          <value value="310440"></value>
+          <value value="310441"></value>
+          <value value="310442"></value>
+          <value value="310443"></value>
+          <value value="310444"></value>
+          <value value="310445"></value>
+          <value value="310446"></value>
+          <value value="310447"></value>
+          <value value="310448"></value>
+          <value value="310449"></value>
+          <value value="310450"></value>
+          <value value="310451"></value>
+          <value value="310452"></value>
+          <value value="310453"></value>
+          <value value="310454"></value>
+          <value value="310455"></value>
+          <value value="310456"></value>
+          <value value="310457"></value>
+          <value value="310458"></value>
+          <value value="310459"></value>
+          <value value="310460"></value>
+          <value value="310461"></value>
+          <value value="310462"></value>
+          <value value="310463"></value>
+          <value value="310464"></value>
+          <value value="310465"></value>
+          <value value="310466"></value>
+          <value value="310467"></value>
+          <value value="310468"></value>
+          <value value="310469"></value>
+          <value value="310470"></value>
+          <value value="310471"></value>
+          <value value="310472"></value>
+          <value value="310473"></value>
+          <value value="310474"></value>
+          <value value="310475"></value>
+          <value value="310476"></value>
+          <value value="310477"></value>
+          <value value="310478"></value>
+          <value value="310479"></value>
+          <value value="310480"></value>
+          <value value="310481"></value>
+          <value value="310482"></value>
+          <value value="310483"></value>
+          <value value="310484"></value>
+          <value value="310485"></value>
+          <value value="310486"></value>
+          <value value="310487"></value>
+          <value value="310488"></value>
+          <value value="310489"></value>
+          <value value="310490"></value>
+          <value value="310491"></value>
+          <value value="310492"></value>
+          <value value="310493"></value>
+          <value value="310494"></value>
+          <value value="310495"></value>
+          <value value="310496"></value>
+          <value value="310497"></value>
+          <value value="310498"></value>
+          <value value="310499"></value>
+          <value value="310500"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="world-mode">
+          <value value="&quot;B-good&quot;"></value>
+          <value value="&quot;B-bad&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="peer-sharing?">
+          <value value="true"></value>
+          <value value="false"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+  </experiments>
+</model>

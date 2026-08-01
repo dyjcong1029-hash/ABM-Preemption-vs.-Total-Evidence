@@ -1,0 +1,14 @@
+"check","value","passed"
+"estimate_rows_per_world_50000","50000/50000",TRUE
+"heldout_rows_per_world_10000","10000/10000",TRUE
+"all_expert_runs_have_125_pulls","0",TRUE
+"calibration_seed_namespaces_disjoint","0",TRUE
+"minimum_estimate_cell_count_at_least_200","496",TRUE
+"smoothed_good_probabilities_sum_to_one","1",TRUE
+"smoothed_bad_probabilities_sum_to_one","1",TRUE
+"all_message_lambdas_finite","TRUE",TRUE
+"message_lambda_monotone_in_bin","TRUE",TRUE
+"heldout_total_variation_good_at_most_003","0.00967963203679629",TRUE
+"heldout_total_variation_bad_at_most_003","0.0109417458254175",TRUE
+"heldout_max_bin_probability_gap_at_most_002","0.0073983201679832",TRUE
+"heldout_weighted_calibration_gap_at_most_003","0.00739838274390531",TRUE

@@ -176,12 +176,29 @@ An inferential-structure experiment is not part of the current core sequence: be
 
 Policy comparisons use matched world × seed blocks. Reported intervals describe uncertainty from finite simulation repetitions; they are not sampling-error estimates for a real-world population.
 
-## Repository Structure
+## Repository Files
 
-- `models/`: NetLogo model files
-- `data/`: BehaviorSpace output
-- `code/`: R scripts for analysis
-- `figures/`: plots and visualizations
+The release files are organized by experiment:
+
+- **NetLogo models:** [Experiment 0](models/experiment_0/), [Experiment 1](models/experiment_1/), and [Experiment 2](models/experiment_2/). Each folder contains a runnable `.nlogox` model and a readable `.nls` source file.
+- **Experiment data:** [Experiment 0](data/experiment_0/), [Experiment 1](data/experiment_1/), and [Experiment 2](data/experiment_2/). These folders contain the complete final-run output, chart-ready trajectory data, result tables, and validation checks.
+- **Analysis figures:** [Experiment 0](figures/experiment_0/), [Experiment 1](figures/experiment_1/), and [Experiment 2](figures/experiment_2/).
+
+The full tick-by-tick raw trajectory exports are not stored in the repository because the Experiment 1 and Experiment 2 files exceed GitHub's standard 100 MB file limit. The smaller `trajectory_summary.csv` and `trajectory_chart_data.csv` files contain the time-series data used for the figures. The complete raw trajectories can be regenerated with the BehaviorSpace experiments included in the NetLogo models.
+
+## Selected Analysis Figures
+
+### Experiment 0: the teacher's average but fallible advantage
+
+![Experiment 0 dynamic expertise](figures/experiment_0/figure_1_dynamic_expertise.png)
+
+### Experiment 1: Total Evidence versus Preemption for raw evidence
+
+![Experiment 1 paired regret effects](figures/experiment_1/figure_1_paired_regret_effects.png)
+
+### Experiment 2: Total Evidence versus Preemption for an opaque credence
+
+![Experiment 2 main regret effect](figures/experiment_2/figure_1_main_regret_effect.png)
 
 ## Software
 
