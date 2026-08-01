@@ -10,14 +10,26 @@ The current core project contains three experiments:
 
 The project does not assume that an expert has superior reasoning abilities. The expert and the laypeople use the same prior, likelihood model, and Thompson-sampling rule. The expert's only advantage is having more research opportunities.
 
-## 中文摘要
+## A Simple Classroom Story
 
-本项目使用NetLogo行动者模型比较认识顺从中的两种立场：
+Imagine a classroom with one teacher and ten students. The students sit in a circle. Each student talks only to the student on the left and the student on the right.
 
-- **Preemption（排除立场）：** 接受expert信息时，排除layperson此前形成判断的认识基础；
-- **Total Evidence（总体证据立场）：** 保留layperson已有的独立信息，并加入expert信息。
+The teacher has had more professional training and has studied the problem for longer. In the model, this means that she has many more chances to test the two options before she teaches the class. The teacher is not assumed to be smarter or always right. She and the students use the same way of reasoning. She is usually better informed because she has more experience.
 
-目前的实验0—2表明：在单一expert、诚实报告、共同且正确的推理模型以及证据相互独立的理想条件下，expert具有平均但非绝对的认识优势；无论expert传递原始证据还是有限精度的credence，Total Evidence都比Preemption产生更低的有限期行动损失。该结果不等于Total Evidence在现实中或一般哲学意义上必然优越。
+The students are not passive. They test the options themselves, learn from their own results, and share those results with their neighbors.
+
+When the teacher teaches the class, the students can respond in two ways:
+
+- **Preemption:** a student sets aside what she learned before and bases her judgment on what the teacher teaches.
+- **Total Evidence:** a student takes the teacher's lesson seriously but combines it with what she and her classmates learned.
+
+In both cases, the students continue to learn after the lesson. The difference is whether they keep or set aside what they learned before the teacher spoke.
+
+The three experiments tell this classroom story in stages:
+
+- **Experiment 0 — Professional training:** the teacher studies for longer and gets more experience. The experiment asks whether this alone makes her better informed on average.
+- **Experiment 1 — Teaching evidence:** the teacher shows the students the individual results from her earlier study.
+- **Experiment 2 — Teaching a judgment:** the teacher does not show her evidence. She only tells the students how confident she is.
 
 ## Research Question
 
@@ -36,22 +48,22 @@ belief → action → observed evidence → local communication → revised beli
 
 All three experiments use the same basic environment:
 
-- one expert and ten laypeople;
-- laypeople form a ring and share first-hand observations with their two neighbors;
+- one teacher (the expert) and ten students (the laypeople);
+- the students sit in a ring and share first-hand observations with their two neighbors;
 - messages arrive with a one-round delay and are not forwarded;
 - option A succeeds with probability 0.50;
 - option B succeeds with probability 0.55 in the **B-good** world and 0.45 in the **B-bad** world;
 - agents do not know which world they inhabit;
 - all agents use the same prior, likelihood model, Bayesian updating, and Thompson sampling;
-- the expert completes five pulls per round for the first 25 rounds: 125 research opportunities;
-- each layperson completes one pull per round over 500 rounds;
-- the expert's advantage is generated endogenously by additional research opportunities rather than by a fixed reliability parameter.
+- the teacher completes five pulls per round for the first 25 rounds: 125 research opportunities;
+- each student completes one pull per round over 500 rounds;
+- the teacher's advantage comes from longer professional training and more research opportunities, not from a fixed reliability score.
 
 The main outcome is **cumulative expected regret**: the expected payoff lost by choosing the worse option. Each incorrect choice adds 0.05 regret, so lower values are better.
 
 ## Experiment 0 — Dynamic Bandit Baseline
 
-Experiment 0 contains no expert testimony. It tests whether the model generates the conditions required for later deference experiments.
+Experiment 0 represents the teacher's professional training before she teaches the class. The teacher has studied for longer and has more research experience than the students. She does not teach them yet. The experiment asks whether longer training alone creates an average but fallible expert advantage.
 
 ### Main findings
 
