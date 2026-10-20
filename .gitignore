@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+results/
+verification/*
+!verification/full_reproduction_2026_10_19/
+verification/full_reproduction_2026_10_19/publication_files.json
+bootstrap_verified_copy.py
+bootstrap_receipt.json
+*.zip

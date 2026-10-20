@@ -1,0 +1,714 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "upstream_commit": "e105f6217db78222e72633a663871c070d630ed3",
+  "created_utc": "2026-10-19T20:31:36.057759+00:00",
+  "totals": {
+    "batches": 12,
+    "runs": 132600,
+    "rows": 1932600,
+    "trajectory_runs": 3600,
+    "trajectory_rows": 1803600
+  },
+  "run_pipeline": "pipeline.json",
+  "independent_postflight": "postflight/full_reproduction_verification.json",
+  "raw_archive": {
+    "availability": "local",
+    "path": "C:\\Users\\user\\OneDrive\\文档\\ABM\\ABM_full_simulation_raw_2026_10_19.zip",
+    "bytes": 72623097,
+    "sha256": "cb16a815fcd3f2f7992b7fbb496e63afbbc80130644b58425bd8c2ee36f84c52",
+    "original_files": 164,
+    "zip_members": 165,
+    "crc_test_passed": true,
+    "all_member_sha256_verified": true,
+    "remote_download_url": null,
+    "note": "Local archive only. Raw trajectories are not uploaded to GitHub; regenerate with the recorded command."
+  },
+  "raw_batch_index": "raw_batches.json",
+  "native_provenance": {
+    "path": "native_provenance.json.gz",
+    "bytes": 283448,
+    "sha256": "de40771365dd387f2f338230d20a6a85338f923e1c39526000acb0990a34d10f"
+  },
+  "evidence_files": [
+    {
+      "path": "00_model.log",
+      "bytes": 179,
+      "sha256": "3776434c0e8cff97fc8ed4fc622b7108592ec580ad59844e6437431ad9f77e7c"
+    },
+    {
+      "path": "01_verifier_mutations.log",
+      "bytes": 1760,
+      "sha256": "3157f3a8dffcca943bad7187b8ccf122f9bda171b6b34a22215fe3139de6fb23"
+    },
+    {
+      "path": "02_statistics.log",
+      "bytes": 193,
+      "sha256": "80138439f24960f37eca411f7900b357bcbae287c18bff8490cc763a9f0a73a2"
+    },
+    {
+      "path": "03_native.log",
+      "bytes": 2088,
+      "sha256": "65aa4fd0afefa1fc80bec24d41a5a420c7faba20f4f4ac6a73b1fc33e2ffd3a7"
+    },
+    {
+      "path": "04_native_baseline.log",
+      "bytes": 216,
+      "sha256": "b25fb18648677c03f770af804ca534a018a95db6e4b6c4f6f0baab48afa82aca"
+    },
+    {
+      "path": "05_experiment-2-calibration-estimate-good.log",
+      "bytes": 261,
+      "sha256": "514a8ceca6e0ccb80c6e575efa213bfbe94b7a35533a76e2838445b8e769128d"
+    },
+    {
+      "path": "06_experiment-2-calibration-estimate-bad.log",
+      "bytes": 259,
+      "sha256": "a51bf60a6fc7d794144c46b95a71d4d1cc0b1eefc8904f9ac98017d46a826eea"
+    },
+    {
+      "path": "07_experiment-2-calibration-heldout-good.log",
+      "bytes": 259,
+      "sha256": "cfe422ad88d438bfd6147ad3c11cd92a5cdc3eacdc5d5734faaf19c5abbc4f92"
+    },
+    {
+      "path": "08_experiment-2-calibration-heldout-bad.log",
+      "bytes": 257,
+      "sha256": "b2fd5e4b5034e886c3e0b615cbc574454ec5f4d7e02afcd9c85d717626b8d254"
+    },
+    {
+      "path": "09_experiment-0-bandit-main-final.log",
+      "bytes": 236,
+      "sha256": "7cb156574878fc37e82fa64dfe935b72790825536ba6caadacd1a6787339d084"
+    },
+    {
+      "path": "10_experiment-0-bandit-peer-check.log",
+      "bytes": 236,
+      "sha256": "f28dbbd75eccbd3442a84a33bfbba64c163705d5d58b007d9b8dc1e91eca0863"
+    },
+    {
+      "path": "11_experiment-0-bandit-trajectories.log",
+      "bytes": 241,
+      "sha256": "2e9a2b9905b44403f39643ae1e5dcfbf8096dfb7080e4c0a7e3eee34f3e73c97"
+    },
+    {
+      "path": "12_experiment-1-evidence-main-final.log",
+      "bytes": 238,
+      "sha256": "48ce877e4be3631bfb7b58b238a0c5169b3c05bbdc728201ef6cd06bda1bbaa5"
+    },
+    {
+      "path": "13_experiment-1-evidence-trajectories.log",
+      "bytes": 244,
+      "sha256": "697f34f5b12c5a4b7a42be87abe3ab7aaed35c3c07d8f372702b6697fdedf176"
+    },
+    {
+      "path": "14_experiment-2-opaque-main-final.log",
+      "bytes": 236,
+      "sha256": "1fe47406346cfcb2ca3aff033f8920f8b6571f95e00e89c0a889823ff649cfd3"
+    },
+    {
+      "path": "15_experiment-2-opaque-trajectories.log",
+      "bytes": 242,
+      "sha256": "5d8641cd773c1017a34d2bf125aa9027ce9ae2764c9cf2b6a4a34fccbcad4c76"
+    },
+    {
+      "path": "16_experiment-2-exact-regression-trajectories.log",
+      "bytes": 257,
+      "sha256": "b5943130d83a0d17e851717f7b209cf308a03099f8e1362a2c9fe16876da7063"
+    },
+    {
+      "path": "17_analysis.log",
+      "bytes": 185,
+      "sha256": "c1347cf4e407b5470566bc453213ac92df6fb960545f754a98fcab459bc6cfda"
+    },
+    {
+      "path": "analysis/analysis_receipt.json",
+      "bytes": 10929,
+      "sha256": "720c68cf35355d3a2c83eac906e6181161a75ac35ba3c4e9517a039ef982ab01"
+    },
+    {
+      "path": "analysis/calibration/analysis.log",
+      "bytes": 218,
+      "sha256": "d0e08b15fd55fa746b17cbfcf65bb7a928040424c657c51024133802d6af2654"
+    },
+    {
+      "path": "analysis/calibration/calibration_validation_checks.csv",
+      "bytes": 753,
+      "sha256": "3db1c83c07bb8d75ad5c234e26059254c9799d333ed3cd1e653754fd59df4373"
+    },
+    {
+      "path": "analysis/calibration/frozen_credence_message_table.csv",
+      "bytes": 2753,
+      "sha256": "2708886b9a0880828a1785ecb0a2d02077488affa575ab96befd8ebba106a074"
+    },
+    {
+      "path": "analysis/calibration/heldout_calibration_audit.csv",
+      "bytes": 1455,
+      "sha256": "acfdafb814664bf04d9bf46f4953f29ab3b7e98d5abbbb5dcca912792d9e0f84"
+    },
+    {
+      "path": "analysis/experiment_0/analysis.log",
+      "bytes": 570,
+      "sha256": "3dad49036c835d88fba0f409e563ff740eae9701562ddbd9b8fee2225b6901ce"
+    },
+    {
+      "path": "analysis/experiment_0/conditional_path_summary.csv",
+      "bytes": 571,
+      "sha256": "3d9bb9d09659a2f44927197630fde161efb39cf75ff00b42e465cdd9e1eace11"
+    },
+    {
+      "path": "analysis/experiment_0/endpoint_summary.csv",
+      "bytes": 1380,
+      "sha256": "ae38080d137269f40e8ec0e249d75c5a6c1434ee49e094dec832524ad23fca1e"
+    },
+    {
+      "path": "analysis/experiment_0/expertise_summary.csv",
+      "bytes": 528,
+      "sha256": "7c81ce53453d6955acce6c279cc73c8547405b9d5d83857c9ff5bd6098717398"
+    },
+    {
+      "path": "analysis/experiment_0/peer_sharing_summary.csv",
+      "bytes": 1033,
+      "sha256": "990f7c52757af253dda59c0cf88b8e9d3863f8a3ef56b92ae3bd64b4e1b0faa0"
+    },
+    {
+      "path": "analysis/experiment_0/thompson_calibration.csv",
+      "bytes": 214,
+      "sha256": "9dd394af82b52296761fac1aeaa91497ef990b1e8f632d68b86455fb6a0027ae"
+    },
+    {
+      "path": "analysis/experiment_0/trajectory_summary.csv",
+      "bytes": 403702,
+      "sha256": "a0dfa0312ce66e20cced3c8e9084f7f94dd74ffd5b71ca2d038ad1bafbdfd9e9"
+    },
+    {
+      "path": "analysis/experiment_0/validation_checks.csv",
+      "bytes": 1884,
+      "sha256": "7f4d19a6b68290c03ba918de4ecef11c9005a10e7524a852df17b940d139969e"
+    },
+    {
+      "path": "analysis/experiment_1/analysis.log",
+      "bytes": 50,
+      "sha256": "23da5e84ca54486f7a75e23b034fd3412151b5a23177f0c7612db85fba240b7f"
+    },
+    {
+      "path": "analysis/experiment_1/conditional_paired_contrasts.csv",
+      "bytes": 10953,
+      "sha256": "1ced928269ad79a79c96f70775a233233a4c04c1d7dd6728bc9f0b2caa7e96ac"
+    },
+    {
+      "path": "analysis/experiment_1/conditional_path_summary.csv",
+      "bytes": 162739,
+      "sha256": "8fd6942117c35ca439373b33ffd3986ff3b790e746ed3969d3e0772e7a91b819"
+    },
+    {
+      "path": "analysis/experiment_1/endpoint_summary.csv",
+      "bytes": 2475,
+      "sha256": "605cea59b3201a72e1669e9f0e3c8f7f2716f0ff8f05bf999dc8aa9121678742"
+    },
+    {
+      "path": "analysis/experiment_1/expert_status_counts.csv",
+      "bytes": 177,
+      "sha256": "6a1b737c251754daff4a34043fa45c89d01596fcd3d06f50874f19973e6b4038"
+    },
+    {
+      "path": "analysis/experiment_1/figures.log",
+      "bytes": 237,
+      "sha256": "f5dac68dea222d5fc0819671629c8631f788bf6d0181d0a7a75c65d427fccbed"
+    },
+    {
+      "path": "analysis/experiment_1/headline_results.csv",
+      "bytes": 527,
+      "sha256": "ce9cb3d82f1ae8055469d5b51a692766974ef753f085241f1aa02827e5eed9ea"
+    },
+    {
+      "path": "analysis/experiment_1/paired_contrasts.csv",
+      "bytes": 6587,
+      "sha256": "3795b8e780219a869aa95b527e2772122671ce663a213dcaf74cbadd49ab7d89"
+    },
+    {
+      "path": "analysis/experiment_1/recovery_run_level.csv",
+      "bytes": 65274,
+      "sha256": "99098509f08a715c5873d08e6b5439aea4b81a847bb991ed5ddad7df88fbae01"
+    },
+    {
+      "path": "analysis/experiment_1/recovery_summary.csv",
+      "bytes": 857,
+      "sha256": "2d9bbcbf7f6c6e7498ea26268a19ed578cb6a23058f68ae90d78813380a6f4f6"
+    },
+    {
+      "path": "analysis/experiment_1/report_source_regret_contrasts.csv",
+      "bytes": 938,
+      "sha256": "96efdc1cf55fb3ac6b68d8641e47b57e7301578e94bbac7d9ebe2c4204e6be4a"
+    },
+    {
+      "path": "analysis/experiment_1/thompson_calibration.csv",
+      "bytes": 824,
+      "sha256": "7fd823a8fd76a637cb4cd914724eea448c9b64a6687b1dd810fda75c46dbc273"
+    },
+    {
+      "path": "analysis/experiment_1/trajectory_chart_data.csv",
+      "bytes": 65503,
+      "sha256": "2aaf18a3dbd37db7bf767b1bac80dc7d234d0578d728acde6bd34111b2121db9"
+    },
+    {
+      "path": "analysis/experiment_1/trajectory_summary.csv",
+      "bytes": 632728,
+      "sha256": "4c8153d3316692f9c12396849f9c4a3b605cd5232c756bcaaa45c3b4cc454953"
+    },
+    {
+      "path": "analysis/experiment_1/validation_checks.csv",
+      "bytes": 2225,
+      "sha256": "2d42ae59989608c9747f6043e84dbed19dfae9553906ad03c5139ac5b2f2986f"
+    },
+    {
+      "path": "analysis/experiment_2/analysis.log",
+      "bytes": 310,
+      "sha256": "1264611e3c9ca2893f674d42f08f3286eaa5a5a48d3531a49c54c1322d45de9a"
+    },
+    {
+      "path": "analysis/experiment_2/conditional_message_effects.csv",
+      "bytes": 1663,
+      "sha256": "b8c891f89dc796b4adb2c7b0ef79a5b9e0f5c70177782efd6b69bfb4a7680e3a"
+    },
+    {
+      "path": "analysis/experiment_2/endpoint_summary.csv",
+      "bytes": 2988,
+      "sha256": "d33a62ab6b31dca603de53b4f3690808c17e328981ce9940459a0491f2a1e8a4"
+    },
+    {
+      "path": "analysis/experiment_2/exact_message_regression.csv",
+      "bytes": 378,
+      "sha256": "377c099a82c6b012a2373e9e997e8e82885bd01d55806f04392ee7832ae83048"
+    },
+    {
+      "path": "analysis/experiment_2/headline_results.csv",
+      "bytes": 174,
+      "sha256": "5a62ce23e529379818c10fbe53278f5966ba7a3b6ead0d9067fd2e13f5c9559f"
+    },
+    {
+      "path": "analysis/experiment_2/message_status_counts.csv",
+      "bytes": 141,
+      "sha256": "ee31c95988862c9c8d32fe9676e033f86f93434e3203913872cb09d8bb9b7c0b"
+    },
+    {
+      "path": "analysis/experiment_2/paired_policy_effects.csv",
+      "bytes": 4330,
+      "sha256": "1406399791b1de876ee8beadc14bec0dfd5c77e3b04f751fe96a6cc84be0c3ce"
+    },
+    {
+      "path": "analysis/experiment_2/recovery_run_level.csv",
+      "bytes": 60974,
+      "sha256": "52a40f6dc41a61b5802428f062b7be48b2df5e38b511536ba7663a659b8ec106"
+    },
+    {
+      "path": "analysis/experiment_2/recovery_summary.csv",
+      "bytes": 488,
+      "sha256": "7d63ed8abb95f41d4f839f752546795db6182f696ef1052db1cb8da7b92b4fc4"
+    },
+    {
+      "path": "analysis/experiment_2/trajectory_chart_data.csv",
+      "bytes": 38406,
+      "sha256": "6a566bfa1d5da73ca1af8fb904ac76e6065fb1dd22f5a7de15cb526cfc7af7aa"
+    },
+    {
+      "path": "analysis/experiment_2/validation_checks.csv",
+      "bytes": 1109,
+      "sha256": "85b915388a523ea49df72ef88524073b99715f00b4fc813313816fba68a35efe"
+    },
+    {
+      "path": "archive_member_manifest.json",
+      "bytes": 44979,
+      "sha256": "ddfda038204dd74879920ad0d41b72a4f594d22152f423961d77dc4e295b2fb7"
+    },
+    {
+      "path": "figure_layout/receipt.json",
+      "bytes": 794,
+      "sha256": "a36bf24def36cd84b608545cd19b9dbf7b4969f1ad6c5805130a24ec32299e00"
+    },
+    {
+      "path": "model/model_verification.json",
+      "bytes": 7586,
+      "sha256": "f6c7f56d7f9a95fbab4c7c24d0d41932bd086316e516cd41cf8c46735c9d65f8"
+    },
+    {
+      "path": "native/acceptance.json",
+      "bytes": 69251,
+      "sha256": "913bd0f489aabc250f6a51d06cb69bd35ed72eda5ce1df527905e24d7c47e2c5"
+    },
+    {
+      "path": "native/diagnostic_0.csv",
+      "bytes": 390,
+      "sha256": "9a5ee7153d782da87eb148743cce5453f08500f880098612cfa67bbf5d4fd5da"
+    },
+    {
+      "path": "native/diagnostic_0.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/diagnostic_0.csv.provenance.json",
+      "bytes": 5675,
+      "sha256": "b5912d2c75910f335397299da984127e9d709dbb6c2b688168c7558c67b21f3d"
+    },
+    {
+      "path": "native/diagnostic_1.csv",
+      "bytes": 738,
+      "sha256": "f0757d977ffcdbae0ac4f514a91a3e47be289e5e3e091fa12264d7b589041821"
+    },
+    {
+      "path": "native/diagnostic_1.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/diagnostic_1.csv.provenance.json",
+      "bytes": 5677,
+      "sha256": "3498b2b52cbe65538cb7f77b2171f1767285c088eeb12d97648162434d358992"
+    },
+    {
+      "path": "native/diagnostic_2.csv",
+      "bytes": 738,
+      "sha256": "30f4be1107fc1b26e45e653f0e739337ba3ae2a00305c8ea0c3dd6cbb6895489"
+    },
+    {
+      "path": "native/diagnostic_2.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/diagnostic_2.csv.provenance.json",
+      "bytes": 5677,
+      "sha256": "11e28a34c659779ce04c2da85e2377b6f2c19ab96ea52e45cc6c6d1aa4157e95"
+    },
+    {
+      "path": "native/evidence_trajectories.csv",
+      "bytes": 853772,
+      "sha256": "f4040ff320d3f7a2539954a3860186c44084c8185b20219545f7d3204026d31e"
+    },
+    {
+      "path": "native/evidence_trajectories.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/evidence_trajectories.csv.provenance.json",
+      "bytes": 6015,
+      "sha256": "07370aeabbf2560fc9d7fe37f7b25ac1539c8d4929b52701a700758ef4676ade"
+    },
+    {
+      "path": "native/exact_trajectories.csv",
+      "bytes": 687357,
+      "sha256": "8fec47ce216208eefca9bc3a0138f9bfb07d9158793fdcabe30beef5ffbf6c9a"
+    },
+    {
+      "path": "native/exact_trajectories.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/exact_trajectories.csv.provenance.json",
+      "bytes": 6036,
+      "sha256": "68e8ff6942b377cad84d1d4001af0476bd453cd36f02474050bc320c881fbb3e"
+    },
+    {
+      "path": "native/peer_check.csv",
+      "bytes": 3217,
+      "sha256": "ad7ba69422381f94e0dfee1b70fccc672d712e7bfc403209bd0680aefec57e66"
+    },
+    {
+      "path": "native/peer_check.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/peer_check.csv.provenance.json",
+      "bytes": 5938,
+      "sha256": "b4a6af7a69c16140d234252b7b5d89bc638a7792cbb9a18c340631fd26c6e521"
+    },
+    {
+      "path": "native/smoke_0.csv",
+      "bytes": 1852,
+      "sha256": "361d022010ca3b1182263ea10d44f1cb793292957c9d4c0d1a19218fdca5cbce"
+    },
+    {
+      "path": "native/smoke_0.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/smoke_0.csv.provenance.json",
+      "bytes": 5544,
+      "sha256": "3e455c623d3a92eabd5c6fbe501cb5c1c5f1f6f450a4dbdb1b839130db3f1372"
+    },
+    {
+      "path": "native/smoke_1.csv",
+      "bytes": 7644,
+      "sha256": "71d673862ea93c0c247e828aefad50df1e642a6a117966fa02a0328d02d1c32b"
+    },
+    {
+      "path": "native/smoke_1.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/smoke_1.csv.provenance.json",
+      "bytes": 5560,
+      "sha256": "c8d5cc4f941a8b00aae1adee678c9e27f3d3ac58a935453bee6e91e1b3aa4214"
+    },
+    {
+      "path": "native/smoke_2.csv",
+      "bytes": 6495,
+      "sha256": "37c8cf4688cefef40fb897763e6b1c3c986d7e1e3c28639d5ef70b4666f7a64f"
+    },
+    {
+      "path": "native/smoke_2.csv.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native/smoke_2.csv.provenance.json",
+      "bytes": 5578,
+      "sha256": "e41140caee22765caf5e01b9206cf8e1a10017524d12ecac1cbfc3073010ff15"
+    },
+    {
+      "path": "native_baseline/native_baseline_comparison.json",
+      "bytes": 13170,
+      "sha256": "34e7582b6efdaeeae44b88eda4d64e3ee9af4fc01dd7299590e4abe48e55c346"
+    },
+    {
+      "path": "native_provenance.json.gz",
+      "bytes": 283448,
+      "sha256": "de40771365dd387f2f338230d20a6a85338f923e1c39526000acb0990a34d10f"
+    },
+    {
+      "path": "pipeline.json",
+      "bytes": 18799,
+      "sha256": "933ba20b808b027d9f0cdbe77d4830cfecfaa9ca2e20331c1bb112ac32bd3354"
+    },
+    {
+      "path": "postflight/full_reproduction_verification.json",
+      "bytes": 84583,
+      "sha256": "ab7e72696f738d6542261b87ad63feb36f63cc5eba1828ce1800daf3cc4eb475"
+    },
+    {
+      "path": "raw_batches.json",
+      "bytes": 7460,
+      "sha256": "d73bc3083eca8b06976c41be47f707832f2c8d7ac2d66074ebbf3b987d6ae362"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1357,
+      "sha256": "3b86b7b5d828db1a13d57e6d6629675facd94e722c9b746173d22d6fcf1db7bf"
+    },
+    {
+      "path": "statistics/bootstrap.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "statistics/bootstrap_inputs.csv",
+      "bytes": 472595,
+      "sha256": "ab69340824ae9611c5af561566e732bd6476fab25fdfaced8d5d7bb6d39b023e"
+    },
+    {
+      "path": "statistics/bootstrap_recomputed.csv",
+      "bytes": 1168,
+      "sha256": "a42a993ebf04f34d439228b8dd8438b4eba5c927771edd3057417e4e95f40b21"
+    },
+    {
+      "path": "statistics/statistics_verification.json",
+      "bytes": 69665,
+      "sha256": "4f8a585c519080273ceea1b0ac8f6e25bf7c4b0e480b10eadbc78ce443decb05"
+    }
+  ],
+  "repo_prefix": "verification/full_reproduction_2026_10_19",
+  "evidence_file_hash_list_excludes": [
+    "index.json",
+    "publication_files.json"
+  ],
+  "omitted_from_compact_evidence": [
+    {
+      "scope": "run",
+      "path": "native/diagnostic_0.nlogox",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/diagnostic_0.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/diagnostic_1.nlogox",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/diagnostic_1.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/diagnostic_2.nlogox",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/diagnostic_2.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/evidence_trajectories.csv.setup.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/exact_trajectories.csv.setup.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "native/peer_check.csv.setup.xml",
+      "reason": "not selected diagnostic evidence"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/calibration/calibration_key_results.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/analysis_key_results.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/experiment_0_bandit_report.html",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/experiment_0_bandit_report.md",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/figure_1_dynamic_expertise.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/figure_2_learning_paths.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/figure_3_outcome_distributions.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/figure_4_peer_sharing_effects.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/main_run_level_clean.csv",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/peer_check_paired_runs.csv",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/peer_check_run_level_clean.csv",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/R_session_info.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_0/validation_report.md",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/analysis_key_results.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/chart_map.md",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/figure_1_paired_regret_effects.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/figure_2_learning_trajectories.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/figure_3_recovery_from_misleading_evidence.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/main_run_level_clean.csv",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/R_session_info.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_1/validation_report.md",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/analysis_key_results.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/figure_1_main_regret_effect.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/figure_2_learning_trajectories.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/figure_3_calibration_check.png",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/main_run_level_clean.csv",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    },
+    {
+      "scope": "run",
+      "path": "analysis/experiment_2/R_session_info.txt",
+      "reason": "raw/clean run-level table, large table, or duplicate image; preserved in local ZIP"
+    }
+  ],
+  "packager_sha256": "ebbf266aef3027a6d891eb8a0c258304c65893c81b48f3b8da3eb2bcb7e606f1",
+  "scope": "Compact publication evidence plus verified local archive; no GitHub write or remote asset upload."
+}

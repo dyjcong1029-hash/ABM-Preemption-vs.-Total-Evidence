@@ -1,0 +1,31 @@
+"world","comparison","policy_1","policy_0","metric","n_pairs","estimate","ci_low","ci_high"
+"B-good","C-Preemption - No Deference","C-Preemption","No Deference","post_regret",500,-0.203319999999999,-0.43617725,0.0369540000000021
+"B-good","C-Preemption - No Deference","C-Preemption","No Deference","early_wrong_rate",500,-0.073312,-0.0982246,-0.0481424
+"B-good","C-Preemption - No Deference","C-Preemption","No Deference","post_correct_rate",500,0.00856084210526316,-0.00167201052631579,0.0183473894736842
+"B-good","C-Preemption - No Deference","C-Preemption","No Deference","late_correct_rate",500,-0.003828,-0.0088883,0.000764
+"B-good","C-Preemption - No Deference","C-Preemption","No Deference","final_brier",500,0.00269980202624007,-0.000984059170855321,0.00666880787626168
+"B-good","C-Total Evidence - No Deference","C-Total Evidence","No Deference","post_regret",500,-0.60912,-0.789791,-0.42455025
+"B-good","C-Total Evidence - No Deference","C-Total Evidence","No Deference","early_wrong_rate",500,-0.129872,-0.14784,-0.111664
+"B-good","C-Total Evidence - No Deference","C-Total Evidence","No Deference","post_correct_rate",500,0.0256471578947368,0.017801,0.0332957684210526
+"B-good","C-Total Evidence - No Deference","C-Total Evidence","No Deference","late_correct_rate",500,0.000152,-0.0036441,0.0038241
+"B-good","C-Total Evidence - No Deference","C-Total Evidence","No Deference","final_brier",500,-0.000103438751997642,-0.00295086969967593,0.00289990174271469
+"B-good","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","post_regret",500,-0.405800000000001,-0.548764000000002,-0.271649
+"B-good","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","early_wrong_rate",500,-0.05656,-0.066832,-0.046744
+"B-good","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","post_correct_rate",500,0.0170863157894737,0.0113757894736842,0.0230627368421053
+"B-good","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","late_correct_rate",500,0.00398,0.0000878000000000001,0.008332
+"B-good","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","final_brier",500,-0.00280324077823771,-0.00633659827043304,0.000399869894736415
+"B-bad","C-Preemption - No Deference","C-Preemption","No Deference","post_regret",500,-0.2382,-0.349614,-0.12425275
+"B-bad","C-Preemption - No Deference","C-Preemption","No Deference","early_wrong_rate",500,-0.03496,-0.0517602,-0.0176078
+"B-bad","C-Preemption - No Deference","C-Preemption","No Deference","post_correct_rate",500,0.0100294736842105,0.0053301052631579,0.0147189368421053
+"B-bad","C-Preemption - No Deference","C-Preemption","No Deference","late_correct_rate",500,0.00284,-0.000096099999999999,0.005788
+"B-bad","C-Preemption - No Deference","C-Preemption","No Deference","final_brier",500,-0.00142893738992559,-0.00342204973667696,0.000439742739461462
+"B-bad","C-Total Evidence - No Deference","C-Total Evidence","No Deference","post_regret",500,-0.716479999999999,-0.814631499999999,-0.61980725
+"B-bad","C-Total Evidence - No Deference","C-Total Evidence","No Deference","early_wrong_rate",500,-0.107744,-0.1205366,-0.094248
+"B-bad","C-Total Evidence - No Deference","C-Total Evidence","No Deference","post_correct_rate",500,0.0301675789473684,0.026112747368421,0.0342084315789474
+"B-bad","C-Total Evidence - No Deference","C-Total Evidence","No Deference","late_correct_rate",500,0.008396,0.0056878,0.0112041
+"B-bad","C-Total Evidence - No Deference","C-Total Evidence","No Deference","final_brier",500,-0.00306268376117869,-0.00500455258596033,-0.00128209703070669
+"B-bad","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","post_regret",500,-0.478279999999999,-0.53942025,-0.416539999999999
+"B-bad","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","early_wrong_rate",500,-0.072784,-0.0801042,-0.065552
+"B-bad","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","post_correct_rate",500,0.0201381052631579,0.0175081578947368,0.0227701578947368
+"B-bad","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","late_correct_rate",500,0.005556,0.0030959,0.008024
+"B-bad","C-Total Evidence - C-Preemption","C-Total Evidence","C-Preemption","final_brier",500,-0.00163374637125309,-0.00324868753289848,-0.0000768739929147357

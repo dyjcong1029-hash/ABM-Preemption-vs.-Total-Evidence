@@ -1,0 +1,42 @@
+{
+  "recovery_date": "2026-10-19",
+  "origin": "Recovered from the original local report workspaces for the pinned GitHub baseline. Numerical analysis scripts are verbatim; the plot-only script has documented layout/label fixes and a preserved baseline copy.",
+  "files": [
+    {
+      "path": "scripts/analysis/analyze_experiment_0_bandit.R",
+      "source_workspace_relative_path": "experiment_0_bandit_base_report/analyze_experiment_0_bandit.R",
+      "source_sha256": "a910c0f8670da78405a04a0cf1b9176cfdacbd0c5e164da2621fb4e6080518e6",
+      "restored_sha256": "a910c0f8670da78405a04a0cf1b9176cfdacbd0c5e164da2621fb4e6080518e6",
+      "modifications": "none; portability is supplied by the separate run_analysis.py wrapper"
+    },
+    {
+      "path": "scripts/analysis/analyze_experiment_1_evidence.R",
+      "source_workspace_relative_path": "experiment_1_evidence_bandit_report/analyze_experiment_1_evidence.R",
+      "source_sha256": "8b2d7e24803520d844183c12a886a694538a6850c87ad09f278b9d062bbfb36c",
+      "restored_sha256": "8b2d7e24803520d844183c12a886a694538a6850c87ad09f278b9d062bbfb36c",
+      "modifications": "none; portability is supplied by the separate run_analysis.py wrapper"
+    },
+    {
+      "path": "scripts/analysis/make_static_figures.R",
+      "source_workspace_relative_path": "experiment_1_evidence_bandit_report/make_static_figures.R",
+      "source_sha256": "f1ce186b73d8a5074eb2546a05743a639a3e6f78104d0f0f41af924bfd6ecf08",
+      "restored_sha256": "73f9c54d0a1fb610c887d5aa3cff8dbd74e6736b3e362082e8917b7edab308dc",
+      "modifications": "Presentation-only: increase recovery-figure margins and clarify average-window recovery and censoring labels. Numerical calculations unchanged.",
+      "baseline_copy": "scripts/analysis/baseline/make_static_figures.R"
+    },
+    {
+      "path": "scripts/analysis/analyze_experiment_2_opaque_credence.R",
+      "source_workspace_relative_path": "experiment_2_opaque_credence_report/analyze_experiment_2_opaque_credence.R",
+      "source_sha256": "0473ea854b9e5099b171e552c2cfe28e1feaff42d3ac142ac83ffbdfd8dc9aaf",
+      "restored_sha256": "0473ea854b9e5099b171e552c2cfe28e1feaff42d3ac142ac83ffbdfd8dc9aaf",
+      "modifications": "none; portability is supplied by the separate run_analysis.py wrapper"
+    },
+    {
+      "path": "scripts/analysis/calibrate_opaque_credence.R",
+      "source_workspace_relative_path": "experiment_2_opaque_credence_report/calibrate_opaque_credence.R",
+      "source_sha256": "f7aa89c7ae30b9ea4efeae473553cf040e25e38f6867dbc18ea525398da9457e",
+      "restored_sha256": "f7aa89c7ae30b9ea4efeae473553cf040e25e38f6867dbc18ea525398da9457e",
+      "modifications": "none; portability is supplied by the separate run_analysis.py wrapper"
+    }
+  ]
+}

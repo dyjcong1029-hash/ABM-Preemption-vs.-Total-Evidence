@@ -1,0 +1,91 @@
+"world","expert_status","comparison","metric","n_pairs","estimate","ci_low","ci_high"
+"B-good","Correct","E-Preemption - No Deference","post_regret",346,-1.01023121387283,-1.15948410404624,-0.867557803468208
+"B-good","Correct","E-Preemption - No Deference","early_wrong_rate",346,-0.145302504816956,-0.160610115606936,-0.129627938342967
+"B-good","Correct","E-Preemption - No Deference","post_correct_rate",346,0.042536051110435,0.036557255856404,0.0491654396105872
+"B-good","Correct","E-Preemption - No Deference","post_b_pulls",346,20.2046242774566,17.3629913294798,23.234725433526
+"B-good","Correct","E-Preemption - No Deference","late_wrong_rate",346,-0.00250867052023121,-0.00476936416184971,-0.00069364161849711
+"B-good","Correct","E-Total Evidence - No Deference","post_regret",346,-1.08979768786127,-1.23386054913295,-0.965949783236994
+"B-good","Correct","E-Total Evidence - No Deference","early_wrong_rate",346,-0.161044315992293,-0.174121483622351,-0.148427263969171
+"B-good","Correct","E-Total Evidence - No Deference","post_correct_rate",346,0.0458862184362641,0.0404738363249163,0.0514086553087922
+"B-good","Correct","E-Total Evidence - No Deference","post_b_pulls",346,21.7959537572254,19.2097615606936,24.365700867052
+"B-good","Correct","E-Total Evidence - No Deference","late_wrong_rate",346,-0.00253757225433526,-0.00481531791907514,-0.000832369942196532
+"B-good","Correct","E-Total Evidence - E-Preemption","post_regret",346,-0.0795664739884394,-0.13031936416185,-0.0290007225433525
+"B-good","Correct","E-Total Evidence - E-Preemption","early_wrong_rate",346,-0.0157418111753372,-0.0218613680154143,-0.00964894026974952
+"B-good","Correct","E-Total Evidence - E-Preemption","post_correct_rate",346,0.00335016732582903,0.00124044721630667,0.00556032856708245
+"B-good","Correct","E-Total Evidence - E-Preemption","post_b_pulls",346,1.59132947976879,0.580621387283236,2.62723265895954
+"B-good","Correct","E-Total Evidence - E-Preemption","late_wrong_rate",346,-0.0000289017341040462,-0.000398843930635838,0.000317919075144509
+"B-good","Incorrect","E-Preemption - No Deference","post_regret",134,2.65817164179105,2.18363059701493,3.16402798507463
+"B-good","Incorrect","E-Preemption - No Deference","early_wrong_rate",134,0.292985074626866,0.26032736318408,0.326362935323383
+"B-good","Incorrect","E-Preemption - No Deference","post_correct_rate",134,-0.111923016496465,-0.132657266300079,-0.092601413982718
+"B-good","Incorrect","E-Preemption - No Deference","post_b_pulls",134,-53.1634328358209,-63.475,-43.6290671641791
+"B-good","Incorrect","E-Preemption - No Deference","late_wrong_rate",134,0.0177611940298507,0.00747723880597015,0.0321208955223881
+"B-good","Incorrect","E-Total Evidence - No Deference","post_regret",134,1.48723880597015,1.12069496268657,1.91442723880598
+"B-good","Incorrect","E-Total Evidence - No Deference","early_wrong_rate",134,0.143014925373134,0.123691044776119,0.163155472636816
+"B-good","Incorrect","E-Total Evidence - No Deference","post_correct_rate",134,-0.0626205813040063,-0.0815781225451689,-0.0474421445404556
+"B-good","Incorrect","E-Total Evidence - No Deference","post_b_pulls",134,-29.744776119403,-37.9754104477612,-22.1469962686567
+"B-good","Incorrect","E-Total Evidence - No Deference","late_wrong_rate",134,0.020955223880597,0.00986567164179105,0.0337466417910448
+"B-good","Incorrect","E-Total Evidence - E-Preemption","post_regret",134,-1.17093283582089,-1.66761660447761,-0.691280783582086
+"B-good","Incorrect","E-Total Evidence - E-Preemption","early_wrong_rate",134,-0.149970149253731,-0.175793034825871,-0.123323134328358
+"B-good","Incorrect","E-Total Evidence - E-Preemption","post_correct_rate",134,0.0493024351924588,0.0283208169677926,0.0700806362922231
+"B-good","Incorrect","E-Total Evidence - E-Preemption","post_b_pulls",134,23.4186567164179,13.3186753731343,33.8252611940299
+"B-good","Incorrect","E-Total Evidence - E-Preemption","late_wrong_rate",134,0.00319402985074627,-0.0141201492537313,0.0187776119402985
+"B-good","Tie","E-Preemption - No Deference","post_regret",20,0.2915,-0.223768750000002,0.813056250000003
+"B-good","Tie","E-Preemption - No Deference","early_wrong_rate",20,0.0682666666666667,0.0263316666666667,0.106403333333333
+"B-good","Tie","E-Preemption - No Deference","post_correct_rate",20,-0.0122736842105263,-0.0344242105263158,0.00981184210526317
+"B-good","Tie","E-Preemption - No Deference","post_b_pulls",20,-5.83,-16.331875,4.39575
+"B-good","Tie","E-Preemption - No Deference","late_wrong_rate",20,-0.0041,-0.0121,0
+"B-good","Tie","E-Total Evidence - No Deference","post_regret",20,0,0,0
+"B-good","Tie","E-Total Evidence - No Deference","early_wrong_rate",20,0,0,0
+"B-good","Tie","E-Total Evidence - No Deference","post_correct_rate",20,0,0,0
+"B-good","Tie","E-Total Evidence - No Deference","post_b_pulls",20,0,0,0
+"B-good","Tie","E-Total Evidence - No Deference","late_wrong_rate",20,0,0,0
+"B-good","Tie","E-Total Evidence - E-Preemption","post_regret",20,-0.2915,-0.803012500000002,0.246325000000003
+"B-good","Tie","E-Total Evidence - E-Preemption","early_wrong_rate",20,-0.0682666666666667,-0.106666666666667,-0.0265283333333333
+"B-good","Tie","E-Total Evidence - E-Preemption","post_correct_rate",20,0.0122736842105263,-0.0106015789473684,0.0341689473684211
+"B-good","Tie","E-Total Evidence - E-Preemption","post_b_pulls",20,5.83,-5.010625,16.09075
+"B-good","Tie","E-Total Evidence - E-Preemption","late_wrong_rate",20,0.0041,0,0.0121
+"B-bad","Correct","E-Preemption - No Deference","post_regret",417,-0.611582733812949,-0.70989298561151,-0.520624400479616
+"B-bad","Correct","E-Preemption - No Deference","early_wrong_rate",417,-0.0832613908872902,-0.0937746602717826,-0.0728181454836131
+"B-bad","Correct","E-Preemption - No Deference","post_correct_rate",417,0.0257508519500189,0.0218345576170642,0.0299225672093904
+"B-bad","Correct","E-Preemption - No Deference","post_b_pulls",417,-12.231654676259,-14.2090167865707,-10.2539928057554
+"B-bad","Correct","E-Preemption - No Deference","late_wrong_rate",417,-0.00482494004796163,-0.00755443645083933,-0.0020478417266187
+"B-bad","Correct","E-Total Evidence - No Deference","post_regret",417,-1.03115107913669,-1.10923471223021,-0.954626199040766
+"B-bad","Correct","E-Total Evidence - No Deference","early_wrong_rate",417,-0.128006394884093,-0.135742126298961,-0.120648601119105
+"B-bad","Correct","E-Total Evidence - No Deference","post_correct_rate",417,0.0434168875425975,0.0402049602423325,0.0467062223905086
+"B-bad","Correct","E-Total Evidence - No Deference","post_b_pulls",417,-20.6230215827338,-22.242979616307,-19.0476738609113
+"B-bad","Correct","E-Total Evidence - No Deference","late_wrong_rate",417,-0.0095347721822542,-0.0125181055155875,-0.00651786570743405
+"B-bad","Correct","E-Total Evidence - E-Preemption","post_regret",417,-0.41956834532374,-0.493352517985611,-0.34983123501199
+"B-bad","Correct","E-Total Evidence - E-Preemption","early_wrong_rate",417,-0.0447450039968026,-0.0517091926458833,-0.0380136690647482
+"B-bad","Correct","E-Total Evidence - E-Preemption","post_correct_rate",417,0.0176660355925786,0.0147225419664269,0.0206777609491354
+"B-bad","Correct","E-Total Evidence - E-Preemption","post_b_pulls",417,-8.39136690647482,-9.81680455635492,-7.00717625899281
+"B-bad","Correct","E-Total Evidence - E-Preemption","late_wrong_rate",417,-0.00470983213429257,-0.00716067146282974,-0.00236846522781774
+"B-bad","Incorrect","E-Preemption - No Deference","post_regret",66,1.46022727272727,1.10491666666666,1.84571212121212
+"B-bad","Incorrect","E-Preemption - No Deference","early_wrong_rate",66,0.215313131313131,0.177996464646465,0.254668181818182
+"B-bad","Incorrect","E-Preemption - No Deference","post_correct_rate",66,-0.0614832535885168,-0.0780480861244019,-0.0470015151515152
+"B-bad","Incorrect","E-Preemption - No Deference","post_b_pulls",66,29.2045454545455,22.2196590909091,36.7455681818182
+"B-bad","Incorrect","E-Preemption - No Deference","late_wrong_rate",66,0.00772727272727273,0.000303030303030304,0.0144242424242424
+"B-bad","Incorrect","E-Total Evidence - No Deference","post_regret",66,1.1205303030303,0.85975,1.40933143939394
+"B-bad","Incorrect","E-Total Evidence - No Deference","early_wrong_rate",66,0.145151515151515,0.115188383838384,0.179255050505051
+"B-bad","Incorrect","E-Total Evidence - No Deference","post_correct_rate",66,-0.0471802232854864,-0.0593205741626794,-0.0356904306220096
+"B-bad","Incorrect","E-Total Evidence - No Deference","post_b_pulls",66,22.4106060606061,16.9681818181818,28.0704545454545
+"B-bad","Incorrect","E-Total Evidence - No Deference","late_wrong_rate",66,0.00993939393939394,0.00403030303030303,0.0161515151515152
+"B-bad","Incorrect","E-Total Evidence - E-Preemption","post_regret",66,-0.339696969696969,-0.589248106060607,-0.102556818181816
+"B-bad","Incorrect","E-Total Evidence - E-Preemption","early_wrong_rate",66,-0.0701616161616162,-0.0894555555555556,-0.0520378787878788
+"B-bad","Incorrect","E-Total Evidence - E-Preemption","post_correct_rate",66,0.0143030303030303,0.00461754385964912,0.0249570175438596
+"B-bad","Incorrect","E-Total Evidence - E-Preemption","post_b_pulls",66,-6.79393939393939,-11.6229545454545,-2.11609848484848
+"B-bad","Incorrect","E-Total Evidence - E-Preemption","late_wrong_rate",66,0.00221212121212121,-0.00397045454545455,0.00851515151515152
+"B-bad","Tie","E-Preemption - No Deference","post_regret",17,0.440000000000001,-0.0670735294117653,0.94914705882353
+"B-bad","Tie","E-Preemption - No Deference","early_wrong_rate",17,0.0526274509803922,0.0107450980392157,0.0921686274509804
+"B-bad","Tie","E-Preemption - No Deference","post_correct_rate",17,-0.0185263157894737,-0.039702786377709,0.00254024767801858
+"B-bad","Tie","E-Preemption - No Deference","post_b_pulls",17,8.8,-1.64794117647059,18.765
+"B-bad","Tie","E-Preemption - No Deference","late_wrong_rate",17,0.0151764705882353,0.00141176470588235,0.0318823529411765
+"B-bad","Tie","E-Total Evidence - No Deference","post_regret",17,0,0,0
+"B-bad","Tie","E-Total Evidence - No Deference","early_wrong_rate",17,0,0,0
+"B-bad","Tie","E-Total Evidence - No Deference","post_correct_rate",17,0,0,0
+"B-bad","Tie","E-Total Evidence - No Deference","post_b_pulls",17,0,0,0
+"B-bad","Tie","E-Total Evidence - No Deference","late_wrong_rate",17,0,0,0
+"B-bad","Tie","E-Total Evidence - E-Preemption","post_regret",17,-0.440000000000001,-0.932102941176472,0.0644191176470581
+"B-bad","Tie","E-Total Evidence - E-Preemption","early_wrong_rate",17,-0.0526274509803922,-0.0934137254901961,-0.0114470588235294
+"B-bad","Tie","E-Total Evidence - E-Preemption","post_correct_rate",17,0.0185263157894737,-0.00277616099071207,0.0395541795665635
+"B-bad","Tie","E-Total Evidence - E-Preemption","post_b_pulls",17,-8.8,-19.0838235294118,1.33558823529412
+"B-bad","Tie","E-Total Evidence - E-Preemption","late_wrong_rate",17,-0.0151764705882353,-0.0320058823529412,-0.00152941176470588

@@ -1,0 +1,204 @@
+{
+  "totals": {
+    "batches": 12,
+    "runs": 132600,
+    "rows": 1932600,
+    "trajectory_runs": 3600,
+    "trajectory_rows": 1803600
+  },
+  "batches": [
+    {
+      "path": "raw/experiment_2/calibration_estimate_good_raw.csv",
+      "experiment": "experiment-2-calibration-estimate-good",
+      "runs": 50000,
+      "rows": 50000,
+      "bytes": 5485153,
+      "sha256": "ae3d3b1f7048097eae6bf0414cb15de3f984fd59f32070faadfe56e3dfa00d20",
+      "seeds": {
+        "count": 50000,
+        "first": 1000001,
+        "last": 1050000
+      },
+      "provenance_path": "raw/experiment_2/calibration_estimate_good_raw.csv.provenance.json",
+      "provenance_sha256": "9939d9bf0c9a72eafebcfa4c2b95c0aee20f459f8cf4394fbb809db3e6e4e813"
+    },
+    {
+      "path": "raw/experiment_2/calibration_estimate_bad_raw.csv",
+      "experiment": "experiment-2-calibration-estimate-bad",
+      "runs": 50000,
+      "rows": 50000,
+      "bytes": 5400978,
+      "sha256": "425fddcb1b3216fc137e2b52fb9c81159d30bf789d846860df4b8b9bd47b3013",
+      "seeds": {
+        "count": 50000,
+        "first": 1100001,
+        "last": 1150000
+      },
+      "provenance_path": "raw/experiment_2/calibration_estimate_bad_raw.csv.provenance.json",
+      "provenance_sha256": "908498acdb4bb739f68035b0bb55977b37310b7fb33dbb1a7740116d582fafc6"
+    },
+    {
+      "path": "raw/experiment_2/calibration_heldout_good_raw.csv",
+      "experiment": "experiment-2-calibration-heldout-good",
+      "runs": 10000,
+      "rows": 10000,
+      "bytes": 1088918,
+      "sha256": "c28523d3cd7776f774ef0d23de208cd3dd001dad3030940c993c94810b964375",
+      "seeds": {
+        "count": 10000,
+        "first": 2000001,
+        "last": 2010000
+      },
+      "provenance_path": "raw/experiment_2/calibration_heldout_good_raw.csv.provenance.json",
+      "provenance_sha256": "507039e51efd0d54f5bfc876d3701ab752b6115e0ae6185533fb22b1b5fdb86f"
+    },
+    {
+      "path": "raw/experiment_2/calibration_heldout_bad_raw.csv",
+      "experiment": "experiment-2-calibration-heldout-bad",
+      "runs": 10000,
+      "rows": 10000,
+      "bytes": 1071709,
+      "sha256": "707d69967505e85df08abb5dbe3e21f0aeea903d064749d59e495e6fb0887b8e",
+      "seeds": {
+        "count": 10000,
+        "first": 2100001,
+        "last": 2110000
+      },
+      "provenance_path": "raw/experiment_2/calibration_heldout_bad_raw.csv.provenance.json",
+      "provenance_sha256": "45ea1a82ba59519ecdc1101d57f949bb52d7ae07d3160b28ae19af5f9cd686ea"
+    },
+    {
+      "path": "raw/experiment_0/raw_main_final.csv",
+      "experiment": "experiment-0-bandit-main-final",
+      "runs": 1000,
+      "rows": 1000,
+      "bytes": 460175,
+      "sha256": "cd0ff04a1537cdc1c7779990d90f61cc4b28bb85c96b5945c884664c218e9cfb",
+      "seeds": {
+        "count": 500,
+        "first": 310001,
+        "last": 310500
+      },
+      "provenance_path": "raw/experiment_0/raw_main_final.csv.provenance.json",
+      "provenance_sha256": "05766d59929301e2c8483ee7781bb15aa5d280fe155230dc08223749c9b5f768"
+    },
+    {
+      "path": "raw/experiment_0/raw_peer_check.csv",
+      "experiment": "experiment-0-bandit-peer-check",
+      "runs": 2000,
+      "rows": 2000,
+      "bytes": 921437,
+      "sha256": "33df1cc975827a27bd0676e5b068ad384380f08babfd8b50f4c95252ece53463",
+      "seeds": {
+        "count": 500,
+        "first": 310001,
+        "last": 310500
+      },
+      "provenance_path": "raw/experiment_0/raw_peer_check.csv.provenance.json",
+      "provenance_sha256": "f8ea836348304ac8f6a8f6eec989bf5e3d60cfaabddc1e3a873dbaf15236ed88"
+    },
+    {
+      "path": "raw/experiment_0/raw_trajectories.csv",
+      "experiment": "experiment-0-bandit-trajectories",
+      "runs": 400,
+      "rows": 200400,
+      "bytes": 43813060,
+      "sha256": "f1453a1f312d0ca1e2531327037167f631edaf0d950f0a3ffba2bdfe27672fe0",
+      "seeds": {
+        "count": 200,
+        "first": 310001,
+        "last": 310200
+      },
+      "provenance_path": "raw/experiment_0/raw_trajectories.csv.provenance.json",
+      "provenance_sha256": "139414e67a8757f4c3f4f35d495c2c08fa58235cde567f411c5456907c0555f1"
+    },
+    {
+      "path": "raw/experiment_1/raw_main_final.csv",
+      "experiment": "experiment-1-evidence-main-final",
+      "runs": 3000,
+      "rows": 3000,
+      "bytes": 2505583,
+      "sha256": "ac74aba6e99c3f8e6cbab68df1e355c0f05d0ad82511686a340b485d885843d8",
+      "seeds": {
+        "count": 500,
+        "first": 310001,
+        "last": 310500
+      },
+      "provenance_path": "raw/experiment_1/raw_main_final.csv.provenance.json",
+      "provenance_sha256": "722a7da5b3bb4e4109c9851ecc2e5054a63e3dd46f24d2e85f1661c402c38262"
+    },
+    {
+      "path": "raw/experiment_1/raw_trajectories.csv",
+      "experiment": "experiment-1-evidence-trajectories",
+      "runs": 1200,
+      "rows": 601200,
+      "bytes": 169475126,
+      "sha256": "07fe97b359934978236bb19bf16793a8f1c8056649288b51f2c0431decb23943",
+      "seeds": {
+        "count": 200,
+        "first": 310001,
+        "last": 310200
+      },
+      "provenance_path": "raw/experiment_1/raw_trajectories.csv.provenance.json",
+      "provenance_sha256": "ee4ddd6ed2c30cbe0d12418b2c50076678f0960230fe3c488edbc08861696cd1"
+    },
+    {
+      "path": "raw/experiment_2/raw_main_final.csv",
+      "experiment": "experiment-2-opaque-main-final",
+      "runs": 3000,
+      "rows": 3000,
+      "bytes": 2193525,
+      "sha256": "5b94c2670aac487e8851c1cdb9d681b399e181d6015f2f51dc2c3bc3ee56391b",
+      "seeds": {
+        "count": 500,
+        "first": 510001,
+        "last": 510500
+      },
+      "provenance_path": "raw/experiment_2/raw_main_final.csv.provenance.json",
+      "provenance_sha256": "f2c2c869f05d196dc042e08aeb96b8bfd6095ba20496da57843af9879ea66a64"
+    },
+    {
+      "path": "raw/experiment_2/raw_trajectories.csv",
+      "experiment": "experiment-2-opaque-trajectories",
+      "runs": 1200,
+      "rows": 601200,
+      "bytes": 202707356,
+      "sha256": "cd07e381d5cb0bc2540bf21f1789bc95e8c856f823f292f3495f02b67d226f65",
+      "seeds": {
+        "count": 200,
+        "first": 510001,
+        "last": 510200
+      },
+      "provenance_path": "raw/experiment_2/raw_trajectories.csv.provenance.json",
+      "provenance_sha256": "e8f29a26e4eb103b38221fc8aaf802d900f14352fe3944a84f23c6bdca75bcbf"
+    },
+    {
+      "path": "raw/experiment_2/raw_exact_trajectories.csv",
+      "experiment": "experiment-2-exact-regression-trajectories",
+      "runs": 800,
+      "rows": 400800,
+      "bytes": 136985016,
+      "sha256": "a9fe960fc4fafd59411bf07995c18108f7bc43e9c3408e33f295c72154f710ec",
+      "seeds": {
+        "count": 200,
+        "first": 310001,
+        "last": 310200
+      },
+      "provenance_path": "raw/experiment_2/raw_exact_trajectories.csv.provenance.json",
+      "provenance_sha256": "46959d6747abd92a64dfc39d0fd7df8a2d5c7fbe0352da86a9aadc07dc82cf98"
+    }
+  ],
+  "path_scope": "Original run-root / ZIP-root relative; not compact repository download paths",
+  "raw_archive": {
+    "availability": "local",
+    "path": "C:\\Users\\user\\OneDrive\\文档\\ABM\\ABM_full_simulation_raw_2026_10_19.zip",
+    "bytes": 72623097,
+    "sha256": "cb16a815fcd3f2f7992b7fbb496e63afbbc80130644b58425bd8c2ee36f84c52",
+    "original_files": 164,
+    "zip_members": 165,
+    "crc_test_passed": true,
+    "all_member_sha256_verified": true,
+    "remote_download_url": null,
+    "note": "Local archive only. Raw trajectories are not uploaded to GitHub; regenerate with the recorded command."
+  }
+}

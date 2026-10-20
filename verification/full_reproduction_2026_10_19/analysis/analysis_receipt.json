@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "scientific_parameters_changed": false,
+  "input_sha256": {
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\frozen_credence_message_table.csv": "2708886b9a0880828a1785ecb0a2d02077488affa575ab96befd8ebba106a074",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\heldout_calibration_audit.csv": "acfdafb814664bf04d9bf46f4953f29ab3b7e98d5abbbb5dcca912792d9e0f84",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv": "cd0ff04a1537cdc1c7779990d90f61cc4b28bb85c96b5945c884664c218e9cfb",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv": "33df1cc975827a27bd0676e5b068ad384380f08babfd8b50f4c95252ece53463",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv": "f1453a1f312d0ca1e2531327037167f631edaf0d950f0a3ffba2bdfe27672fe0",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv": "ac74aba6e99c3f8e6cbab68df1e355c0f05d0ad82511686a340b485d885843d8",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv": "07fe97b359934978236bb19bf16793a8f1c8056649288b51f2c0431decb23943",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv": "425fddcb1b3216fc137e2b52fb9c81159d30bf789d846860df4b8b9bd47b3013",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv": "ae3d3b1f7048097eae6bf0414cb15de3f984fd59f32070faadfe56e3dfa00d20",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv": "707d69967505e85df08abb5dbe3e21f0aeea903d064749d59e495e6fb0887b8e",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv": "c28523d3cd7776f774ef0d23de208cd3dd001dad3030940c993c94810b964375",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv": "a9fe960fc4fafd59411bf07995c18108f7bc43e9c3408e33f295c72154f710ec",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv": "5b94c2670aac487e8851c1cdb9d681b399e181d6015f2f51dc2c3bc3ee56391b",
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv": "cd07e381d5cb0bc2540bf21f1789bc95e8c856f823f292f3495f02b67d226f65"
+  },
+  "steps": [
+    {
+      "experiment": "calibration",
+      "command": [
+        "C:\\PROGRA~1\\R\\R-45~1.3\\bin\\Rscript.exe",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\scripts\\analysis\\CALIBR~1.R",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\CALIBR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\CALIBR~2.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\CALIBR~3.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\CALIBR~4.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\analysis\\CALIBR~1"
+      ],
+      "returncode": 0,
+      "log": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\calibration\\analysis.log",
+      "original_validation_checks_passed": 13
+    },
+    {
+      "experiment": "0",
+      "command": [
+        "C:\\PROGRA~1\\R\\R-45~1.3\\bin\\Rscript.exe",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\scripts\\analysis\\ANALYZ~1.R",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~2\\RAW_MA~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~2\\RAW_TR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~2\\RAW_PE~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\analysis\\EXPERI~1"
+      ],
+      "returncode": 0,
+      "log": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_0\\analysis.log",
+      "original_validation_checks_passed": 36
+    },
+    {
+      "experiment": "1",
+      "command": [
+        "C:\\PROGRA~1\\R\\R-45~1.3\\bin\\Rscript.exe",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\scripts\\analysis\\ANALYZ~2.R",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~3\\RAW_MA~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~3\\RAW_TR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~2\\RAW_MA~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~2\\RAW_TR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\analysis\\EXPERI~2"
+      ],
+      "returncode": 0,
+      "log": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1\\analysis.log"
+    },
+    {
+      "experiment": "1-figures",
+      "command": [
+        "C:\\PROGRA~1\\R\\R-45~1.3\\bin\\Rscript.exe",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\scripts\\analysis\\MAKE_S~1.R",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\analysis\\EXPERI~2"
+      ],
+      "returncode": 0,
+      "original_validation_checks_passed": 33
+    },
+    {
+      "experiment": "2",
+      "command": [
+        "C:\\PROGRA~1\\R\\R-45~1.3\\bin\\Rscript.exe",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\scripts\\analysis\\ANALYZ~3.R",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\RAW_MA~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\RAW_TR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~1\\RAW_EX~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\raw\\EXPERI~3\\RAW_TR~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\data\\EXPERI~3\\FROZEN~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\data\\EXPERI~3\\HELDOU~1.CSV",
+        "C:\\Users\\user\\OneDrive\\73EC~1\\ABM\\GITHUB~1\\results\\FULL_R~1\\analysis\\EXPERI~3"
+      ],
+      "returncode": 0,
+      "log": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2\\analysis.log",
+      "original_validation_checks_passed": 21
+    }
+  ],
+  "scope": "Existing raw-data analysis only; no simulation is launched.",
+  "rscript_version": "Rscript (R) version 4.5.3 (2026-03-11)",
+  "recovered_script_sha256": {
+    "analyze_experiment_0_bandit.R": "a910c0f8670da78405a04a0cf1b9176cfdacbd0c5e164da2621fb4e6080518e6",
+    "analyze_experiment_1_evidence.R": "8b2d7e24803520d844183c12a886a694538a6850c87ad09f278b9d062bbfb36c",
+    "analyze_experiment_2_opaque_credence.R": "0473ea854b9e5099b171e552c2cfe28e1feaff42d3ac142ac83ffbdfd8dc9aaf",
+    "calibrate_opaque_credence.R": "f7aa89c7ae30b9ea4efeae473553cf040e25e38f6867dbc18ea525398da9457e",
+    "make_static_figures.R": "73f9c54d0a1fb610c887d5aa3cff8dbd74e6736b3e362082e8917b7edab308dc",
+    "verify_bootstrap.R": "26fe54d3365f77c734f58b7e386ea71f808f00b847ff0f1ad74cfc3c49865145"
+  },
+  "analysis_driver_sha256": "c2d4e1eb04e46eda0aab86214c3d647e10c24687accd3539e648eae80365982f",
+  "published_csv_comparisons": [
+    {
+      "file": "calibration_validation_checks.csv",
+      "rows": 13,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "frozen_credence_message_table.csv",
+      "rows": 10,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": [
+        "table_version"
+      ]
+    },
+    {
+      "file": "heldout_calibration_audit.csv",
+      "rows": 10,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "trajectory_summary.csv",
+      "rows": 1002,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "validation_checks.csv",
+      "rows": 36,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "endpoint_summary.csv",
+      "rows": 6,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "paired_contrasts.csv",
+      "rows": 42,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "trajectory_chart_data.csv",
+      "rows": 612,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "validation_checks.csv",
+      "rows": 33,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "endpoint_summary.csv",
+      "rows": 30,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "paired_policy_effects.csv",
+      "rows": 30,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "trajectory_chart_data.csv",
+      "rows": 612,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    },
+    {
+      "file": "validation_checks.csv",
+      "rows": 21,
+      "maximum_absolute_error": 0.0,
+      "ignored_metadata_columns": []
+    }
+  ],
+  "calibration_note": "The recovered script labels its newly computed table prehash-v1. This output is for comparison; the published frozen table and model are never patched."
+}

@@ -1,0 +1,1201 @@
+"world","policy","seed","expert_status","recovery_tick","recovery_delay","censored"
+"B-bad","E-Preemption",310001,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310002,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310003,"Incorrect",39,14,FALSE
+"B-bad","E-Preemption",310004,"Incorrect",129,104,FALSE
+"B-bad","E-Preemption",310005,"Correct",43,18,FALSE
+"B-bad","E-Preemption",310006,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310007,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310008,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310009,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310010,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310011,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310012,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310013,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310014,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310015,"Incorrect",139,114,FALSE
+"B-bad","E-Preemption",310016,"Incorrect",39,14,FALSE
+"B-bad","E-Preemption",310017,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310018,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310019,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310020,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310021,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310022,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310023,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310024,"Correct",28,3,FALSE
+"B-bad","E-Preemption",310025,"Incorrect",77,52,FALSE
+"B-bad","E-Preemption",310026,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310027,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310028,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310029,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310030,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310031,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310032,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310033,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310034,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310035,"Correct",33,8,FALSE
+"B-bad","E-Preemption",310036,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310037,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310038,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310039,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310040,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310041,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310042,"Tie",37,12,FALSE
+"B-bad","E-Preemption",310043,"Incorrect",33,8,FALSE
+"B-bad","E-Preemption",310044,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310045,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310046,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310047,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310048,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310049,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310050,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310051,"Incorrect",93,68,FALSE
+"B-bad","E-Preemption",310052,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310053,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310054,"Incorrect",71,46,FALSE
+"B-bad","E-Preemption",310055,"Tie",29,4,FALSE
+"B-bad","E-Preemption",310056,"Correct",27,2,FALSE
+"B-bad","E-Preemption",310057,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310058,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310059,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310060,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310061,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310062,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310063,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310064,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310065,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310066,"Tie",32,7,FALSE
+"B-bad","E-Preemption",310067,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310068,"Correct",67,42,FALSE
+"B-bad","E-Preemption",310069,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310070,"Incorrect",49,24,FALSE
+"B-bad","E-Preemption",310071,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310072,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310073,"Incorrect",66,41,FALSE
+"B-bad","E-Preemption",310074,"Incorrect",138,113,FALSE
+"B-bad","E-Preemption",310075,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310076,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310077,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310078,"Incorrect",210,185,FALSE
+"B-bad","E-Preemption",310079,"Correct",31,6,FALSE
+"B-bad","E-Preemption",310080,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310081,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310082,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310083,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310084,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310085,"Incorrect",50,25,FALSE
+"B-bad","E-Preemption",310086,"Incorrect",29,4,FALSE
+"B-bad","E-Preemption",310087,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310088,"Incorrect",59,34,FALSE
+"B-bad","E-Preemption",310089,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310090,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310091,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310092,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310093,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310094,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310095,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310096,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310097,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310098,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310099,"Incorrect",93,68,FALSE
+"B-bad","E-Preemption",310100,"Tie",62,37,FALSE
+"B-bad","E-Preemption",310101,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310102,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310103,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310104,"Correct",27,2,FALSE
+"B-bad","E-Preemption",310105,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310106,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310107,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310108,"Incorrect",59,34,FALSE
+"B-bad","E-Preemption",310109,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310110,"Incorrect",30,5,FALSE
+"B-bad","E-Preemption",310111,"Correct",44,19,FALSE
+"B-bad","E-Preemption",310112,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310113,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310114,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310115,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310116,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310117,"Incorrect",89,64,FALSE
+"B-bad","E-Preemption",310118,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310119,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310120,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310121,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310122,"Correct",27,2,FALSE
+"B-bad","E-Preemption",310123,"Incorrect",35,10,FALSE
+"B-bad","E-Preemption",310124,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310125,"Incorrect",51,26,FALSE
+"B-bad","E-Preemption",310126,"Incorrect",334,309,FALSE
+"B-bad","E-Preemption",310127,"Incorrect",109,84,FALSE
+"B-bad","E-Preemption",310128,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310129,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310130,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310131,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310132,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310133,"Incorrect",28,3,FALSE
+"B-bad","E-Preemption",310134,"Incorrect",27,2,FALSE
+"B-bad","E-Preemption",310135,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310136,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310137,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310138,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310139,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310140,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310141,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310142,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310143,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310144,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310145,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310146,"Correct",31,6,FALSE
+"B-bad","E-Preemption",310147,"Incorrect",99,74,FALSE
+"B-bad","E-Preemption",310148,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310149,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310150,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310151,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310152,"Correct",39,14,FALSE
+"B-bad","E-Preemption",310153,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310154,"Tie",51,26,FALSE
+"B-bad","E-Preemption",310155,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310156,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310157,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310158,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310159,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310160,"Tie",51,26,FALSE
+"B-bad","E-Preemption",310161,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310162,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310163,"Incorrect",48,23,FALSE
+"B-bad","E-Preemption",310164,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310165,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310166,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310167,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310168,"Incorrect",55,30,FALSE
+"B-bad","E-Preemption",310169,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310170,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310171,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310172,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310173,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310174,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310175,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310176,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310177,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310178,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310179,"Incorrect",55,30,FALSE
+"B-bad","E-Preemption",310180,"Tie",30,5,FALSE
+"B-bad","E-Preemption",310181,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310182,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310183,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310184,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310185,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310186,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310187,"Tie",144,119,FALSE
+"B-bad","E-Preemption",310188,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310189,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310190,"Correct",27,2,FALSE
+"B-bad","E-Preemption",310191,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310192,"Correct",64,39,FALSE
+"B-bad","E-Preemption",310193,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310194,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310195,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310196,"Incorrect",117,92,FALSE
+"B-bad","E-Preemption",310197,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310198,"Incorrect",41,16,FALSE
+"B-bad","E-Preemption",310199,"Correct",26,1,FALSE
+"B-bad","E-Preemption",310200,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310001,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310002,"Correct",41,16,FALSE
+"B-bad","E-Total Evidence",310003,"Incorrect",31,6,FALSE
+"B-bad","E-Total Evidence",310004,"Incorrect",115,90,FALSE
+"B-bad","E-Total Evidence",310005,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310006,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310007,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310008,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310009,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310010,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310011,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310012,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310013,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310014,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310015,"Incorrect",109,84,FALSE
+"B-bad","E-Total Evidence",310016,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310017,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310018,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310019,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310020,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310021,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310022,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310023,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310024,"Correct",35,10,FALSE
+"B-bad","E-Total Evidence",310025,"Incorrect",75,50,FALSE
+"B-bad","E-Total Evidence",310026,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310027,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310028,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310029,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310030,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310031,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310032,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310033,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310034,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310035,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310036,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310037,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310038,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310039,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310040,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310041,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310042,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310043,"Incorrect",28,3,FALSE
+"B-bad","E-Total Evidence",310044,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310045,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310046,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310047,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310048,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310049,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310050,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310051,"Incorrect",44,19,FALSE
+"B-bad","E-Total Evidence",310052,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310053,"Correct",45,20,FALSE
+"B-bad","E-Total Evidence",310054,"Incorrect",58,33,FALSE
+"B-bad","E-Total Evidence",310055,"Tie",38,13,FALSE
+"B-bad","E-Total Evidence",310056,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310057,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310058,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310059,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310060,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310061,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310062,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310063,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310064,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310065,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310066,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310067,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310068,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310069,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310070,"Incorrect",46,21,FALSE
+"B-bad","E-Total Evidence",310071,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310072,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310073,"Incorrect",27,2,FALSE
+"B-bad","E-Total Evidence",310074,"Incorrect",119,94,FALSE
+"B-bad","E-Total Evidence",310075,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310076,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310077,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310078,"Incorrect",188,163,FALSE
+"B-bad","E-Total Evidence",310079,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310080,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310081,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310082,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310083,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310084,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310085,"Incorrect",35,10,FALSE
+"B-bad","E-Total Evidence",310086,"Incorrect",46,21,FALSE
+"B-bad","E-Total Evidence",310087,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310088,"Incorrect",55,30,FALSE
+"B-bad","E-Total Evidence",310089,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310090,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310091,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310092,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310093,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310094,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310095,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310096,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310097,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310098,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310099,"Incorrect",90,65,FALSE
+"B-bad","E-Total Evidence",310100,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310101,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310102,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310103,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310104,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310105,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310106,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310107,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310108,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310109,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310110,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310111,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310112,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310113,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310114,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310115,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310116,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310117,"Incorrect",89,64,FALSE
+"B-bad","E-Total Evidence",310118,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310119,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310120,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310121,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310122,"Correct",44,19,FALSE
+"B-bad","E-Total Evidence",310123,"Incorrect",34,9,FALSE
+"B-bad","E-Total Evidence",310124,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310125,"Incorrect",53,28,FALSE
+"B-bad","E-Total Evidence",310126,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310127,"Incorrect",75,50,FALSE
+"B-bad","E-Total Evidence",310128,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310129,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310130,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310131,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310132,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310133,"Incorrect",27,2,FALSE
+"B-bad","E-Total Evidence",310134,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310135,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310136,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310137,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310138,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310139,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310140,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310141,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310142,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310143,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310144,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310145,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310146,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310147,"Incorrect",104,79,FALSE
+"B-bad","E-Total Evidence",310148,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310149,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310150,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310151,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310152,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310153,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310154,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310155,"Correct",33,8,FALSE
+"B-bad","E-Total Evidence",310156,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310157,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310158,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310159,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310160,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310161,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310162,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310163,"Incorrect",47,22,FALSE
+"B-bad","E-Total Evidence",310164,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310165,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310166,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310167,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310168,"Incorrect",54,29,FALSE
+"B-bad","E-Total Evidence",310169,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310170,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310171,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310172,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310173,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310174,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310175,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310176,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310177,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310178,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310179,"Incorrect",46,21,FALSE
+"B-bad","E-Total Evidence",310180,"Tie",26,1,FALSE
+"B-bad","E-Total Evidence",310181,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310182,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310183,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310184,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310185,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310186,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310187,"Tie",146,121,FALSE
+"B-bad","E-Total Evidence",310188,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310189,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310190,"Correct",48,23,FALSE
+"B-bad","E-Total Evidence",310191,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310192,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310193,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310194,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310195,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310196,"Incorrect",68,43,FALSE
+"B-bad","E-Total Evidence",310197,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310198,"Incorrect",26,1,FALSE
+"B-bad","E-Total Evidence",310199,"Correct",26,1,FALSE
+"B-bad","E-Total Evidence",310200,"Correct",26,1,FALSE
+"B-bad","No Deference",310001,"Correct",65,40,FALSE
+"B-bad","No Deference",310002,"Correct",48,23,FALSE
+"B-bad","No Deference",310003,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310004,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310005,"Correct",33,8,FALSE
+"B-bad","No Deference",310006,"Correct",26,1,FALSE
+"B-bad","No Deference",310007,"Correct",26,1,FALSE
+"B-bad","No Deference",310008,"Correct",26,1,FALSE
+"B-bad","No Deference",310009,"Correct",73,48,FALSE
+"B-bad","No Deference",310010,"Correct",104,79,FALSE
+"B-bad","No Deference",310011,"Correct",26,1,FALSE
+"B-bad","No Deference",310012,"Correct",44,19,FALSE
+"B-bad","No Deference",310013,"Correct",26,1,FALSE
+"B-bad","No Deference",310014,"Correct",26,1,FALSE
+"B-bad","No Deference",310015,"Incorrect",68,43,FALSE
+"B-bad","No Deference",310016,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310017,"Correct",36,11,FALSE
+"B-bad","No Deference",310018,"Correct",26,1,FALSE
+"B-bad","No Deference",310019,"Correct",26,1,FALSE
+"B-bad","No Deference",310020,"Correct",34,9,FALSE
+"B-bad","No Deference",310021,"Correct",34,9,FALSE
+"B-bad","No Deference",310022,"Correct",26,1,FALSE
+"B-bad","No Deference",310023,"Correct",27,2,FALSE
+"B-bad","No Deference",310024,"Correct",41,16,FALSE
+"B-bad","No Deference",310025,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310026,"Correct",26,1,FALSE
+"B-bad","No Deference",310027,"Correct",26,1,FALSE
+"B-bad","No Deference",310028,"Correct",26,1,FALSE
+"B-bad","No Deference",310029,"Correct",26,1,FALSE
+"B-bad","No Deference",310030,"Correct",26,1,FALSE
+"B-bad","No Deference",310031,"Correct",26,1,FALSE
+"B-bad","No Deference",310032,"Correct",26,1,FALSE
+"B-bad","No Deference",310033,"Correct",101,76,FALSE
+"B-bad","No Deference",310034,"Correct",43,18,FALSE
+"B-bad","No Deference",310035,"Correct",26,1,FALSE
+"B-bad","No Deference",310036,"Correct",26,1,FALSE
+"B-bad","No Deference",310037,"Correct",26,1,FALSE
+"B-bad","No Deference",310038,"Correct",26,1,FALSE
+"B-bad","No Deference",310039,"Correct",26,1,FALSE
+"B-bad","No Deference",310040,"Correct",90,65,FALSE
+"B-bad","No Deference",310041,"Correct",28,3,FALSE
+"B-bad","No Deference",310042,"Tie",26,1,FALSE
+"B-bad","No Deference",310043,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310044,"Correct",34,9,FALSE
+"B-bad","No Deference",310045,"Correct",26,1,FALSE
+"B-bad","No Deference",310046,"Correct",26,1,FALSE
+"B-bad","No Deference",310047,"Correct",65,40,FALSE
+"B-bad","No Deference",310048,"Correct",26,1,FALSE
+"B-bad","No Deference",310049,"Correct",26,1,FALSE
+"B-bad","No Deference",310050,"Correct",26,1,FALSE
+"B-bad","No Deference",310051,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310052,"Correct",26,1,FALSE
+"B-bad","No Deference",310053,"Correct",64,39,FALSE
+"B-bad","No Deference",310054,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310055,"Tie",38,13,FALSE
+"B-bad","No Deference",310056,"Correct",26,1,FALSE
+"B-bad","No Deference",310057,"Correct",26,1,FALSE
+"B-bad","No Deference",310058,"Correct",26,1,FALSE
+"B-bad","No Deference",310059,"Correct",26,1,FALSE
+"B-bad","No Deference",310060,"Correct",26,1,FALSE
+"B-bad","No Deference",310061,"Correct",26,1,FALSE
+"B-bad","No Deference",310062,"Correct",26,1,FALSE
+"B-bad","No Deference",310063,"Correct",40,15,FALSE
+"B-bad","No Deference",310064,"Correct",26,1,FALSE
+"B-bad","No Deference",310065,"Correct",26,1,FALSE
+"B-bad","No Deference",310066,"Tie",26,1,FALSE
+"B-bad","No Deference",310067,"Correct",26,1,FALSE
+"B-bad","No Deference",310068,"Correct",26,1,FALSE
+"B-bad","No Deference",310069,"Correct",26,1,FALSE
+"B-bad","No Deference",310070,"Incorrect",33,8,FALSE
+"B-bad","No Deference",310071,"Correct",26,1,FALSE
+"B-bad","No Deference",310072,"Correct",38,13,FALSE
+"B-bad","No Deference",310073,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310074,"Incorrect",51,26,FALSE
+"B-bad","No Deference",310075,"Correct",26,1,FALSE
+"B-bad","No Deference",310076,"Correct",26,1,FALSE
+"B-bad","No Deference",310077,"Correct",28,3,FALSE
+"B-bad","No Deference",310078,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310079,"Correct",26,1,FALSE
+"B-bad","No Deference",310080,"Correct",26,1,FALSE
+"B-bad","No Deference",310081,"Correct",26,1,FALSE
+"B-bad","No Deference",310082,"Correct",26,1,FALSE
+"B-bad","No Deference",310083,"Correct",26,1,FALSE
+"B-bad","No Deference",310084,"Correct",26,1,FALSE
+"B-bad","No Deference",310085,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310086,"Incorrect",40,15,FALSE
+"B-bad","No Deference",310087,"Correct",26,1,FALSE
+"B-bad","No Deference",310088,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310089,"Correct",26,1,FALSE
+"B-bad","No Deference",310090,"Correct",55,30,FALSE
+"B-bad","No Deference",310091,"Correct",26,1,FALSE
+"B-bad","No Deference",310092,"Correct",26,1,FALSE
+"B-bad","No Deference",310093,"Correct",26,1,FALSE
+"B-bad","No Deference",310094,"Correct",34,9,FALSE
+"B-bad","No Deference",310095,"Correct",26,1,FALSE
+"B-bad","No Deference",310096,"Correct",26,1,FALSE
+"B-bad","No Deference",310097,"Correct",36,11,FALSE
+"B-bad","No Deference",310098,"Correct",49,24,FALSE
+"B-bad","No Deference",310099,"Incorrect",73,48,FALSE
+"B-bad","No Deference",310100,"Tie",26,1,FALSE
+"B-bad","No Deference",310101,"Correct",26,1,FALSE
+"B-bad","No Deference",310102,"Correct",30,5,FALSE
+"B-bad","No Deference",310103,"Correct",75,50,FALSE
+"B-bad","No Deference",310104,"Correct",26,1,FALSE
+"B-bad","No Deference",310105,"Correct",27,2,FALSE
+"B-bad","No Deference",310106,"Correct",26,1,FALSE
+"B-bad","No Deference",310107,"Correct",26,1,FALSE
+"B-bad","No Deference",310108,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310109,"Correct",26,1,FALSE
+"B-bad","No Deference",310110,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310111,"Correct",26,1,FALSE
+"B-bad","No Deference",310112,"Correct",26,1,FALSE
+"B-bad","No Deference",310113,"Correct",26,1,FALSE
+"B-bad","No Deference",310114,"Correct",26,1,FALSE
+"B-bad","No Deference",310115,"Correct",51,26,FALSE
+"B-bad","No Deference",310116,"Correct",26,1,FALSE
+"B-bad","No Deference",310117,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310118,"Correct",50,25,FALSE
+"B-bad","No Deference",310119,"Correct",26,1,FALSE
+"B-bad","No Deference",310120,"Correct",26,1,FALSE
+"B-bad","No Deference",310121,"Correct",26,1,FALSE
+"B-bad","No Deference",310122,"Correct",54,29,FALSE
+"B-bad","No Deference",310123,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310124,"Correct",26,1,FALSE
+"B-bad","No Deference",310125,"Incorrect",57,32,FALSE
+"B-bad","No Deference",310126,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310127,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310128,"Correct",26,1,FALSE
+"B-bad","No Deference",310129,"Correct",26,1,FALSE
+"B-bad","No Deference",310130,"Correct",26,1,FALSE
+"B-bad","No Deference",310131,"Correct",26,1,FALSE
+"B-bad","No Deference",310132,"Correct",26,1,FALSE
+"B-bad","No Deference",310133,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310134,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310135,"Correct",26,1,FALSE
+"B-bad","No Deference",310136,"Correct",26,1,FALSE
+"B-bad","No Deference",310137,"Correct",26,1,FALSE
+"B-bad","No Deference",310138,"Correct",26,1,FALSE
+"B-bad","No Deference",310139,"Correct",36,11,FALSE
+"B-bad","No Deference",310140,"Correct",26,1,FALSE
+"B-bad","No Deference",310141,"Correct",26,1,FALSE
+"B-bad","No Deference",310142,"Correct",26,1,FALSE
+"B-bad","No Deference",310143,"Correct",26,1,FALSE
+"B-bad","No Deference",310144,"Correct",26,1,FALSE
+"B-bad","No Deference",310145,"Correct",26,1,FALSE
+"B-bad","No Deference",310146,"Correct",26,1,FALSE
+"B-bad","No Deference",310147,"Incorrect",48,23,FALSE
+"B-bad","No Deference",310148,"Correct",26,1,FALSE
+"B-bad","No Deference",310149,"Correct",26,1,FALSE
+"B-bad","No Deference",310150,"Correct",26,1,FALSE
+"B-bad","No Deference",310151,"Correct",26,1,FALSE
+"B-bad","No Deference",310152,"Correct",26,1,FALSE
+"B-bad","No Deference",310153,"Correct",77,52,FALSE
+"B-bad","No Deference",310154,"Tie",26,1,FALSE
+"B-bad","No Deference",310155,"Correct",43,18,FALSE
+"B-bad","No Deference",310156,"Correct",26,1,FALSE
+"B-bad","No Deference",310157,"Correct",26,1,FALSE
+"B-bad","No Deference",310158,"Correct",26,1,FALSE
+"B-bad","No Deference",310159,"Correct",26,1,FALSE
+"B-bad","No Deference",310160,"Tie",26,1,FALSE
+"B-bad","No Deference",310161,"Correct",31,6,FALSE
+"B-bad","No Deference",310162,"Correct",26,1,FALSE
+"B-bad","No Deference",310163,"Incorrect",32,7,FALSE
+"B-bad","No Deference",310164,"Correct",26,1,FALSE
+"B-bad","No Deference",310165,"Correct",26,1,FALSE
+"B-bad","No Deference",310166,"Correct",26,1,FALSE
+"B-bad","No Deference",310167,"Correct",26,1,FALSE
+"B-bad","No Deference",310168,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310169,"Correct",26,1,FALSE
+"B-bad","No Deference",310170,"Correct",26,1,FALSE
+"B-bad","No Deference",310171,"Correct",37,12,FALSE
+"B-bad","No Deference",310172,"Correct",80,55,FALSE
+"B-bad","No Deference",310173,"Correct",26,1,FALSE
+"B-bad","No Deference",310174,"Correct",26,1,FALSE
+"B-bad","No Deference",310175,"Correct",26,1,FALSE
+"B-bad","No Deference",310176,"Correct",26,1,FALSE
+"B-bad","No Deference",310177,"Correct",26,1,FALSE
+"B-bad","No Deference",310178,"Correct",44,19,FALSE
+"B-bad","No Deference",310179,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310180,"Tie",26,1,FALSE
+"B-bad","No Deference",310181,"Correct",26,1,FALSE
+"B-bad","No Deference",310182,"Correct",26,1,FALSE
+"B-bad","No Deference",310183,"Correct",26,1,FALSE
+"B-bad","No Deference",310184,"Correct",26,1,FALSE
+"B-bad","No Deference",310185,"Correct",26,1,FALSE
+"B-bad","No Deference",310186,"Correct",39,14,FALSE
+"B-bad","No Deference",310187,"Tie",146,121,FALSE
+"B-bad","No Deference",310188,"Correct",26,1,FALSE
+"B-bad","No Deference",310189,"Correct",26,1,FALSE
+"B-bad","No Deference",310190,"Correct",61,36,FALSE
+"B-bad","No Deference",310191,"Correct",26,1,FALSE
+"B-bad","No Deference",310192,"Correct",26,1,FALSE
+"B-bad","No Deference",310193,"Correct",36,11,FALSE
+"B-bad","No Deference",310194,"Correct",32,7,FALSE
+"B-bad","No Deference",310195,"Correct",26,1,FALSE
+"B-bad","No Deference",310196,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310197,"Correct",32,7,FALSE
+"B-bad","No Deference",310198,"Incorrect",26,1,FALSE
+"B-bad","No Deference",310199,"Correct",26,1,FALSE
+"B-bad","No Deference",310200,"Correct",26,1,FALSE
+"B-good","E-Preemption",310001,"Correct",26,1,FALSE
+"B-good","E-Preemption",310002,"Correct",26,1,FALSE
+"B-good","E-Preemption",310003,"Correct",26,1,FALSE
+"B-good","E-Preemption",310004,"Correct",26,1,FALSE
+"B-good","E-Preemption",310005,"Correct",26,1,FALSE
+"B-good","E-Preemption",310006,"Correct",26,1,FALSE
+"B-good","E-Preemption",310007,"Incorrect",31,6,FALSE
+"B-good","E-Preemption",310008,"Correct",26,1,FALSE
+"B-good","E-Preemption",310009,"Incorrect",51,26,FALSE
+"B-good","E-Preemption",310010,"Tie",26,1,FALSE
+"B-good","E-Preemption",310011,"Correct",26,1,FALSE
+"B-good","E-Preemption",310012,"Incorrect",67,42,FALSE
+"B-good","E-Preemption",310013,"Correct",26,1,FALSE
+"B-good","E-Preemption",310014,"Correct",26,1,FALSE
+"B-good","E-Preemption",310015,"Correct",26,1,FALSE
+"B-good","E-Preemption",310016,"Correct",26,1,FALSE
+"B-good","E-Preemption",310017,"Incorrect",48,23,FALSE
+"B-good","E-Preemption",310018,"Correct",26,1,FALSE
+"B-good","E-Preemption",310019,"Correct",26,1,FALSE
+"B-good","E-Preemption",310020,"Incorrect",90,65,FALSE
+"B-good","E-Preemption",310021,"Incorrect",139,114,FALSE
+"B-good","E-Preemption",310022,"Correct",26,1,FALSE
+"B-good","E-Preemption",310023,"Incorrect",66,41,FALSE
+"B-good","E-Preemption",310024,"Correct",26,1,FALSE
+"B-good","E-Preemption",310025,"Correct",26,1,FALSE
+"B-good","E-Preemption",310026,"Correct",26,1,FALSE
+"B-good","E-Preemption",310027,"Incorrect",79,54,FALSE
+"B-good","E-Preemption",310028,"Tie",31,6,FALSE
+"B-good","E-Preemption",310029,"Correct",26,1,FALSE
+"B-good","E-Preemption",310030,"Incorrect",132,107,FALSE
+"B-good","E-Preemption",310031,"Correct",53,28,FALSE
+"B-good","E-Preemption",310032,"Correct",26,1,FALSE
+"B-good","E-Preemption",310033,"Correct",26,1,FALSE
+"B-good","E-Preemption",310034,"Correct",26,1,FALSE
+"B-good","E-Preemption",310035,"Correct",26,1,FALSE
+"B-good","E-Preemption",310036,"Incorrect",68,43,FALSE
+"B-good","E-Preemption",310037,"Tie",26,1,FALSE
+"B-good","E-Preemption",310038,"Correct",26,1,FALSE
+"B-good","E-Preemption",310039,"Correct",26,1,FALSE
+"B-good","E-Preemption",310040,"Incorrect",316,291,FALSE
+"B-good","E-Preemption",310041,"Correct",26,1,FALSE
+"B-good","E-Preemption",310042,"Correct",26,1,FALSE
+"B-good","E-Preemption",310043,"Correct",26,1,FALSE
+"B-good","E-Preemption",310044,"Incorrect",35,10,FALSE
+"B-good","E-Preemption",310045,"Correct",26,1,FALSE
+"B-good","E-Preemption",310046,"Correct",26,1,FALSE
+"B-good","E-Preemption",310047,"Correct",26,1,FALSE
+"B-good","E-Preemption",310048,"Incorrect",84,59,FALSE
+"B-good","E-Preemption",310049,"Correct",26,1,FALSE
+"B-good","E-Preemption",310050,"Correct",49,24,FALSE
+"B-good","E-Preemption",310051,"Correct",26,1,FALSE
+"B-good","E-Preemption",310052,"Incorrect",70,45,FALSE
+"B-good","E-Preemption",310053,"Incorrect",109,84,FALSE
+"B-good","E-Preemption",310054,"Correct",26,1,FALSE
+"B-good","E-Preemption",310055,"Correct",26,1,FALSE
+"B-good","E-Preemption",310056,"Correct",26,1,FALSE
+"B-good","E-Preemption",310057,"Incorrect",135,110,FALSE
+"B-good","E-Preemption",310058,"Incorrect",107,82,FALSE
+"B-good","E-Preemption",310059,"Incorrect",89,64,FALSE
+"B-good","E-Preemption",310060,"Incorrect",84,59,FALSE
+"B-good","E-Preemption",310061,"Correct",26,1,FALSE
+"B-good","E-Preemption",310062,"Correct",26,1,FALSE
+"B-good","E-Preemption",310063,"Correct",26,1,FALSE
+"B-good","E-Preemption",310064,"Incorrect",45,20,FALSE
+"B-good","E-Preemption",310065,"Correct",26,1,FALSE
+"B-good","E-Preemption",310066,"Correct",26,1,FALSE
+"B-good","E-Preemption",310067,"Incorrect",229,204,FALSE
+"B-good","E-Preemption",310068,"Correct",26,1,FALSE
+"B-good","E-Preemption",310069,"Correct",26,1,FALSE
+"B-good","E-Preemption",310070,"Correct",26,1,FALSE
+"B-good","E-Preemption",310071,"Incorrect",197,172,FALSE
+"B-good","E-Preemption",310072,"Correct",26,1,FALSE
+"B-good","E-Preemption",310073,"Correct",26,1,FALSE
+"B-good","E-Preemption",310074,"Correct",26,1,FALSE
+"B-good","E-Preemption",310075,"Correct",26,1,FALSE
+"B-good","E-Preemption",310076,"Correct",26,1,FALSE
+"B-good","E-Preemption",310077,"Tie",26,1,FALSE
+"B-good","E-Preemption",310078,"Correct",26,1,FALSE
+"B-good","E-Preemption",310079,"Tie",26,1,FALSE
+"B-good","E-Preemption",310080,"Correct",26,1,FALSE
+"B-good","E-Preemption",310081,"Incorrect",57,32,FALSE
+"B-good","E-Preemption",310082,"Incorrect",47,22,FALSE
+"B-good","E-Preemption",310083,"Incorrect",104,79,FALSE
+"B-good","E-Preemption",310084,"Incorrect",51,26,FALSE
+"B-good","E-Preemption",310085,"Correct",26,1,FALSE
+"B-good","E-Preemption",310086,"Correct",26,1,FALSE
+"B-good","E-Preemption",310087,"Correct",26,1,FALSE
+"B-good","E-Preemption",310088,"Correct",26,1,FALSE
+"B-good","E-Preemption",310089,"Correct",26,1,FALSE
+"B-good","E-Preemption",310090,"Correct",26,1,FALSE
+"B-good","E-Preemption",310091,"Correct",26,1,FALSE
+"B-good","E-Preemption",310092,"Incorrect",50,25,FALSE
+"B-good","E-Preemption",310093,"Correct",26,1,FALSE
+"B-good","E-Preemption",310094,"Incorrect",134,109,FALSE
+"B-good","E-Preemption",310095,"Correct",26,1,FALSE
+"B-good","E-Preemption",310096,"Correct",26,1,FALSE
+"B-good","E-Preemption",310097,"Correct",26,1,FALSE
+"B-good","E-Preemption",310098,"Correct",26,1,FALSE
+"B-good","E-Preemption",310099,"Correct",26,1,FALSE
+"B-good","E-Preemption",310100,"Correct",26,1,FALSE
+"B-good","E-Preemption",310101,"Correct",26,1,FALSE
+"B-good","E-Preemption",310102,"Correct",26,1,FALSE
+"B-good","E-Preemption",310103,"Correct",26,1,FALSE
+"B-good","E-Preemption",310104,"Correct",26,1,FALSE
+"B-good","E-Preemption",310105,"Correct",26,1,FALSE
+"B-good","E-Preemption",310106,"Correct",26,1,FALSE
+"B-good","E-Preemption",310107,"Correct",26,1,FALSE
+"B-good","E-Preemption",310108,"Correct",26,1,FALSE
+"B-good","E-Preemption",310109,"Correct",26,1,FALSE
+"B-good","E-Preemption",310110,"Correct",26,1,FALSE
+"B-good","E-Preemption",310111,"Correct",26,1,FALSE
+"B-good","E-Preemption",310112,"Correct",26,1,FALSE
+"B-good","E-Preemption",310113,"Correct",26,1,FALSE
+"B-good","E-Preemption",310114,"Correct",26,1,FALSE
+"B-good","E-Preemption",310115,"Incorrect",84,59,FALSE
+"B-good","E-Preemption",310116,"Correct",26,1,FALSE
+"B-good","E-Preemption",310117,"Correct",26,1,FALSE
+"B-good","E-Preemption",310118,"Incorrect",64,39,FALSE
+"B-good","E-Preemption",310119,"Incorrect",36,11,FALSE
+"B-good","E-Preemption",310120,"Incorrect",26,1,FALSE
+"B-good","E-Preemption",310121,"Incorrect",44,19,FALSE
+"B-good","E-Preemption",310122,"Correct",26,1,FALSE
+"B-good","E-Preemption",310123,"Correct",26,1,FALSE
+"B-good","E-Preemption",310124,"Incorrect",125,100,FALSE
+"B-good","E-Preemption",310125,"Correct",26,1,FALSE
+"B-good","E-Preemption",310126,"Correct",26,1,FALSE
+"B-good","E-Preemption",310127,"Correct",26,1,FALSE
+"B-good","E-Preemption",310128,"Incorrect",35,10,FALSE
+"B-good","E-Preemption",310129,"Correct",26,1,FALSE
+"B-good","E-Preemption",310130,"Correct",26,1,FALSE
+"B-good","E-Preemption",310131,"Correct",26,1,FALSE
+"B-good","E-Preemption",310132,"Correct",26,1,FALSE
+"B-good","E-Preemption",310133,"Correct",26,1,FALSE
+"B-good","E-Preemption",310134,"Correct",26,1,FALSE
+"B-good","E-Preemption",310135,"Incorrect",70,45,FALSE
+"B-good","E-Preemption",310136,"Correct",26,1,FALSE
+"B-good","E-Preemption",310137,"Incorrect",30,5,FALSE
+"B-good","E-Preemption",310138,"Correct",26,1,FALSE
+"B-good","E-Preemption",310139,"Correct",26,1,FALSE
+"B-good","E-Preemption",310140,"Tie",32,7,FALSE
+"B-good","E-Preemption",310141,"Incorrect",87,62,FALSE
+"B-good","E-Preemption",310142,"Correct",26,1,FALSE
+"B-good","E-Preemption",310143,"Correct",26,1,FALSE
+"B-good","E-Preemption",310144,"Incorrect",51,26,FALSE
+"B-good","E-Preemption",310145,"Correct",26,1,FALSE
+"B-good","E-Preemption",310146,"Incorrect",26,1,FALSE
+"B-good","E-Preemption",310147,"Correct",26,1,FALSE
+"B-good","E-Preemption",310148,"Correct",26,1,FALSE
+"B-good","E-Preemption",310149,"Correct",26,1,FALSE
+"B-good","E-Preemption",310150,"Correct",26,1,FALSE
+"B-good","E-Preemption",310151,"Correct",26,1,FALSE
+"B-good","E-Preemption",310152,"Incorrect",38,13,FALSE
+"B-good","E-Preemption",310153,"Correct",26,1,FALSE
+"B-good","E-Preemption",310154,"Correct",26,1,FALSE
+"B-good","E-Preemption",310155,"Correct",26,1,FALSE
+"B-good","E-Preemption",310156,"Correct",26,1,FALSE
+"B-good","E-Preemption",310157,"Correct",26,1,FALSE
+"B-good","E-Preemption",310158,"Correct",26,1,FALSE
+"B-good","E-Preemption",310159,"Incorrect",42,17,FALSE
+"B-good","E-Preemption",310160,"Correct",26,1,FALSE
+"B-good","E-Preemption",310161,"Tie",26,1,FALSE
+"B-good","E-Preemption",310162,"Incorrect",100,75,FALSE
+"B-good","E-Preemption",310163,"Correct",26,1,FALSE
+"B-good","E-Preemption",310164,"Incorrect",97,72,FALSE
+"B-good","E-Preemption",310165,"Incorrect",55,30,FALSE
+"B-good","E-Preemption",310166,"Incorrect",59,34,FALSE
+"B-good","E-Preemption",310167,"Incorrect",69,44,FALSE
+"B-good","E-Preemption",310168,"Correct",26,1,FALSE
+"B-good","E-Preemption",310169,"Incorrect",62,37,FALSE
+"B-good","E-Preemption",310170,"Correct",26,1,FALSE
+"B-good","E-Preemption",310171,"Correct",26,1,FALSE
+"B-good","E-Preemption",310172,"Correct",26,1,FALSE
+"B-good","E-Preemption",310173,"Correct",26,1,FALSE
+"B-good","E-Preemption",310174,"Tie",26,1,FALSE
+"B-good","E-Preemption",310175,"Correct",26,1,FALSE
+"B-good","E-Preemption",310176,"Incorrect",119,94,FALSE
+"B-good","E-Preemption",310177,"Correct",30,5,FALSE
+"B-good","E-Preemption",310178,"Tie",33,8,FALSE
+"B-good","E-Preemption",310179,"Correct",26,1,FALSE
+"B-good","E-Preemption",310180,"Correct",26,1,FALSE
+"B-good","E-Preemption",310181,"Correct",61,36,FALSE
+"B-good","E-Preemption",310182,"Correct",26,1,FALSE
+"B-good","E-Preemption",310183,"Correct",26,1,FALSE
+"B-good","E-Preemption",310184,"Correct",26,1,FALSE
+"B-good","E-Preemption",310185,"Incorrect",93,68,FALSE
+"B-good","E-Preemption",310186,"Correct",26,1,FALSE
+"B-good","E-Preemption",310187,"Correct",26,1,FALSE
+"B-good","E-Preemption",310188,"Incorrect",203,178,FALSE
+"B-good","E-Preemption",310189,"Correct",26,1,FALSE
+"B-good","E-Preemption",310190,"Correct",26,1,FALSE
+"B-good","E-Preemption",310191,"Correct",26,1,FALSE
+"B-good","E-Preemption",310192,"Correct",26,1,FALSE
+"B-good","E-Preemption",310193,"Incorrect",140,115,FALSE
+"B-good","E-Preemption",310194,"Incorrect",72,47,FALSE
+"B-good","E-Preemption",310195,"Correct",26,1,FALSE
+"B-good","E-Preemption",310196,"Correct",26,1,FALSE
+"B-good","E-Preemption",310197,"Correct",26,1,FALSE
+"B-good","E-Preemption",310198,"Correct",26,1,FALSE
+"B-good","E-Preemption",310199,"Incorrect",107,82,FALSE
+"B-good","E-Preemption",310200,"Incorrect",108,83,FALSE
+"B-good","E-Total Evidence",310001,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310002,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310003,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310004,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310005,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310006,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310007,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310008,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310009,"Incorrect",27,2,FALSE
+"B-good","E-Total Evidence",310010,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310011,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310012,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310013,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310014,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310015,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310016,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310017,"Incorrect",38,13,FALSE
+"B-good","E-Total Evidence",310018,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310019,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310020,"Incorrect",81,56,FALSE
+"B-good","E-Total Evidence",310021,"Incorrect",34,9,FALSE
+"B-good","E-Total Evidence",310022,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310023,"Incorrect",38,13,FALSE
+"B-good","E-Total Evidence",310024,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310025,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310026,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310027,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310028,"Tie",27,2,FALSE
+"B-good","E-Total Evidence",310029,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310030,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310031,"Correct",71,46,FALSE
+"B-good","E-Total Evidence",310032,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310033,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310034,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310035,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310036,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310037,"Tie",29,4,FALSE
+"B-good","E-Total Evidence",310038,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310039,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310040,"Incorrect",66,41,FALSE
+"B-good","E-Total Evidence",310041,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310042,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310043,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310044,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310045,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310046,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310047,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310048,"Incorrect",96,71,FALSE
+"B-good","E-Total Evidence",310049,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310050,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310051,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310052,"Incorrect",37,12,FALSE
+"B-good","E-Total Evidence",310053,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310054,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310055,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310056,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310057,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310058,"Incorrect",79,54,FALSE
+"B-good","E-Total Evidence",310059,"Incorrect",90,65,FALSE
+"B-good","E-Total Evidence",310060,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310061,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310062,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310063,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310064,"Incorrect",38,13,FALSE
+"B-good","E-Total Evidence",310065,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310066,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310067,"Incorrect",97,72,FALSE
+"B-good","E-Total Evidence",310068,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310069,"Correct",54,29,FALSE
+"B-good","E-Total Evidence",310070,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310071,"Incorrect",115,90,FALSE
+"B-good","E-Total Evidence",310072,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310073,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310074,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310075,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310076,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310077,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310078,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310079,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310080,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310081,"Incorrect",42,17,FALSE
+"B-good","E-Total Evidence",310082,"Incorrect",47,22,FALSE
+"B-good","E-Total Evidence",310083,"Incorrect",115,90,FALSE
+"B-good","E-Total Evidence",310084,"Incorrect",33,8,FALSE
+"B-good","E-Total Evidence",310085,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310086,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310087,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310088,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310089,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310090,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310091,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310092,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310093,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310094,"Incorrect",32,7,FALSE
+"B-good","E-Total Evidence",310095,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310096,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310097,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310098,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310099,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310100,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310101,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310102,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310103,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310104,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310105,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310106,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310107,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310108,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310109,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310110,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310111,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310112,"Correct",27,2,FALSE
+"B-good","E-Total Evidence",310113,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310114,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310115,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310116,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310117,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310118,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310119,"Incorrect",68,43,FALSE
+"B-good","E-Total Evidence",310120,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310121,"Incorrect",34,9,FALSE
+"B-good","E-Total Evidence",310122,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310123,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310124,"Incorrect",126,101,FALSE
+"B-good","E-Total Evidence",310125,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310126,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310127,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310128,"Incorrect",45,20,FALSE
+"B-good","E-Total Evidence",310129,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310130,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310131,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310132,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310133,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310134,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310135,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310136,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310137,"Incorrect",36,11,FALSE
+"B-good","E-Total Evidence",310138,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310139,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310140,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310141,"Incorrect",65,40,FALSE
+"B-good","E-Total Evidence",310142,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310143,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310144,"Incorrect",29,4,FALSE
+"B-good","E-Total Evidence",310145,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310146,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310147,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310148,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310149,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310150,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310151,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310152,"Incorrect",32,7,FALSE
+"B-good","E-Total Evidence",310153,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310154,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310155,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310156,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310157,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310158,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310159,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310160,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310161,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310162,"Incorrect",65,40,FALSE
+"B-good","E-Total Evidence",310163,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310164,"Incorrect",46,21,FALSE
+"B-good","E-Total Evidence",310165,"Incorrect",54,29,FALSE
+"B-good","E-Total Evidence",310166,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310167,"Incorrect",84,59,FALSE
+"B-good","E-Total Evidence",310168,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310169,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310170,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310171,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310172,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310173,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310174,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310175,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310176,"Incorrect",57,32,FALSE
+"B-good","E-Total Evidence",310177,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310178,"Tie",26,1,FALSE
+"B-good","E-Total Evidence",310179,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310180,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310181,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310182,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310183,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310184,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310185,"Incorrect",67,42,FALSE
+"B-good","E-Total Evidence",310186,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310187,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310188,"Incorrect",71,46,FALSE
+"B-good","E-Total Evidence",310189,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310190,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310191,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310192,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310193,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310194,"Incorrect",26,1,FALSE
+"B-good","E-Total Evidence",310195,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310196,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310197,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310198,"Correct",26,1,FALSE
+"B-good","E-Total Evidence",310199,"Incorrect",28,3,FALSE
+"B-good","E-Total Evidence",310200,"Incorrect",143,118,FALSE
+"B-good","No Deference",310001,"Correct",26,1,FALSE
+"B-good","No Deference",310002,"Correct",26,1,FALSE
+"B-good","No Deference",310003,"Correct",26,1,FALSE
+"B-good","No Deference",310004,"Correct",26,1,FALSE
+"B-good","No Deference",310005,"Correct",26,1,FALSE
+"B-good","No Deference",310006,"Correct",26,1,FALSE
+"B-good","No Deference",310007,"Incorrect",26,1,FALSE
+"B-good","No Deference",310008,"Correct",26,1,FALSE
+"B-good","No Deference",310009,"Incorrect",26,1,FALSE
+"B-good","No Deference",310010,"Tie",26,1,FALSE
+"B-good","No Deference",310011,"Correct",26,1,FALSE
+"B-good","No Deference",310012,"Incorrect",26,1,FALSE
+"B-good","No Deference",310013,"Correct",26,1,FALSE
+"B-good","No Deference",310014,"Correct",63,38,FALSE
+"B-good","No Deference",310015,"Correct",26,1,FALSE
+"B-good","No Deference",310016,"Correct",26,1,FALSE
+"B-good","No Deference",310017,"Incorrect",26,1,FALSE
+"B-good","No Deference",310018,"Correct",26,1,FALSE
+"B-good","No Deference",310019,"Correct",26,1,FALSE
+"B-good","No Deference",310020,"Incorrect",26,1,FALSE
+"B-good","No Deference",310021,"Incorrect",26,1,FALSE
+"B-good","No Deference",310022,"Correct",26,1,FALSE
+"B-good","No Deference",310023,"Incorrect",26,1,FALSE
+"B-good","No Deference",310024,"Correct",26,1,FALSE
+"B-good","No Deference",310025,"Correct",26,1,FALSE
+"B-good","No Deference",310026,"Correct",28,3,FALSE
+"B-good","No Deference",310027,"Incorrect",26,1,FALSE
+"B-good","No Deference",310028,"Tie",27,2,FALSE
+"B-good","No Deference",310029,"Correct",26,1,FALSE
+"B-good","No Deference",310030,"Incorrect",26,1,FALSE
+"B-good","No Deference",310031,"Correct",79,54,FALSE
+"B-good","No Deference",310032,"Correct",82,57,FALSE
+"B-good","No Deference",310033,"Correct",26,1,FALSE
+"B-good","No Deference",310034,"Correct",26,1,FALSE
+"B-good","No Deference",310035,"Correct",28,3,FALSE
+"B-good","No Deference",310036,"Incorrect",26,1,FALSE
+"B-good","No Deference",310037,"Tie",29,4,FALSE
+"B-good","No Deference",310038,"Correct",26,1,FALSE
+"B-good","No Deference",310039,"Correct",26,1,FALSE
+"B-good","No Deference",310040,"Incorrect",26,1,FALSE
+"B-good","No Deference",310041,"Correct",26,1,FALSE
+"B-good","No Deference",310042,"Correct",26,1,FALSE
+"B-good","No Deference",310043,"Correct",26,1,FALSE
+"B-good","No Deference",310044,"Incorrect",26,1,FALSE
+"B-good","No Deference",310045,"Correct",26,1,FALSE
+"B-good","No Deference",310046,"Correct",113,88,FALSE
+"B-good","No Deference",310047,"Correct",26,1,FALSE
+"B-good","No Deference",310048,"Incorrect",39,14,FALSE
+"B-good","No Deference",310049,"Correct",49,24,FALSE
+"B-good","No Deference",310050,"Correct",26,1,FALSE
+"B-good","No Deference",310051,"Correct",26,1,FALSE
+"B-good","No Deference",310052,"Incorrect",26,1,FALSE
+"B-good","No Deference",310053,"Incorrect",26,1,FALSE
+"B-good","No Deference",310054,"Correct",27,2,FALSE
+"B-good","No Deference",310055,"Correct",26,1,FALSE
+"B-good","No Deference",310056,"Correct",26,1,FALSE
+"B-good","No Deference",310057,"Incorrect",26,1,FALSE
+"B-good","No Deference",310058,"Incorrect",26,1,FALSE
+"B-good","No Deference",310059,"Incorrect",81,56,FALSE
+"B-good","No Deference",310060,"Incorrect",26,1,FALSE
+"B-good","No Deference",310061,"Correct",26,1,FALSE
+"B-good","No Deference",310062,"Correct",36,11,FALSE
+"B-good","No Deference",310063,"Correct",26,1,FALSE
+"B-good","No Deference",310064,"Incorrect",37,12,FALSE
+"B-good","No Deference",310065,"Correct",26,1,FALSE
+"B-good","No Deference",310066,"Correct",35,10,FALSE
+"B-good","No Deference",310067,"Incorrect",26,1,FALSE
+"B-good","No Deference",310068,"Correct",26,1,FALSE
+"B-good","No Deference",310069,"Correct",60,35,FALSE
+"B-good","No Deference",310070,"Correct",26,1,FALSE
+"B-good","No Deference",310071,"Incorrect",26,1,FALSE
+"B-good","No Deference",310072,"Correct",26,1,FALSE
+"B-good","No Deference",310073,"Correct",103,78,FALSE
+"B-good","No Deference",310074,"Correct",26,1,FALSE
+"B-good","No Deference",310075,"Correct",26,1,FALSE
+"B-good","No Deference",310076,"Correct",58,33,FALSE
+"B-good","No Deference",310077,"Tie",26,1,FALSE
+"B-good","No Deference",310078,"Correct",97,72,FALSE
+"B-good","No Deference",310079,"Tie",26,1,FALSE
+"B-good","No Deference",310080,"Correct",26,1,FALSE
+"B-good","No Deference",310081,"Incorrect",26,1,FALSE
+"B-good","No Deference",310082,"Incorrect",26,1,FALSE
+"B-good","No Deference",310083,"Incorrect",29,4,FALSE
+"B-good","No Deference",310084,"Incorrect",26,1,FALSE
+"B-good","No Deference",310085,"Correct",26,1,FALSE
+"B-good","No Deference",310086,"Correct",26,1,FALSE
+"B-good","No Deference",310087,"Correct",89,64,FALSE
+"B-good","No Deference",310088,"Correct",38,13,FALSE
+"B-good","No Deference",310089,"Correct",26,1,FALSE
+"B-good","No Deference",310090,"Correct",26,1,FALSE
+"B-good","No Deference",310091,"Correct",26,1,FALSE
+"B-good","No Deference",310092,"Incorrect",26,1,FALSE
+"B-good","No Deference",310093,"Correct",26,1,FALSE
+"B-good","No Deference",310094,"Incorrect",26,1,FALSE
+"B-good","No Deference",310095,"Correct",26,1,FALSE
+"B-good","No Deference",310096,"Correct",26,1,FALSE
+"B-good","No Deference",310097,"Correct",26,1,FALSE
+"B-good","No Deference",310098,"Correct",26,1,FALSE
+"B-good","No Deference",310099,"Correct",26,1,FALSE
+"B-good","No Deference",310100,"Correct",26,1,FALSE
+"B-good","No Deference",310101,"Correct",27,2,FALSE
+"B-good","No Deference",310102,"Correct",26,1,FALSE
+"B-good","No Deference",310103,"Correct",26,1,FALSE
+"B-good","No Deference",310104,"Correct",26,1,FALSE
+"B-good","No Deference",310105,"Correct",26,1,FALSE
+"B-good","No Deference",310106,"Correct",26,1,FALSE
+"B-good","No Deference",310107,"Correct",26,1,FALSE
+"B-good","No Deference",310108,"Correct",26,1,FALSE
+"B-good","No Deference",310109,"Correct",26,1,FALSE
+"B-good","No Deference",310110,"Correct",26,1,FALSE
+"B-good","No Deference",310111,"Correct",26,1,FALSE
+"B-good","No Deference",310112,"Correct",35,10,FALSE
+"B-good","No Deference",310113,"Correct",26,1,FALSE
+"B-good","No Deference",310114,"Correct",42,17,FALSE
+"B-good","No Deference",310115,"Incorrect",26,1,FALSE
+"B-good","No Deference",310116,"Correct",77,52,FALSE
+"B-good","No Deference",310117,"Correct",26,1,FALSE
+"B-good","No Deference",310118,"Incorrect",26,1,FALSE
+"B-good","No Deference",310119,"Incorrect",38,13,FALSE
+"B-good","No Deference",310120,"Incorrect",26,1,FALSE
+"B-good","No Deference",310121,"Incorrect",26,1,FALSE
+"B-good","No Deference",310122,"Correct",26,1,FALSE
+"B-good","No Deference",310123,"Correct",26,1,FALSE
+"B-good","No Deference",310124,"Incorrect",33,8,FALSE
+"B-good","No Deference",310125,"Correct",26,1,FALSE
+"B-good","No Deference",310126,"Correct",26,1,FALSE
+"B-good","No Deference",310127,"Correct",26,1,FALSE
+"B-good","No Deference",310128,"Incorrect",33,8,FALSE
+"B-good","No Deference",310129,"Correct",26,1,FALSE
+"B-good","No Deference",310130,"Correct",26,1,FALSE
+"B-good","No Deference",310131,"Correct",38,13,FALSE
+"B-good","No Deference",310132,"Correct",26,1,FALSE
+"B-good","No Deference",310133,"Correct",26,1,FALSE
+"B-good","No Deference",310134,"Correct",26,1,FALSE
+"B-good","No Deference",310135,"Incorrect",26,1,FALSE
+"B-good","No Deference",310136,"Correct",92,67,FALSE
+"B-good","No Deference",310137,"Incorrect",26,1,FALSE
+"B-good","No Deference",310138,"Correct",26,1,FALSE
+"B-good","No Deference",310139,"Correct",26,1,FALSE
+"B-good","No Deference",310140,"Tie",26,1,FALSE
+"B-good","No Deference",310141,"Incorrect",26,1,FALSE
+"B-good","No Deference",310142,"Correct",26,1,FALSE
+"B-good","No Deference",310143,"Correct",83,58,FALSE
+"B-good","No Deference",310144,"Incorrect",26,1,FALSE
+"B-good","No Deference",310145,"Correct",26,1,FALSE
+"B-good","No Deference",310146,"Incorrect",26,1,FALSE
+"B-good","No Deference",310147,"Correct",26,1,FALSE
+"B-good","No Deference",310148,"Correct",26,1,FALSE
+"B-good","No Deference",310149,"Correct",40,15,FALSE
+"B-good","No Deference",310150,"Correct",26,1,FALSE
+"B-good","No Deference",310151,"Correct",26,1,FALSE
+"B-good","No Deference",310152,"Incorrect",32,7,FALSE
+"B-good","No Deference",310153,"Correct",26,1,FALSE
+"B-good","No Deference",310154,"Correct",26,1,FALSE
+"B-good","No Deference",310155,"Correct",26,1,FALSE
+"B-good","No Deference",310156,"Correct",26,1,FALSE
+"B-good","No Deference",310157,"Correct",26,1,FALSE
+"B-good","No Deference",310158,"Correct",26,1,FALSE
+"B-good","No Deference",310159,"Incorrect",26,1,FALSE
+"B-good","No Deference",310160,"Correct",26,1,FALSE
+"B-good","No Deference",310161,"Tie",26,1,FALSE
+"B-good","No Deference",310162,"Incorrect",27,2,FALSE
+"B-good","No Deference",310163,"Correct",26,1,FALSE
+"B-good","No Deference",310164,"Incorrect",26,1,FALSE
+"B-good","No Deference",310165,"Incorrect",46,21,FALSE
+"B-good","No Deference",310166,"Incorrect",26,1,FALSE
+"B-good","No Deference",310167,"Incorrect",81,56,FALSE
+"B-good","No Deference",310168,"Correct",26,1,FALSE
+"B-good","No Deference",310169,"Incorrect",26,1,FALSE
+"B-good","No Deference",310170,"Correct",84,59,FALSE
+"B-good","No Deference",310171,"Correct",26,1,FALSE
+"B-good","No Deference",310172,"Correct",26,1,FALSE
+"B-good","No Deference",310173,"Correct",26,1,FALSE
+"B-good","No Deference",310174,"Tie",26,1,FALSE
+"B-good","No Deference",310175,"Correct",50,25,FALSE
+"B-good","No Deference",310176,"Incorrect",26,1,FALSE
+"B-good","No Deference",310177,"Correct",26,1,FALSE
+"B-good","No Deference",310178,"Tie",26,1,FALSE
+"B-good","No Deference",310179,"Correct",30,5,FALSE
+"B-good","No Deference",310180,"Correct",26,1,FALSE
+"B-good","No Deference",310181,"Correct",106,81,FALSE
+"B-good","No Deference",310182,"Correct",26,1,FALSE
+"B-good","No Deference",310183,"Correct",26,1,FALSE
+"B-good","No Deference",310184,"Correct",26,1,FALSE
+"B-good","No Deference",310185,"Incorrect",26,1,FALSE
+"B-good","No Deference",310186,"Correct",26,1,FALSE
+"B-good","No Deference",310187,"Correct",26,1,FALSE
+"B-good","No Deference",310188,"Incorrect",26,1,FALSE
+"B-good","No Deference",310189,"Correct",81,56,FALSE
+"B-good","No Deference",310190,"Correct",26,1,FALSE
+"B-good","No Deference",310191,"Correct",26,1,FALSE
+"B-good","No Deference",310192,"Correct",26,1,FALSE
+"B-good","No Deference",310193,"Incorrect",26,1,FALSE
+"B-good","No Deference",310194,"Incorrect",26,1,FALSE
+"B-good","No Deference",310195,"Correct",26,1,FALSE
+"B-good","No Deference",310196,"Correct",44,19,FALSE
+"B-good","No Deference",310197,"Correct",26,1,FALSE
+"B-good","No Deference",310198,"Correct",26,1,FALSE
+"B-good","No Deference",310199,"Incorrect",26,1,FALSE
+"B-good","No Deference",310200,"Incorrect",26,1,FALSE

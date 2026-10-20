@@ -1,0 +1,13 @@
+"job","n","mean","ci_low","ci_high"
+"E0/B-good/expert_gap_audit",500,0.0524893898528095,0.025436816966745,0.0795862230567381
+"E0/B-bad/expert_gap_audit",500,0.0615084763334596,0.0417837139160419,0.0809183257878256
+"E1/endpoint/B-good/No Deference/post_regret",500,1.56658,1.449624,1.692537
+"E1/endpoint/B-good/E-Preemption/post_regret",500,1.59155,1.3923975,1.78749975
+"E1/endpoint/B-good/E-Total Evidence/post_regret",500,1.21102,1.0526005,1.39488675
+"E1/endpoint/B-bad/No Deference/post_regret",500,2.76511,2.67570975,2.8561145
+"E1/endpoint/B-bad/E-Preemption/post_regret",500,2.46276,2.34916775,2.5699045
+"E1/endpoint/B-bad/E-Total Evidence/post_regret",500,2.05304,1.94584,2.167968
+"E1/contrast/B-good/E-Total Evidence - E-Preemption/post_regret",500,-0.38053,-0.53112075,-0.241255749999999
+"E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_regret",500,-0.409719999999999,-0.479755499999999,-0.340099499999999
+"E2/contrast/B-good/C-Total Evidence - C-Preemption/post_regret",500,-0.405800000000001,-0.548764000000002,-0.271649
+"E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_regret",500,-0.478279999999999,-0.53942025,-0.416539999999999

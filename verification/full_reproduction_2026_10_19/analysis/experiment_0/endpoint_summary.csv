@@ -1,0 +1,13 @@
+"world","metric_key","metric","n_runs","mean","ci_low","ci_high","median","q1","q3"
+"B-good","lay_regret","Cumulative expected regret",500,2.10045,1.9813955,2.2265585,1.7425,1.08375,2.70875
+"B-good","late_correct_rate","Late correct-arm rate",500,0.9968,0.9949639,0.998296,1,1,1
+"B-good","lay_truth_final","Final posterior truth mass",500,0.997557317852626,0.996031322178755,0.998794492814226,0.999999998226426,0.999999804821248,0.99999999996765
+"B-good","lay_b_pulls","B pulls per layperson",500,457.991,455.40105,460.545825,465.15,445.825,478.325
+"B-good","run_persistent_error","Run persistent-error proportion",500,0,0,0,0,0,0
+"B-good","lay_payoff","Realized payoff",500,0.546056,0.545352,0.54677329,0.5464,0.541,0.5512
+"B-bad","lay_regret","Cumulative expected regret",500,3.29785,3.20654975,3.390885,3.095,2.56,3.90999999999999
+"B-bad","late_correct_rate","Late correct-arm rate",500,0.95268,0.9493077,0.955788,0.962,0.944,0.974
+"B-bad","lay_truth_final","Final posterior truth mass",500,0.95533920046493,0.952149828450392,0.958339317662813,0.965912858373249,0.948333649143036,0.976042877772674
+"B-bad","lay_b_pulls","B pulls per layperson",500,65.957,64.168175,67.84521,61.9,51.2,78.2
+"B-bad","run_persistent_error","Run persistent-error proportion",500,0,0,0,0,0,0
+"B-bad","lay_payoff","Realized payoff",500,0.4929864,0.4924338,0.4935508,0.4934,0.4886,0.4972

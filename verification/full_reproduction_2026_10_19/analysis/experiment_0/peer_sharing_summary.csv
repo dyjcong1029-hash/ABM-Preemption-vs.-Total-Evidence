@@ -1,0 +1,11 @@
+"world","metric_key","metric","n_pairs","mean_on_minus_off","ci_low","ci_high","share_positive","share_nonzero"
+"B-good","lay_regret","Regret",500,-3.71514000000001,-3.84475400000002,-3.58113700000001,0.004,1
+"B-good","late_correct_rate","Late correct-arm rate",500,0.113724,0.1068997,0.1210804,0.966,0.97
+"B-good","lay_truth_final","Final truth mass",500,0.108486676137421,0.10150718205055,0.115635932376703,0.996,1
+"B-good","lay_b_pulls","B pulls per layperson",500,74.3028,71.712885,76.955785,0.996,1
+"B-good","run_persistent_error","Persistent-error probability",500,0,0,0,0,0
+"B-bad","lay_regret","Regret",500,-2.68955,-2.766922,-2.6130595,0.004,1
+"B-bad","late_correct_rate","Late correct-arm rate",500,0.08012,0.0763199,0.0839401,0.978,1
+"B-bad","lay_truth_final","Final truth mass",500,0.0758567976242184,0.0722632149696782,0.0794873732596699,0.972,1
+"B-bad","lay_b_pulls","B pulls per layperson",500,-53.791,-55.228355,-52.29751,0.004,1
+"B-bad","run_persistent_error","Persistent-error probability",500,0,0,0,0,0

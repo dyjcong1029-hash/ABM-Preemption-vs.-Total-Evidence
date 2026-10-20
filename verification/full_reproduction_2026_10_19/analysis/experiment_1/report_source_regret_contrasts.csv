@@ -1,0 +1,7 @@
+world,comparison,policy_1,policy_0,metric,favorable_direction,n_pairs,estimate,ci_low,ci_high
+B-good,E-Preemption - No Deference,E-Preemption,No Deference,post_regret,lower,500,0.0249700000000009,-0.18926225,0.246166000000001
+B-good,E-Total Evidence - No Deference,E-Total Evidence,No Deference,post_regret,lower,500,-0.355559999999999,-0.52728375,-0.181388999999998
+B-good,E-Total Evidence - E-Preemption,E-Total Evidence,E-Preemption,post_regret,lower,500,-0.38053,-0.53112075,-0.241255749999999
+B-bad,E-Preemption - No Deference,E-Preemption,No Deference,post_regret,lower,500,-0.302349999999999,-0.412751499999999,-0.187569749999999
+B-bad,E-Total Evidence - No Deference,E-Total Evidence,No Deference,post_regret,lower,500,-0.712069999999999,-0.813814249999999,-0.615638249999999
+B-bad,E-Total Evidence - E-Preemption,E-Total Evidence,E-Preemption,post_regret,lower,500,-0.409719999999999,-0.479755499999999,-0.340099499999999

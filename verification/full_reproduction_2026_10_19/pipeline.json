@@ -1,0 +1,394 @@
+{
+  "status": "passed",
+  "command": "reproduce",
+  "upstream": "e105f6217db78222e72633a663871c070d630ed3",
+  "started_utc": "2026-10-19T18:16:19.256508+00:00",
+  "scientific_parameters_changed": false,
+  "sources": {
+    "models/experiment_0/experiment_0_bandit_base.nlogox": "739b1a16fbd738a4ab89b738720310ea42124ab704d0e8f8033978773cd67e88",
+    "models/experiment_0/experiment_0_bandit_base.nls": "2ca8cf57202c88b4d206c8879e5c227838bcbdd386d2bd413804ce5ac854e466",
+    "models/experiment_1/experiment_1_evidence_bandit.nlogox": "b7924c4107f66b2711b8c961c08cf2fa93306679451306675916d4c4b05cd154",
+    "models/experiment_1/experiment_1_evidence_bandit.nls": "79df3810f3c35708365a9dbc06a3bca60e885d8883f994030fc8b2b781099590",
+    "models/experiment_2/experiment_2_opaque_credence_bandit.nlogox": "fcd321612eb2d26f933bfaca8435d4b185c8872fb659ae3cf952cfad839fc7e0",
+    "models/experiment_2/experiment_2_opaque_credence_bandit.nls": "ec45d92a64092cdb8496ee81904745131da1af3b2b79e4cc77e5f328dbfacd1b",
+    "run_all.ps1": "8d1e835104e92bb99321013763b051bb82dec4019da8028237763e32cc117043",
+    "run_all.py": "3cbbe89b93b6a2cb376853c088739f05dbec3b259de1ad125eb9819453df4121",
+    "scripts/analysis/analyze_experiment_0_bandit.R": "a910c0f8670da78405a04a0cf1b9176cfdacbd0c5e164da2621fb4e6080518e6",
+    "scripts/analysis/analyze_experiment_1_evidence.R": "8b2d7e24803520d844183c12a886a694538a6850c87ad09f278b9d062bbfb36c",
+    "scripts/analysis/analyze_experiment_2_opaque_credence.R": "0473ea854b9e5099b171e552c2cfe28e1feaff42d3ac142ac83ffbdfd8dc9aaf",
+    "scripts/analysis/baseline/make_static_figures.R": "f1ce186b73d8a5074eb2546a05743a639a3e6f78104d0f0f41af924bfd6ecf08",
+    "scripts/analysis/calibrate_opaque_credence.R": "f7aa89c7ae30b9ea4efeae473553cf040e25e38f6867dbc18ea525398da9457e",
+    "scripts/analysis/make_static_figures.R": "73f9c54d0a1fb610c887d5aa3cff8dbd74e6736b3e362082e8917b7edab308dc",
+    "scripts/analysis/run_analysis.py": "c2d4e1eb04e46eda0aab86214c3d647e10c24687accd3539e648eae80365982f",
+    "scripts/analysis/verify_bootstrap.R": "26fe54d3365f77c734f58b7e386ea71f808f00b847ff0f1ad74cfc3c49865145",
+    "scripts/compare_native_baseline.py": "95267e47121803b686d292b8b2c54882036ae4c3bac577c0170599e2cbb9144d",
+    "scripts/java_support/README.md": "3abe59b6d9cf0688739fbfb8076c58b3e5d96d2d4ecec93cfde96c9d5c8604f7",
+    "scripts/java_support/WorkspacePreferencesFactory$MemoryPreferences.class": "474412adc9fc5f6e2900036e1981df184edcd3544aabee7aafd9d0f08c93c00b",
+    "scripts/java_support/WorkspacePreferencesFactory.class": "c738f97e8b22fd9c4f30ee32b9da6d21abe180022d75a0122e8080ab9be8566c",
+    "scripts/java_support/WorkspacePreferencesFactory.java": "cfbc15f4de0bc2828f709fe8ec5d776ddc1805a29e657daef41af31b9efe1429",
+    "scripts/native_checks.py": "403d6a06419e2336fc376719f019f9505a1dc2099a8280b3720e57df845687ae",
+    "scripts/run_netlogo.py": "54bb763a0f38bb9b600fe58a8ec1fd7d12b37340ede0622e4bae3a0937f39082",
+    "scripts/test_verify_model.py": "928746c29cbeff15022f9e0d77017962d3d870dc88fcdeb3cf4aaefa6232cf42",
+    "scripts/verify_model.py": "f77a2f1b331e1294235c7653fc33787a9db4f89046df78a62f96dc84ef8bbec1",
+    "scripts/verify_statistics.py": "46b8d8efe0ce1d5b8f37d6b8d1120bd019367c230da3465ac17e7798e93d7133"
+  },
+  "steps": [
+    {
+      "name": "model",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/verify_model.py",
+        "--output-dir",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\model"
+      ],
+      "started_utc": "2026-10-19T18:16:19.617116+00:00",
+      "log": "00_model.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:16:21.761558+00:00"
+    },
+    {
+      "name": "verifier_mutations",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_verify_model.py",
+        "-v"
+      ],
+      "started_utc": "2026-10-19T18:16:21.761558+00:00",
+      "log": "01_verifier_mutations.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:16:23.982710+00:00"
+    },
+    {
+      "name": "statistics",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/verify_statistics.py",
+        "--output-dir",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\statistics"
+      ],
+      "started_utc": "2026-10-19T18:16:23.982710+00:00",
+      "log": "02_statistics.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:16:42.364422+00:00"
+    },
+    {
+      "name": "native",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/native_checks.py",
+        "--output-dir",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:16:42.365422+00:00",
+      "log": "03_native.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:21:19.506001+00:00"
+    },
+    {
+      "name": "native_baseline",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/compare_native_baseline.py",
+        "--native-dir",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native",
+        "--output-dir",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native_baseline"
+      ],
+      "started_utc": "2026-10-19T18:21:19.513026+00:00",
+      "log": "04_native_baseline.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:21:20.099929+00:00"
+    },
+    {
+      "name": "experiment-2-calibration-estimate-good",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-calibration-estimate-good",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:21:20.101941+00:00",
+      "log": "05_experiment-2-calibration-estimate-good.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:22:43.426548+00:00"
+    },
+    {
+      "name": "experiment-2-calibration-estimate-bad",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-calibration-estimate-bad",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:22:43.430041+00:00",
+      "log": "06_experiment-2-calibration-estimate-bad.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:24:28.385479+00:00"
+    },
+    {
+      "name": "experiment-2-calibration-heldout-good",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-calibration-heldout-good",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:24:28.388792+00:00",
+      "log": "07_experiment-2-calibration-heldout-good.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:25:05.314290+00:00"
+    },
+    {
+      "name": "experiment-2-calibration-heldout-bad",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-calibration-heldout-bad",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:25:05.314290+00:00",
+      "log": "08_experiment-2-calibration-heldout-bad.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:25:40.425296+00:00"
+    },
+    {
+      "name": "experiment-0-bandit-main-final",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_0\\experiment_0_bandit_base.nlogox",
+        "--experiment",
+        "experiment-0-bandit-main-final",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:25:40.427829+00:00",
+      "log": "09_experiment-0-bandit-main-final.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:34:27.404620+00:00"
+    },
+    {
+      "name": "experiment-0-bandit-peer-check",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_0\\experiment_0_bandit_base.nlogox",
+        "--experiment",
+        "experiment-0-bandit-peer-check",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:34:27.410154+00:00",
+      "log": "10_experiment-0-bandit-peer-check.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:44:58.619539+00:00"
+    },
+    {
+      "name": "experiment-0-bandit-trajectories",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_0\\experiment_0_bandit_base.nlogox",
+        "--experiment",
+        "experiment-0-bandit-trajectories",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:44:58.623063+00:00",
+      "log": "11_experiment-0-bandit-trajectories.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T18:49:38.060529+00:00"
+    },
+    {
+      "name": "experiment-1-evidence-main-final",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_1\\experiment_1_evidence_bandit.nlogox",
+        "--experiment",
+        "experiment-1-evidence-main-final",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T18:49:38.065035+00:00",
+      "log": "12_experiment-1-evidence-main-final.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T19:18:00.113888+00:00"
+    },
+    {
+      "name": "experiment-1-evidence-trajectories",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_1\\experiment_1_evidence_bandit.nlogox",
+        "--experiment",
+        "experiment-1-evidence-trajectories",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T19:18:00.125987+00:00",
+      "log": "13_experiment-1-evidence-trajectories.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T19:33:25.798255+00:00"
+    },
+    {
+      "name": "experiment-2-opaque-main-final",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-opaque-main-final",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T19:33:25.807155+00:00",
+      "log": "14_experiment-2-opaque-main-final.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T19:58:29.453203+00:00"
+    },
+    {
+      "name": "experiment-2-opaque-trajectories",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-opaque-trajectories",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T19:58:29.460545+00:00",
+      "log": "15_experiment-2-opaque-trajectories.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T20:12:10.709013+00:00"
+    },
+    {
+      "name": "experiment-2-exact-regression-trajectories",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/run_netlogo.py",
+        "--model",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+        "--experiment",
+        "experiment-2-exact-regression-trajectories",
+        "--output",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv",
+        "--threads",
+        "4"
+      ],
+      "started_utc": "2026-10-19T20:12:10.719559+00:00",
+      "log": "16_experiment-2-exact-regression-trajectories.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T20:21:44.178670+00:00"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "C:\\Users\\user\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/analysis/run_analysis.py",
+        "--experiment",
+        "all",
+        "--raw-root",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw",
+        "--output-root",
+        "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis"
+      ],
+      "started_utc": "2026-10-19T20:21:44.179666+00:00",
+      "log": "17_analysis.log",
+      "returncode": 0,
+      "completed_utc": "2026-10-19T20:25:36.540741+00:00"
+    }
+  ],
+  "coverage_note": "verify checks all published endpoints; smoke adds bounded native runs. Only reproduce regenerates every full BehaviorSpace batch.",
+  "completed_utc": "2026-10-19T20:25:36.832325+00:00"
+}

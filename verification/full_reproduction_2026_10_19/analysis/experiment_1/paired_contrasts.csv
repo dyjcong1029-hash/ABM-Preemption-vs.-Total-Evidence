@@ -1,0 +1,43 @@
+"world","comparison","policy_1","policy_0","metric","favorable_direction","n_pairs","estimate","ci_low","ci_high"
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","post_regret","lower",500,0.0249700000000009,-0.18926225,0.246166000000001
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","early_wrong_rate","lower",500,-0.0192986666666667,-0.0406000666666667,0.00246686666666667
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","post_correct_rate","higher",500,-0.00105136842105263,-0.0105098315789474,0.0080884947368421
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","post_payoff","higher",500,-0.0000176842105263157,-0.000541494736842108,0.000501073684210528
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","post_b_pulls","mechanism",500,-0.4994,-5.077785,3.744355
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","final_truth_mass","higher",500,-0.00226969646768507,-0.00570023326932193,0.000464979618328381
+"B-good","E-Preemption - No Deference","E-Preemption","No Deference","late_wrong_rate","lower",500,0.00286,-0.0005921,0.0068843
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_regret","lower",500,-0.355559999999999,-0.52728375,-0.181388999999998
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","early_wrong_rate","lower",500,-0.0731146666666667,-0.0892352,-0.0574258666666667
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_correct_rate","higher",500,0.0149709473684211,0.00747663157894737,0.0219892526315789
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_payoff","higher",500,0.000732631578947368,0.000328757894736841,0.00111411578947368
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_b_pulls","mechanism",500,7.1112,3.61564,10.49314
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","final_truth_mass","higher",500,-0.00420185857348682,-0.00774504769230887,-0.00108880229358999
+"B-good","E-Total Evidence - No Deference","E-Total Evidence","No Deference","late_wrong_rate","lower",500,0.00386,0.0006479,0.0077402
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_regret","lower",500,-0.38053,-0.53112075,-0.241255749999999
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","early_wrong_rate","lower",500,-0.053816,-0.0638986666666667,-0.0441086666666667
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_correct_rate","higher",500,0.0160223157894737,0.00997218947368421,0.0223368947368421
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_payoff","higher",500,0.000750315789473684,0.000374263157894734,0.00113853684210526
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_b_pulls","mechanism",500,7.6106,4.739985,10.448325
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","final_truth_mass","higher",500,-0.00193216210580175,-0.00602272914311767,0.00216132894115821
+"B-good","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","late_wrong_rate","lower",500,0.001,-0.003616,0.0052561
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","post_regret","lower",500,-0.302349999999999,-0.412751499999999,-0.187569749999999
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","early_wrong_rate","lower",500,-0.0392293333333333,-0.0523636666666667,-0.0254395333333333
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","post_correct_rate","higher",500,0.0127305263157895,0.00788774736842105,0.017505852631579
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","post_payoff","higher",500,0.000633684210526317,0.000362947368421054,0.000907821052631581
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","post_b_pulls","mechanism",500,-6.047,-8.30906,-3.68704
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","final_truth_mass","higher",500,0.00320238991693701,0.00086151165196319,0.00576211187752519
+"B-bad","E-Preemption - No Deference","E-Preemption","No Deference","late_wrong_rate","lower",500,-0.002488,-0.0052442,0.0000401000000000004
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_regret","lower",500,-0.712069999999999,-0.813814249999999,-0.615638249999999
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","early_wrong_rate","lower",500,-0.0875973333333333,-0.0984493333333333,-0.0763039333333333
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_correct_rate","higher",500,0.0299818947368421,0.0258200736842105,0.0341868315789474
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_payoff","higher",500,0.00146610526315789,0.00123029473684211,0.00169515789473684
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","post_b_pulls","mechanism",500,-14.2414,-16.297315,-12.325865
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","final_truth_mass","higher",500,0.00685748498106861,0.00424406838745017,0.00950022326485392
+"B-bad","E-Total Evidence - No Deference","E-Total Evidence","No Deference","late_wrong_rate","lower",500,-0.00664,-0.0093601,-0.0039479
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_regret","lower",500,-0.409719999999999,-0.479755499999999,-0.340099499999999
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","early_wrong_rate","lower",500,-0.048368,-0.0548248666666667,-0.0419224
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_correct_rate","higher",500,0.0172513684210526,0.0143717473684211,0.0201499473684211
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_payoff","higher",500,0.000832421052631578,0.000655989473684209,0.00102105263157895
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","post_b_pulls","mechanism",500,-8.1944,-9.61983,-6.81192
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","final_truth_mass","higher",500,0.0036550950641316,0.00156405159447863,0.00575412035434572
+"B-bad","E-Total Evidence - E-Preemption","E-Total Evidence","E-Preemption","late_wrong_rate","lower",500,-0.004152,-0.0063841,-0.0019078

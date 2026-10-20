@@ -1,0 +1,5 @@
+"world","message_status","n_pairs","te_minus_preemption_delay","ci_low","ci_high","te_not_recovered_rate","preemption_not_recovered_rate"
+"B-good","Incorrect",38,-47.8421052631579,-76.9486842105263,-21.1842105263158,0.0263157894736842,0.0263157894736842
+"B-good","Correct",162,-3.14814814814815,-6.46944444444444,-0.543055555555558,0,0
+"B-bad","Incorrect",30,-6.5,-20.9666666666667,7.46749999999999,0,0
+"B-bad","Correct",170,-10.6588235294118,-14.8647058823529,-6.70573529411765,0,0

@@ -1,0 +1,24 @@
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+status=READY TO SHARE
+main_runs=1000
+trajectory_rows=200400
+peer_pairs=1000
+B_good_expert_truth_25=0.693548092679063
+B_good_lay_truth_25=0.641058702826254
+B_good_gap=0.0524893898528095
+B_bad_expert_truth_25=0.699339247901092
+B_bad_lay_truth_25=0.637830771567632
+B_bad_gap=0.0615084763334596
+B_good_regret=2.10045
+B_bad_regret=3.29785
+B_good_late_correct=0.9968
+B_bad_late_correct=0.95268
+peer_any_path_difference_share=1
+checks_passed=36/36 

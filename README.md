@@ -1,5 +1,18 @@
 # ABM: Preemption vs. Total Evidence in Epistemic Deference
 
+## Verification and reproduction
+
+The `2026-10-19` full reproduction of upstream scientific baseline `e105f6217db78222e72633a663871c070d630ed3` completed successfully. All 23 core model/data files retain their upstream bytes. The original 12 native batches were freshly regenerated: 132,600 runs and 1,932,600 exported rows, including 3,600 trajectory runs. R analyses used these new raw outputs.
+
+See the [completed reproduction evidence](verification/full_reproduction_2026_10_19/README.md), [independent full-run postflight](verification/full_reproduction_2026_10_19/postflight/full_reproduction_verification.json), [commands](REPRODUCIBILITY.md), and [中文验收结果](VERIFICATION.zh.md). The complete raw ZIP is verified and stored locally; [batch hashes and availability](verification/full_reproduction_2026_10_19/raw_batches.json) explicitly record that it has no remote download URL.
+
+```text
+python run_all.py verify
+python run_all.py reproduce --threads 4 --output-root results/my_fresh_reproduction
+```
+
+`verify`, bounded native `smoke`, and complete `reproduce` have distinct coverage. Historical root-level version files remain outside the core Experiments 0–2 suite.
+
 This repository develops a series of NetLogo agent-based models (ABMs) comparing **Preemption** and **Total Evidence** as strategies of epistemic deference.
 
 The current core project contains three experiments:
@@ -103,6 +116,8 @@ Paired difference in post-intervention regret:
 
 Negative values favor Total Evidence. When the expert packet points in the wrong direction, retained local evidence also accelerates recovery. In the trajectory sample, median recovery delay is 9 versus 45 rounds in B-good and 21 versus 34 rounds in B-bad for E-Total Evidence and E-Preemption, respectively.
 
+These Experiment 1 medians use the original 20-round average-correct-choice criterion and are computed among recovered trajectories; the cited incorrect-expert sample has no censored runs. Experiment 2 uses a different sustained-recovery criterion, so its recovery delays are not directly comparable. The [analysis notes](scripts/analysis/README.md) document both definitions and the required raw inputs.
+
 The robust conclusion concerns finite-horizon action loss. The model does not show that Total Evidence produces a more accurate final credence in every world.
 
 ## Experiment 2 — Opaque Credence Deference
@@ -166,15 +181,18 @@ The current conclusions depend on several strong assumptions:
 
 The models do not yet address multiple experts, disagreement aggregation, unknown reliability, evidence overlap, different priors, deception, or unequal inferential competence.
 
+Here Bayesian updating means applying the specified likelihood rule to received experiment outcomes. Agents do not additionally infer hidden evidence from a neighbor's choice of arm. Their beliefs should therefore not be identified with the full posterior over every visible social signal, and Thompson sampling is not claimed to be a Bayes-optimal decision rule. The reported policy comparisons concern this explicitly specified learning algorithm.
+
 An inferential-structure experiment is not part of the current core sequence: because the expert's advantage is defined only by additional research opportunities, the expert and laypeople currently share the same inferential structure.
 
 ## Validation
 
-- Experiment 0: 1,000 main runs; 36/36 model and analysis checks passed.
-- Experiment 1: 3,000 main runs; 33/33 pre-specified checks passed.
-- Experiment 2: 3,000 main runs; 13/13 calibration checks and 21/21 formal/model checks passed.
+- All 12 original native batches freshly completed: 132,600 runs; 1,932,600 exported rows. Main policy experiments account for 7,000 of those runs.
+- Independent comparison covers 9,000 published main/peer endpoints and 601,200 paired trajectory states. Maximum absolute comparison errors are 7.1054274e-15 and 7.1054274e-15, respectively.
+- Fresh R analyses passed the original 36 Experiment 0, 33 Experiment 1, 21 Experiment 2, and 13 calibration checks. The 13 reconstructed published CSVs have maximum numerical difference 0.
+- [Full acceptance receipt and method scope](verification/full_reproduction_2026_10_19/index.json).
 
-Policy comparisons use matched world × seed blocks. Reported intervals describe uncertainty from finite simulation repetitions; they are not sampling-error estimates for a real-world population.
+Policy comparisons use matched world × seed blocks. Students, ticks and repeated conditions within a block are not independent samples. Intervals describe finite simulation uncertainty, not a real-world student population.
 
 ## Repository Files
 
@@ -184,7 +202,7 @@ The release files are organized by experiment:
 - **Experiment data:** [Experiment 0](data/experiment_0/), [Experiment 1](data/experiment_1/), and [Experiment 2](data/experiment_2/). These folders contain the complete final-run output, chart-ready trajectory data, result tables, and validation checks.
 - **Analysis figures:** [Experiment 0](figures/experiment_0/), [Experiment 1](figures/experiment_1/), and [Experiment 2](figures/experiment_2/).
 
-The full tick-by-tick raw trajectory exports are not stored in the repository because the Experiment 1 and Experiment 2 files exceed GitHub's standard 100 MB file limit. The smaller `trajectory_summary.csv` and `trajectory_chart_data.csv` files contain the time-series data used for the figures. The complete raw trajectories can be regenerated with the BehaviorSpace experiments included in the NetLogo models.
+The full tick-by-tick raw trajectory exports remain outside the Git tree. This completed rerun preserves every native raw CSV, diagnostic state, R output, figure and log in a verified local ZIP. [Raw batch hashes, sizes and local-only archive identity](verification/full_reproduction_2026_10_19/raw_batches.json) are published with the [complete ZIP member manifest](verification/full_reproduction_2026_10_19/archive_member_manifest.json). No remote download URL is claimed. The smaller public trajectory summaries remain in `data/`; full raw data can be regenerated with the documented `reproduce` command.
 
 ## Selected Analysis Figures
 

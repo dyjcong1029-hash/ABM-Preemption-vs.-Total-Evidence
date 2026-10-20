@@ -1,0 +1,1896 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "run_root": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19",
+  "started_utc": "2026-10-19T20:25:45.902898+00:00",
+  "scope": "Independent postflight of newly regenerated full native grids, run-key endpoints, every-tick regressions and 13 R outputs",
+  "runs_launched": 0,
+  "scientific_sources_modified": false,
+  "numeric_tolerance_raw": 1e-10,
+  "numeric_tolerance_analysis": 0.0,
+  "batches": [
+    {
+      "experiment": "experiment-2-calibration-estimate-good",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv",
+      "sha256": "ae3d3b1f7048097eae6bf0414cb15de3f984fd59f32070faadfe56e3dfa00d20",
+      "status": "passed",
+      "runs": 50000,
+      "rows": 50000,
+      "final_tick": 25,
+      "trajectory": false,
+      "maximum_identity_error": 0.0,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "calibration-expert-q",
+        "calibration-message-bin",
+        "expert-total-pulls"
+      ]
+    },
+    {
+      "experiment": "experiment-2-calibration-estimate-bad",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv",
+      "sha256": "425fddcb1b3216fc137e2b52fb9c81159d30bf789d846860df4b8b9bd47b3013",
+      "status": "passed",
+      "runs": 50000,
+      "rows": 50000,
+      "final_tick": 25,
+      "trajectory": false,
+      "maximum_identity_error": 0.0,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "calibration-expert-q",
+        "calibration-message-bin",
+        "expert-total-pulls"
+      ]
+    },
+    {
+      "experiment": "experiment-2-calibration-heldout-good",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv",
+      "sha256": "c28523d3cd7776f774ef0d23de208cd3dd001dad3030940c993c94810b964375",
+      "status": "passed",
+      "runs": 10000,
+      "rows": 10000,
+      "final_tick": 25,
+      "trajectory": false,
+      "maximum_identity_error": 0.0,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "calibration-expert-q",
+        "calibration-message-bin",
+        "expert-total-pulls"
+      ]
+    },
+    {
+      "experiment": "experiment-2-calibration-heldout-bad",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv",
+      "sha256": "707d69967505e85df08abb5dbe3e21f0aeea903d064749d59e495e6fb0887b8e",
+      "status": "passed",
+      "runs": 10000,
+      "rows": 10000,
+      "final_tick": 25,
+      "trajectory": false,
+      "maximum_identity_error": 0.0,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "calibration-expert-q",
+        "calibration-message-bin",
+        "expert-total-pulls"
+      ]
+    },
+    {
+      "experiment": "experiment-0-bandit-main-final",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv",
+      "sha256": "cd0ff04a1537cdc1c7779990d90f61cc4b28bb85c96b5945c884664c218e9cfb",
+      "status": "passed",
+      "runs": 1000,
+      "rows": 1000,
+      "final_tick": 500,
+      "trajectory": false,
+      "maximum_identity_error": 1.8118839761882555e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "expert-total-pulls",
+        "total-lay-pulls",
+        "expert-truth-mass-at-25",
+        "expert-recommendation-score-at-25",
+        "expert-informative-observations-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-posterior-truth-mass",
+        "cumulative-lay-correct-choice-rate",
+        "mean-lay-cumulative-regret",
+        "mean-lay-realized-payoff",
+        "mean-lay-b-pulls",
+        "mean-lay-informative-observations",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "run-finite-horizon-persistent-error?",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-thompson-correct-rate",
+        "expert-cumulative-regret",
+        "expert-b-pull-rate",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "expert-a-reward-rate",
+        "expert-b-reward-rate",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "duplicate-message-count",
+        "maximum-belief-identity-error",
+        "maximum-regret-identity-error",
+        "network-structure-valid?",
+        "message-accounting-valid?",
+        "evidence-provenance-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-0-bandit-peer-check",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv",
+      "sha256": "33df1cc975827a27bd0676e5b068ad384380f08babfd8b50f4c95252ece53463",
+      "status": "passed",
+      "runs": 2000,
+      "rows": 2000,
+      "final_tick": 500,
+      "trajectory": false,
+      "maximum_identity_error": 2.0605739337042905e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "expert-total-pulls",
+        "total-lay-pulls",
+        "expert-truth-mass-at-25",
+        "expert-recommendation-score-at-25",
+        "expert-informative-observations-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-posterior-truth-mass",
+        "cumulative-lay-correct-choice-rate",
+        "mean-lay-cumulative-regret",
+        "mean-lay-realized-payoff",
+        "mean-lay-b-pulls",
+        "mean-lay-informative-observations",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "run-finite-horizon-persistent-error?",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-thompson-correct-rate",
+        "expert-cumulative-regret",
+        "expert-b-pull-rate",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "expert-a-reward-rate",
+        "expert-b-reward-rate",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "duplicate-message-count",
+        "maximum-belief-identity-error",
+        "maximum-regret-identity-error",
+        "network-structure-valid?",
+        "message-accounting-valid?",
+        "evidence-provenance-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-0-bandit-trajectories",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv",
+      "sha256": "f1453a1f312d0ca1e2531327037167f631edaf0d950f0a3ffba2bdfe27672fe0",
+      "status": "passed",
+      "runs": 400,
+      "rows": 200400,
+      "final_tick": 500,
+      "trajectory": true,
+      "maximum_identity_error": 1.2789769243681803e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "current-lay-correct-choice-rate",
+        "current-lay-b-share",
+        "mean-lay-q",
+        "mean-lay-posterior-truth-mass",
+        "lay-q-dispersion",
+        "mean-lay-cumulative-regret",
+        "mean-lay-b-pulls",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "maximum-belief-identity-error",
+        "message-accounting-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-1-evidence-main-final",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv",
+      "sha256": "ac74aba6e99c3f8e6cbab68df1e355c0f05d0ad82511686a340b485d885843d8",
+      "status": "passed",
+      "runs": 3000,
+      "rows": 3000,
+      "final_tick": 500,
+      "trajectory": false,
+      "maximum_identity_error": 1.8829382497642655e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "evidence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "expert-total-pulls",
+        "total-lay-pulls",
+        "expert-truth-mass-at-25",
+        "expert-recommendation-score-at-25",
+        "expert-informative-observations-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-cumulative-regret-at-25",
+        "mean-lay-correct-pulls-at-25",
+        "mean-lay-b-pulls-at-25",
+        "mean-lay-reward-at-25",
+        "expert-packet-size-at-intervention",
+        "expert-packet-informative-count",
+        "expert-packet-llr-from-raw",
+        "expert-packet-unique?",
+        "inbox-empty-at-intervention?",
+        "expert-local-overlap-count",
+        "broadcast-count",
+        "mean-lay-truth-mass-post-intervention",
+        "mean-lay-recommendation-score-post-intervention",
+        "lay-q-dispersion-post-intervention",
+        "mean-lay-decision-evidence-post-intervention",
+        "mean-lay-archive-size-post-intervention",
+        "mean-lay-active-evidence-items-post-intervention",
+        "maximum-intervention-identity-error",
+        "maximum-expert-packet-llr-error",
+        "mean-lay-post-intervention-regret",
+        "post-intervention-correct-choice-rate",
+        "post-intervention-realized-payoff",
+        "mean-lay-post-intervention-b-pulls",
+        "early-window-correct-choice-rate",
+        "early-window-wrong-choice-rate",
+        "early-window-b-share",
+        "mean-lay-posterior-truth-mass",
+        "cumulative-lay-correct-choice-rate",
+        "mean-lay-cumulative-regret",
+        "mean-lay-realized-payoff",
+        "mean-lay-b-pulls",
+        "mean-lay-informative-observations",
+        "mean-lay-active-evidence-items",
+        "mean-lay-total-archive-size",
+        "mean-expert-evidence-items-received",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "run-finite-horizon-persistent-error?",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-thompson-correct-rate",
+        "expert-cumulative-regret",
+        "expert-b-pull-rate",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "expert-a-reward-rate",
+        "expert-b-reward-rate",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "duplicate-message-count",
+        "maximum-belief-identity-error",
+        "maximum-regret-identity-error",
+        "maximum-decision-decomposition-error",
+        "network-structure-valid?",
+        "message-accounting-valid?",
+        "evidence-provenance-valid?",
+        "expert-evidence-provenance-valid?",
+        "expert-packet-valid?",
+        "intervention-structure-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-1-evidence-trajectories",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv",
+      "sha256": "07fe97b359934978236bb19bf16793a8f1c8056649288b51f2c0431decb23943",
+      "status": "passed",
+      "runs": 1200,
+      "rows": 601200,
+      "final_tick": 500,
+      "trajectory": true,
+      "maximum_identity_error": 1.3500311979441904e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "evidence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "current-lay-correct-choice-rate",
+        "current-lay-b-share",
+        "current-lay-wrong-posterior-share",
+        "mean-lay-q",
+        "mean-lay-posterior-truth-mass",
+        "lay-q-dispersion",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-b-pulls",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-total-pulls",
+        "maximum-belief-identity-error",
+        "maximum-decision-decomposition-error",
+        "message-accounting-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-2-opaque-main-final",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv",
+      "sha256": "5b94c2670aac487e8851c1cdb9d681b399e181d6015f2f51dc2c3bc3ee56391b",
+      "status": "passed",
+      "runs": 3000,
+      "rows": 3000,
+      "final_tick": 500,
+      "trajectory": false,
+      "maximum_identity_error": 2.0605739337042905e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "report-table-version",
+        "expert-total-pulls",
+        "total-lay-pulls",
+        "expert-truth-mass-at-25",
+        "expert-recommendation-score-at-25",
+        "expert-informative-observations-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-llr-at-25",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-cumulative-regret-at-25",
+        "private-expert-q-at-intervention",
+        "private-expert-llr-at-intervention",
+        "broadcast-message-bin",
+        "broadcast-message-midpoint",
+        "broadcast-message-llr",
+        "broadcast-message-mode",
+        "expert-report-direction-accuracy",
+        "credence-message-count",
+        "expert-raw-items-transmitted",
+        "inbox-empty-at-intervention?",
+        "maximum-message-bin-copy-error",
+        "maximum-message-llr-copy-error",
+        "maximum-immediate-policy-formula-error",
+        "mean-received-message-bin-post-intervention",
+        "received-bin-dispersion-post-intervention",
+        "mean-received-message-llr-post-intervention",
+        "received-message-llr-dispersion-post-intervention",
+        "mean-lay-truth-mass-post-intervention",
+        "lay-q-dispersion-post-intervention",
+        "mean-lay-local-archive-size-post-intervention",
+        "mean-lay-active-decision-inputs-post-intervention",
+        "mean-lay-post-intervention-regret",
+        "early-window-wrong-choice-rate",
+        "post-intervention-correct-choice-rate",
+        "final-window-correct-choice-rate",
+        "final-window-wrong-choice-rate",
+        "mean-lay-final-brier-score",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-q",
+        "mean-lay-cumulative-regret",
+        "mean-lay-realized-payoff",
+        "post-intervention-realized-payoff",
+        "mean-lay-b-pulls",
+        "maximum-local-ledger-identity-error",
+        "maximum-regret-identity-error",
+        "maximum-decision-decomposition-error",
+        "network-structure-valid?",
+        "message-accounting-valid?",
+        "evidence-provenance-valid?",
+        "credence-payload-valid?",
+        "credence-intervention-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-2-opaque-trajectories",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv",
+      "sha256": "cd07e381d5cb0bc2540bf21f1789bc95e8c856f823f292f3495f02b67d226f65",
+      "status": "passed",
+      "runs": 1200,
+      "rows": 601200,
+      "final_tick": 500,
+      "trajectory": true,
+      "maximum_identity_error": 1.3500311979441904e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "report-table-version",
+        "broadcast-message-bin",
+        "broadcast-message-llr",
+        "private-expert-q-at-intervention",
+        "current-lay-correct-choice-rate",
+        "current-lay-b-share",
+        "mean-lay-q",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-final-brier-score",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "maximum-local-ledger-identity-error",
+        "maximum-decision-decomposition-error",
+        "message-accounting-valid?"
+      ]
+    },
+    {
+      "experiment": "experiment-2-exact-regression-trajectories",
+      "file": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv",
+      "sha256": "a9fe960fc4fafd59411bf07995c18108f7bc43e9c3408e33f295c72154f710ec",
+      "status": "passed",
+      "runs": 800,
+      "rows": 400800,
+      "final_tick": 500,
+      "trajectory": true,
+      "maximum_identity_error": 1.4210854715202004e-13,
+      "columns": [
+        "[run number]",
+        "run-seed",
+        "world-mode",
+        "peer-sharing?",
+        "credence-policy",
+        "[step]",
+        "actual-seed",
+        "hidden-world",
+        "ticks",
+        "report-table-version",
+        "broadcast-message-bin",
+        "broadcast-message-llr",
+        "private-expert-q-at-intervention",
+        "current-lay-correct-choice-rate",
+        "current-lay-b-share",
+        "mean-lay-q",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-final-brier-score",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "maximum-local-ledger-identity-error",
+        "maximum-decision-decomposition-error",
+        "message-accounting-valid?"
+      ]
+    }
+  ],
+  "endpoint_comparisons": [
+    {
+      "comparison": "E0/raw_main_final.csv versus pinned published runs",
+      "endpoints": 1000,
+      "field_comparisons": 42000,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "cumulative-lay-correct-choice-rate",
+        "duplicate-message-count",
+        "evidence-provenance-valid?",
+        "expert-a-reward-rate",
+        "expert-b-pull-rate",
+        "expert-b-reward-rate",
+        "expert-cumulative-regret",
+        "expert-informative-observations-at-25",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-recommendation-score-at-25",
+        "expert-thompson-correct-rate",
+        "expert-total-pulls",
+        "expert-truth-mass-at-25",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "hidden-world",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "maximum-belief-identity-error",
+        "maximum-regret-identity-error",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-informative-observations",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-realized-payoff",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "message-accounting-valid?",
+        "network-structure-valid?",
+        "peer-sharing?",
+        "run-finite-horizon-persistent-error?",
+        "run-seed",
+        "ticks",
+        "total-lay-pulls",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E0/raw_peer_check.csv versus pinned published runs",
+      "endpoints": 2000,
+      "field_comparisons": 84000,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "cumulative-lay-correct-choice-rate",
+        "duplicate-message-count",
+        "evidence-provenance-valid?",
+        "expert-a-reward-rate",
+        "expert-b-pull-rate",
+        "expert-b-reward-rate",
+        "expert-cumulative-regret",
+        "expert-informative-observations-at-25",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-recommendation-score-at-25",
+        "expert-thompson-correct-rate",
+        "expert-total-pulls",
+        "expert-truth-mass-at-25",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "hidden-world",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "maximum-belief-identity-error",
+        "maximum-regret-identity-error",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-informative-observations",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-realized-payoff",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "message-accounting-valid?",
+        "network-structure-valid?",
+        "peer-sharing?",
+        "run-finite-horizon-persistent-error?",
+        "run-seed",
+        "ticks",
+        "total-lay-pulls",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E1/raw_main_final.csv versus pinned published runs",
+      "endpoints": 3000,
+      "field_comparisons": 225000,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "broadcast-count",
+        "cumulative-lay-correct-choice-rate",
+        "duplicate-message-count",
+        "early-window-b-share",
+        "early-window-correct-choice-rate",
+        "early-window-wrong-choice-rate",
+        "evidence-provenance-valid?",
+        "expert-a-reward-rate",
+        "expert-b-pull-rate",
+        "expert-b-reward-rate",
+        "expert-cumulative-regret",
+        "expert-evidence-provenance-valid?",
+        "expert-informative-observations-at-25",
+        "expert-local-overlap-count",
+        "expert-packet-informative-count",
+        "expert-packet-llr-from-raw",
+        "expert-packet-size-at-intervention",
+        "expert-packet-unique?",
+        "expert-packet-valid?",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-recommendation-score-at-25",
+        "expert-thompson-correct-rate",
+        "expert-total-pulls",
+        "expert-truth-mass-at-25",
+        "final-window-wrong-choice-rate",
+        "finite-horizon-error-persistence-rate",
+        "hidden-world",
+        "inbox-empty-at-intervention?",
+        "intervention-structure-valid?",
+        "lay-a-reward-rate",
+        "lay-b-reward-rate",
+        "lay-q-dispersion-post-intervention",
+        "maximum-belief-identity-error",
+        "maximum-decision-decomposition-error",
+        "maximum-expert-packet-llr-error",
+        "maximum-intervention-identity-error",
+        "maximum-regret-identity-error",
+        "mean-expert-evidence-items-received",
+        "mean-lay-active-evidence-items",
+        "mean-lay-active-evidence-items-post-intervention",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-archive-size-post-intervention",
+        "mean-lay-b-pulls",
+        "mean-lay-b-pulls-at-25",
+        "mean-lay-correct-pulls-at-25",
+        "mean-lay-cumulative-regret",
+        "mean-lay-cumulative-regret-at-25",
+        "mean-lay-decision-evidence-post-intervention",
+        "mean-lay-informative-observations",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-post-intervention-b-pulls",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-realized-payoff",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-recommendation-score-post-intervention",
+        "mean-lay-reward-at-25",
+        "mean-lay-total-archive-size",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-truth-mass-post-intervention",
+        "mean-peer-messages-received",
+        "mean-unique-evidence-count",
+        "message-accounting-valid?",
+        "network-structure-valid?",
+        "peer-sharing?",
+        "post-intervention-correct-choice-rate",
+        "post-intervention-realized-payoff",
+        "run-finite-horizon-persistent-error?",
+        "run-seed",
+        "ticks",
+        "total-lay-pulls",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E2/raw_main_final.csv versus pinned published runs",
+      "endpoints": 3000,
+      "field_comparisons": 180000,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "broadcast-message-bin",
+        "broadcast-message-llr",
+        "broadcast-message-midpoint",
+        "broadcast-message-mode",
+        "credence-intervention-valid?",
+        "credence-message-count",
+        "credence-payload-valid?",
+        "early-window-wrong-choice-rate",
+        "evidence-provenance-valid?",
+        "expert-informative-observations-at-25",
+        "expert-raw-items-transmitted",
+        "expert-recommendation-score-at-25",
+        "expert-report-direction-accuracy",
+        "expert-total-pulls",
+        "expert-truth-mass-at-25",
+        "final-window-correct-choice-rate",
+        "final-window-wrong-choice-rate",
+        "hidden-world",
+        "inbox-empty-at-intervention?",
+        "lay-q-dispersion-post-intervention",
+        "maximum-decision-decomposition-error",
+        "maximum-immediate-policy-formula-error",
+        "maximum-local-ledger-identity-error",
+        "maximum-message-bin-copy-error",
+        "maximum-message-llr-copy-error",
+        "maximum-regret-identity-error",
+        "mean-lay-active-decision-inputs-post-intervention",
+        "mean-lay-archive-size-at-25",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-cumulative-regret-at-25",
+        "mean-lay-final-brier-score",
+        "mean-lay-informative-observations-at-25",
+        "mean-lay-llr-at-25",
+        "mean-lay-local-archive-size-post-intervention",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-q",
+        "mean-lay-realized-payoff",
+        "mean-lay-recommendation-score-at-25",
+        "mean-lay-truth-mass-at-25",
+        "mean-lay-truth-mass-post-intervention",
+        "mean-received-message-bin-post-intervention",
+        "mean-received-message-llr-post-intervention",
+        "message-accounting-valid?",
+        "network-structure-valid?",
+        "peer-sharing?",
+        "post-intervention-correct-choice-rate",
+        "post-intervention-realized-payoff",
+        "private-expert-llr-at-intervention",
+        "private-expert-q-at-intervention",
+        "received-bin-dispersion-post-intervention",
+        "received-message-llr-dispersion-post-intervention",
+        "report-table-version",
+        "run-seed",
+        "ticks",
+        "total-lay-pulls",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E0 trajectory tick 500 versus newly generated main endpoints",
+      "endpoints": 400,
+      "field_comparisons": 5600,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "hidden-world",
+        "maximum-belief-identity-error",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-posterior-truth-mass",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E1 trajectory tick 500 versus newly generated main endpoints",
+      "endpoints": 1200,
+      "field_comparisons": 20400,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "expert-posterior-truth-mass",
+        "expert-recommendation-accuracy",
+        "expert-total-pulls",
+        "hidden-world",
+        "maximum-belief-identity-error",
+        "maximum-decision-decomposition-error",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E2 trajectory tick 500 versus newly generated main endpoints",
+      "endpoints": 1200,
+      "field_comparisons": 24000,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "broadcast-message-bin",
+        "broadcast-message-llr",
+        "expert-total-pulls",
+        "hidden-world",
+        "maximum-decision-decomposition-error",
+        "maximum-local-ledger-identity-error",
+        "mean-lay-cumulative-regret",
+        "mean-lay-final-brier-score",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-q",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "private-expert-q-at-intervention",
+        "report-table-version",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    },
+    {
+      "comparison": "E2 exact trajectory tick 500 versus newly generated E1 main endpoints",
+      "endpoints": 800,
+      "field_comparisons": 11200,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "hidden-world",
+        "maximum-decision-decomposition-error",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 7.105427357601002e-15,
+      "ignored_columns": [
+        "[run number]",
+        "evidence-policy",
+        "credence-policy"
+      ],
+      "policy_keys_checked_separately": true
+    }
+  ],
+  "trajectory_regressions": [
+    {
+      "comparison": "E0 baseline versus E1 No Deference, all 200 seeds/world",
+      "paired_rows": 200400,
+      "field_comparisons": 3607200,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "current-lay-b-share",
+        "current-lay-correct-choice-rate",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "hidden-world",
+        "lay-q-dispersion",
+        "maximum-belief-identity-error",
+        "mean-lay-b-pulls",
+        "mean-lay-cumulative-regret",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-q",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 0.0,
+      "alignment": "seed, world, sharing, mapped policy, tick; independent of native run order",
+      "sqlite_cache_limit_mib": 64
+    },
+    {
+      "comparison": "E1 raw evidence versus E2 exact regression, all 200 seeds/world/policy",
+      "paired_rows": 400800,
+      "field_comparisons": 6813600,
+      "columns": [
+        "[step]",
+        "actual-seed",
+        "current-lay-b-share",
+        "current-lay-correct-choice-rate",
+        "expert-posterior-truth-mass",
+        "expert-total-pulls",
+        "hidden-world",
+        "maximum-decision-decomposition-error",
+        "mean-lay-cumulative-regret",
+        "mean-lay-post-intervention-regret",
+        "mean-lay-posterior-truth-mass",
+        "mean-lay-q",
+        "message-accounting-valid?",
+        "peer-sharing?",
+        "run-seed",
+        "ticks",
+        "world-mode"
+      ],
+      "maximum_absolute_error": 7.105427357601002e-15,
+      "alignment": "seed, world, sharing, mapped policy, tick; independent of native run order",
+      "sqlite_cache_limit_mib": 64
+    }
+  ],
+  "source_integrity": {
+    "upstream": "e105f6217db78222e72633a663871c070d630ed3",
+    "pipeline_snapshot_files": 26,
+    "pinned_model_and_data_files": 23,
+    "all_hashes_unchanged": true
+  },
+  "totals": {
+    "batches": 12,
+    "runs": 132600,
+    "rows": 1932600,
+    "trajectory_runs": 3600,
+    "trajectory_rows": 1803600
+  },
+  "independent_calibration": {
+    "status": "passed",
+    "raw_runs_recounted": 120000,
+    "source_counts": {
+      "estimate_good": {
+        "rows": 50000,
+        "counts_by_bin": [
+          496,
+          2968,
+          2727,
+          3132,
+          3304,
+          5356,
+          3472,
+          3290,
+          6427,
+          18828
+        ],
+        "q_minimum": 0.038763882555285664,
+        "q_maximum": 0.9999759546975565,
+        "seed_minimum": 1000001,
+        "seed_maximum": 1050000,
+        "all_q_bins_independently_checked": true
+      },
+      "estimate_bad": {
+        "rows": 50000,
+        "counts_by_bin": [
+          5920,
+          15841,
+          7986,
+          6647,
+          4609,
+          4275,
+          1674,
+          1156,
+          1172,
+          720
+        ],
+        "q_minimum": 0.026286220877142923,
+        "q_maximum": 0.9963840547280801,
+        "seed_minimum": 1100001,
+        "seed_maximum": 1150000,
+        "all_q_bins_independently_checked": true
+      },
+      "heldout_good": {
+        "rows": 10000,
+        "counts_by_bin": [
+          91,
+          607,
+          515,
+          626,
+          674,
+          1015,
+          693,
+          695,
+          1288,
+          3796
+        ],
+        "q_minimum": 0.04697344025176312,
+        "q_maximum": 0.9999759546975565,
+        "seed_minimum": 2000001,
+        "seed_maximum": 2010000,
+        "all_q_bins_independently_checked": true
+      },
+      "heldout_bad": {
+        "rows": 10000,
+        "counts_by_bin": [
+          1176,
+          3094,
+          1606,
+          1308,
+          941,
+          863,
+          373,
+          241,
+          260,
+          138
+        ],
+        "q_minimum": 0.03194102356087177,
+        "q_maximum": 0.9919667203630474,
+        "seed_minimum": 2100001,
+        "seed_maximum": 2110000,
+        "all_q_bins_independently_checked": true
+      }
+    },
+    "derived_table_comparisons": [
+      {
+        "table": "frozen_credence_message_table.csv",
+        "categories": 10,
+        "field_comparisons": 130,
+        "maximum_absolute_error": 4.6629367034256575e-15,
+        "integer_counts_exact": true,
+        "floating_tolerance": 1e-12
+      },
+      {
+        "table": "heldout_calibration_audit.csv",
+        "categories": 10,
+        "field_comparisons": 110,
+        "maximum_absolute_error": 4.440892098500626e-16,
+        "integer_counts_exact": true,
+        "floating_tolerance": 1e-12
+      }
+    ],
+    "independent_original_checks": {
+      "estimate_rows_per_world_50000": true,
+      "heldout_rows_per_world_10000": true,
+      "all_expert_runs_have_125_pulls": true,
+      "calibration_seed_namespaces_disjoint": true,
+      "minimum_estimate_cell_count_at_least_200": true,
+      "smoothed_good_probabilities_sum_to_one": true,
+      "smoothed_bad_probabilities_sum_to_one": true,
+      "all_message_lambdas_finite": true,
+      "message_lambda_monotone_in_bin": true,
+      "heldout_total_variation_good_at_most_003": true,
+      "heldout_total_variation_bad_at_most_003": true,
+      "heldout_max_bin_probability_gap_at_most_002": true,
+      "heldout_weighted_calibration_gap_at_most_003": true
+    },
+    "heldout_total_variation_good": 0.009679632036796292,
+    "heldout_total_variation_bad": 0.01094174582541746,
+    "heldout_maximum_bin_probability_gap": 0.007398320167983197,
+    "heldout_weighted_calibration_gap": 0.00739838274390532,
+    "method": "q -> floor(10q) category, exact counts, Jeffreys .5 probabilities, independent log ratio/SE/posterior and Wilson interval"
+  },
+  "analysis": {
+    "status": "passed",
+    "published_csv_comparisons": [
+      {
+        "folder": "calibration",
+        "file": "calibration_validation_checks.csv",
+        "rows": 13,
+        "field_comparisons": 39,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "calibration",
+        "file": "frozen_credence_message_table.csv",
+        "rows": 10,
+        "field_comparisons": 160,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": [
+          "table_version"
+        ]
+      },
+      {
+        "folder": "calibration",
+        "file": "heldout_calibration_audit.csv",
+        "rows": 10,
+        "field_comparisons": 110,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_0",
+        "file": "trajectory_summary.csv",
+        "rows": 1002,
+        "field_comparisons": 27054,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_0",
+        "file": "validation_checks.csv",
+        "rows": 36,
+        "field_comparisons": 144,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_1",
+        "file": "endpoint_summary.csv",
+        "rows": 6,
+        "field_comparisons": 162,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_1",
+        "file": "paired_contrasts.csv",
+        "rows": 42,
+        "field_comparisons": 420,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_1",
+        "file": "trajectory_chart_data.csv",
+        "rows": 612,
+        "field_comparisons": 6120,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_1",
+        "file": "validation_checks.csv",
+        "rows": 33,
+        "field_comparisons": 99,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_2",
+        "file": "endpoint_summary.csv",
+        "rows": 30,
+        "field_comparisons": 210,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_2",
+        "file": "paired_policy_effects.csv",
+        "rows": 30,
+        "field_comparisons": 270,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_2",
+        "file": "trajectory_chart_data.csv",
+        "rows": 612,
+        "field_comparisons": 3672,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      },
+      {
+        "folder": "experiment_2",
+        "file": "validation_checks.csv",
+        "rows": 21,
+        "field_comparisons": 63,
+        "maximum_absolute_error": 0.0,
+        "ignored_metadata_columns": []
+      }
+    ],
+    "new_raw_inputs": 12,
+    "deliberate_published_inputs": 2,
+    "original_checks": {
+      "calibration": 13,
+      "0": 36,
+      "1": null,
+      "1-figures": 33,
+      "2": 21
+    },
+    "checked_stage_commands": [
+      {
+        "stage": "calibration",
+        "rscript": "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe",
+        "script": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\calibrate_opaque_credence.R",
+        "input_paths": [
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv"
+        ],
+        "output_path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\calibration"
+      },
+      {
+        "stage": "0",
+        "rscript": "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe",
+        "script": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_0_bandit.R",
+        "input_paths": [
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv"
+        ],
+        "output_path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_0"
+      },
+      {
+        "stage": "1",
+        "rscript": "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe",
+        "script": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_1_evidence.R",
+        "input_paths": [
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv"
+        ],
+        "output_path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1"
+      },
+      {
+        "stage": "1-figures",
+        "rscript": "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe",
+        "script": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\make_static_figures.R",
+        "input_paths": [],
+        "output_path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1"
+      },
+      {
+        "stage": "2",
+        "rscript": "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe",
+        "script": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_2_opaque_credence.R",
+        "input_paths": [
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\frozen_credence_message_table.csv",
+          "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\heldout_calibration_audit.csv"
+        ],
+        "output_path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2"
+      }
+    ],
+    "rscript_version": "Rscript (R) version 4.5.3 (2026-03-11)",
+    "metadata_exception": "Only frozen table_version may differ (prehash-v1 versus published hash label)."
+  },
+  "verifier": {
+    "path": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\verify_full_reproduction.py",
+    "sha256": "b8fa0cd7454bb8e80283e9f5a3e8c4573beae98a9718457c6a970885dfabf38f",
+    "separate_postflight_source": true,
+    "not_in_upstream_pipeline_snapshot": true
+  },
+  "input_files": {
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\pipeline.json": {
+      "sha256": "933ba20b808b027d9f0cdbe77d4830cfecfaa9ca2e20331c1bb112ac32bd3354",
+      "bytes": 18799,
+      "mtime_ns": 1792441536835324000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\00_model.log": {
+      "sha256": "3776434c0e8cff97fc8ed4fc622b7108592ec580ad59844e6437431ad9f77e7c",
+      "bytes": 179,
+      "mtime_ns": 1792433781740040200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\01_verifier_mutations.log": {
+      "sha256": "3157f3a8dffcca943bad7187b8ccf122f9bda171b6b34a22215fe3139de6fb23",
+      "bytes": 1760,
+      "mtime_ns": 1792433783962389200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\02_statistics.log": {
+      "sha256": "80138439f24960f37eca411f7900b357bcbae287c18bff8490cc763a9f0a73a2",
+      "bytes": 193,
+      "mtime_ns": 1792433802262880600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\03_native.log": {
+      "sha256": "65aa4fd0afefa1fc80bec24d41a5a420c7faba20f4f4ac6a73b1fc33e2ffd3a7",
+      "bytes": 2088,
+      "mtime_ns": 1792434079446811900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\04_native_baseline.log": {
+      "sha256": "b25fb18648677c03f770af804ca534a018a95db6e4b6c4f6f0baab48afa82aca",
+      "bytes": 216,
+      "mtime_ns": 1792434080084290100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\05_experiment-2-calibration-estimate-good.log": {
+      "sha256": "514a8ceca6e0ccb80c6e575efa213bfbe94b7a35533a76e2838445b8e769128d",
+      "bytes": 261,
+      "mtime_ns": 1792434163358105700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\06_experiment-2-calibration-estimate-bad.log": {
+      "sha256": "a51bf60a6fc7d794144c46b95a71d4d1cc0b1eefc8904f9ac98017d46a826eea",
+      "bytes": 259,
+      "mtime_ns": 1792434268300865400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\07_experiment-2-calibration-heldout-good.log": {
+      "sha256": "cfe422ad88d438bfd6147ad3c11cd92a5cdc3eacdc5d5734faaf19c5abbc4f92",
+      "bytes": 259,
+      "mtime_ns": 1792434305279347300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\08_experiment-2-calibration-heldout-bad.log": {
+      "sha256": "b2fd5e4b5034e886c3e0b615cbc574454ec5f4d7e02afcd9c85d717626b8d254",
+      "bytes": 257,
+      "mtime_ns": 1792434340380774100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\09_experiment-0-bandit-main-final.log": {
+      "sha256": "7cb156574878fc37e82fa64dfe935b72790825536ba6caadacd1a6787339d084",
+      "bytes": 236,
+      "mtime_ns": 1792434867356867000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\10_experiment-0-bandit-peer-check.log": {
+      "sha256": "f28dbbd75eccbd3442a84a33bfbba64c163705d5d58b007d9b8dc1e91eca0863",
+      "bytes": 236,
+      "mtime_ns": 1792435498582102500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\11_experiment-0-bandit-trajectories.log": {
+      "sha256": "2e9a2b9905b44403f39643ae1e5dcfbf8096dfb7080e4c0a7e3eee34f3e73c97",
+      "bytes": 241,
+      "mtime_ns": 1792435778031356400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\12_experiment-1-evidence-main-final.log": {
+      "sha256": "48ce877e4be3631bfb7b58b238a0c5169b3c05bbdc728201ef6cd06bda1bbaa5",
+      "bytes": 238,
+      "mtime_ns": 1792437480050005300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\13_experiment-1-evidence-trajectories.log": {
+      "sha256": "697f34f5b12c5a4b7a42be87abe3ab7aaed35c3c07d8f372702b6697fdedf176",
+      "bytes": 244,
+      "mtime_ns": 1792438405744713100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\14_experiment-2-opaque-main-final.log": {
+      "sha256": "1fe47406346cfcb2ca3aff033f8920f8b6571f95e00e89c0a889823ff649cfd3",
+      "bytes": 236,
+      "mtime_ns": 1792439909401242200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\15_experiment-2-opaque-trajectories.log": {
+      "sha256": "5d8641cd773c1017a34d2bf125aa9027ce9ae2764c9cf2b6a4a34fccbcad4c76",
+      "bytes": 242,
+      "mtime_ns": 1792440730647871800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\16_experiment-2-exact-regression-trajectories.log": {
+      "sha256": "b5943130d83a0d17e851717f7b209cf308a03099f8e1362a2c9fe16876da7063",
+      "bytes": 257,
+      "mtime_ns": 1792441304146667500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\17_analysis.log": {
+      "sha256": "c1347cf4e407b5470566bc453213ac92df6fb960545f754a98fcab459bc6cfda",
+      "bytes": 185,
+      "mtime_ns": 1792441536514742600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_0\\experiment_0_bandit_base.nlogox": {
+      "sha256": "739b1a16fbd738a4ab89b738720310ea42124ab704d0e8f8033978773cd67e88",
+      "bytes": 87738,
+      "mtime_ns": 1792399090388103800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_0\\experiment_0_bandit_base.nls": {
+      "sha256": "2ca8cf57202c88b4d206c8879e5c227838bcbdd386d2bd413804ce5ac854e466",
+      "bytes": 19595,
+      "mtime_ns": 1792399090438628900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_1\\experiment_1_evidence_bandit.nlogox": {
+      "sha256": "b7924c4107f66b2711b8c961c08cf2fa93306679451306675916d4c4b05cd154",
+      "bytes": 87525,
+      "mtime_ns": 1792399090446621700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_1\\experiment_1_evidence_bandit.nls": {
+      "sha256": "79df3810f3c35708365a9dbc06a3bca60e885d8883f994030fc8b2b781099590",
+      "bytes": 37172,
+      "mtime_ns": 1792399090482624500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox": {
+      "sha256": "fcd321612eb2d26f933bfaca8435d4b185c8872fb659ae3cf952cfad839fc7e0",
+      "bytes": 65787,
+      "mtime_ns": 1792399090488628500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nls": {
+      "sha256": "ec45d92a64092cdb8496ee81904745131da1af3b2b79e4cc77e5f328dbfacd1b",
+      "bytes": 40225,
+      "mtime_ns": 1792399090514146000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\run_all.ps1": {
+      "sha256": "8d1e835104e92bb99321013763b051bb82dec4019da8028237763e32cc117043",
+      "bytes": 1505,
+      "mtime_ns": 1792399824252150900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\run_all.py": {
+      "sha256": "3cbbe89b93b6a2cb376853c088739f05dbec3b259de1ad125eb9819453df4121",
+      "bytes": 7607,
+      "mtime_ns": 1792399825830807000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_0_bandit.R": {
+      "sha256": "a910c0f8670da78405a04a0cf1b9176cfdacbd0c5e164da2621fb4e6080518e6",
+      "bytes": 36117,
+      "mtime_ns": 1792399224959525400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_1_evidence.R": {
+      "sha256": "8b2d7e24803520d844183c12a886a694538a6850c87ad09f278b9d062bbfb36c",
+      "bytes": 30380,
+      "mtime_ns": 1792399224994564500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\analyze_experiment_2_opaque_credence.R": {
+      "sha256": "0473ea854b9e5099b171e552c2cfe28e1feaff42d3ac142ac83ffbdfd8dc9aaf",
+      "bytes": 24783,
+      "mtime_ns": 1792399225035558500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\baseline\\make_static_figures.R": {
+      "sha256": "f1ce186b73d8a5074eb2546a05743a639a3e6f78104d0f0f41af924bfd6ecf08",
+      "bytes": 6103,
+      "mtime_ns": 1792400189984837500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\calibrate_opaque_credence.R": {
+      "sha256": "f7aa89c7ae30b9ea4efeae473553cf040e25e38f6867dbc18ea525398da9457e",
+      "bytes": 8457,
+      "mtime_ns": 1792399225067178100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\make_static_figures.R": {
+      "sha256": "73f9c54d0a1fb610c887d5aa3cff8dbd74e6736b3e362082e8917b7edab308dc",
+      "bytes": 6110,
+      "mtime_ns": 1792400190744220400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\run_analysis.py": {
+      "sha256": "c2d4e1eb04e46eda0aab86214c3d647e10c24687accd3539e648eae80365982f",
+      "bytes": 11801,
+      "mtime_ns": 1792399582139686100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\analysis\\verify_bootstrap.R": {
+      "sha256": "26fe54d3365f77c734f58b7e386ea71f808f00b847ff0f1ad74cfc3c49865145",
+      "bytes": 681,
+      "mtime_ns": 1792399268485864300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\compare_native_baseline.py": {
+      "sha256": "95267e47121803b686d292b8b2c54882036ae4c3bac577c0170599e2cbb9144d",
+      "bytes": 4965,
+      "mtime_ns": 1792399606849382900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\README.md": {
+      "sha256": "3abe59b6d9cf0688739fbfb8076c58b3e5d96d2d4ecec93cfde96c9d5c8604f7",
+      "bytes": 1103,
+      "mtime_ns": 1792399741748474700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory$MemoryPreferences.class": {
+      "sha256": "474412adc9fc5f6e2900036e1981df184edcd3544aabee7aafd9d0f08c93c00b",
+      "bytes": 2629,
+      "mtime_ns": 1792311489209505900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory.class": {
+      "sha256": "c738f97e8b22fd9c4f30ee32b9da6d21abe180022d75a0122e8080ab9be8566c",
+      "bytes": 692,
+      "mtime_ns": 1792311489213507200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory.java": {
+      "sha256": "cfbc15f4de0bc2828f709fe8ec5d776ddc1805a29e657daef41af31b9efe1429",
+      "bytes": 1621,
+      "mtime_ns": 1792311485978808100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\native_checks.py": {
+      "sha256": "403d6a06419e2336fc376719f019f9505a1dc2099a8280b3720e57df845687ae",
+      "bytes": 20822,
+      "mtime_ns": 1792399800821161400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\run_netlogo.py": {
+      "sha256": "54bb763a0f38bb9b600fe58a8ec1fd7d12b37340ede0622e4bae3a0937f39082",
+      "bytes": 14903,
+      "mtime_ns": 1792399801427010700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\test_verify_model.py": {
+      "sha256": "928746c29cbeff15022f9e0d77017962d3d870dc88fcdeb3cf4aaefa6232cf42",
+      "bytes": 4094,
+      "mtime_ns": 1792399478400161900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\verify_model.py": {
+      "sha256": "f77a2f1b331e1294235c7653fc33787a9db4f89046df78a62f96dc84ef8bbec1",
+      "bytes": 33741,
+      "mtime_ns": 1792399453647829800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\verify_statistics.py": {
+      "sha256": "46b8d8efe0ce1d5b8f37d6b8d1120bd019367c230da3465ac17e7798e93d7133",
+      "bytes": 14625,
+      "mtime_ns": 1792399476236239400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\source_manifest.json": {
+      "sha256": "2e48a25b4ff24785a8aaca08ea53867c4a881bde7d99681e237c1ea00e7dc0e4",
+      "bytes": 6117,
+      "mtime_ns": 1792399053725406400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_0\\raw_main_final.csv": {
+      "sha256": "806ad5e66b5921ea8c0bb6fbea3cc511d1ba057e38e41433e3b97994eedb218f",
+      "bytes": 460210,
+      "mtime_ns": 1792399089753549300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_0\\raw_peer_check.csv": {
+      "sha256": "1994878b967ef05a79c6fda86fb06653699bc632180653d74fcab85036677d2b",
+      "bytes": 921472,
+      "mtime_ns": 1792399089795778900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_0\\trajectory_summary.csv": {
+      "sha256": "a0dfa0312ce66e20cced3c8e9084f7f94dd74ffd5b71ca2d038ad1bafbdfd9e9",
+      "bytes": 403702,
+      "mtime_ns": 1792399089829782600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_0\\validation_checks.csv": {
+      "sha256": "7f4d19a6b68290c03ba918de4ecef11c9005a10e7524a852df17b940d139969e",
+      "bytes": 1884,
+      "mtime_ns": 1792399089855774700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_1\\endpoint_summary.csv": {
+      "sha256": "605cea59b3201a72e1669e9f0e3c8f7f2716f0ff8f05bf999dc8aa9121678742",
+      "bytes": 2475,
+      "mtime_ns": 1792399089878793500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_1\\paired_contrasts.csv": {
+      "sha256": "3795b8e780219a869aa95b527e2772122671ce663a213dcaf74cbadd49ab7d89",
+      "bytes": 6587,
+      "mtime_ns": 1792399089901321300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_1\\raw_main_final.csv": {
+      "sha256": "e50bc63cb89fc1bcd04df75d9beefab6ee18d87534cdf661572c15868e66b57f",
+      "bytes": 2505614,
+      "mtime_ns": 1792399089950337000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_1\\trajectory_chart_data.csv": {
+      "sha256": "2aaf18a3dbd37db7bf767b1bac80dc7d234d0578d728acde6bd34111b2121db9",
+      "bytes": 65503,
+      "mtime_ns": 1792399090007919800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_1\\validation_checks.csv": {
+      "sha256": "2d42ae59989608c9747f6043e84dbed19dfae9553906ad03c5139ac5b2f2986f",
+      "bytes": 2225,
+      "mtime_ns": 1792399090066897300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\calibration_validation_checks.csv": {
+      "sha256": "3db1c83c07bb8d75ad5c234e26059254c9799d333ed3cd1e653754fd59df4373",
+      "bytes": 753,
+      "mtime_ns": 1792399090092890800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\endpoint_summary.csv": {
+      "sha256": "d33a62ab6b31dca603de53b4f3690808c17e328981ce9940459a0491f2a1e8a4",
+      "bytes": 2988,
+      "mtime_ns": 1792399090119982700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\frozen_credence_message_table.csv": {
+      "sha256": "2708886b9a0880828a1785ecb0a2d02077488affa575ab96befd8ebba106a074",
+      "bytes": 2753,
+      "mtime_ns": 1792399090147984700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\heldout_calibration_audit.csv": {
+      "sha256": "acfdafb814664bf04d9bf46f4953f29ab3b7e98d5abbbb5dcca912792d9e0f84",
+      "bytes": 1455,
+      "mtime_ns": 1792399090181000200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\paired_policy_effects.csv": {
+      "sha256": "1406399791b1de876ee8beadc14bec0dfd5c77e3b04f751fe96a6cc84be0c3ce",
+      "bytes": 4330,
+      "mtime_ns": 1792399090219533900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\raw_main_final.csv": {
+      "sha256": "a6bc79c2797c6f4f67fd0873602f60a1a2eb1b144526a8504a49e5c03250e3b4",
+      "bytes": 2193536,
+      "mtime_ns": 1792399090265529100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\trajectory_chart_data.csv": {
+      "sha256": "6a566bfa1d5da73ca1af8fb904ac76e6065fb1dd22f5a7de15cb526cfc7af7aa",
+      "bytes": 38406,
+      "mtime_ns": 1792399090288534200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\data\\experiment_2\\validation_checks.csv": {
+      "sha256": "85b915388a523ea49df72ef88524073b99715f00b4fc813313816fba68a35efe",
+      "bytes": 1109,
+      "mtime_ns": 1792399090310086300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv": {
+      "sha256": "ae3d3b1f7048097eae6bf0414cb15de3f984fd59f32070faadfe56e3dfa00d20",
+      "bytes": 5485153,
+      "mtime_ns": 1792434159768746200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv.provenance.json": {
+      "sha256": "9939d9bf0c9a72eafebcfa4c2b95c0aee20f459f8cf4394fbb809db3e6e4e813",
+      "bytes": 705696,
+      "mtime_ns": 1792434163395956500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_good_raw.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434081310179400
+    },
+    "C:\\Program Files\\NetLogo 7.0.3\\app\\netlogo-7.0.3.jar": {
+      "sha256": "1efbad9dea772c747fa39b6f639cdac3727a12fffb878a61510e3de8d75f32af",
+      "bytes": 28544110,
+      "mtime_ns": 1764590534000000000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv": {
+      "sha256": "425fddcb1b3216fc137e2b52fb9c81159d30bf789d846860df4b8b9bd47b3013",
+      "bytes": 5400978,
+      "mtime_ns": 1792434264388108200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv.provenance.json": {
+      "sha256": "908498acdb4bb739f68035b0bb55977b37310b7fb33dbb1a7740116d582fafc6",
+      "bytes": 705692,
+      "mtime_ns": 1792434268343829400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_estimate_bad_raw.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434164166468600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv": {
+      "sha256": "c28523d3cd7776f774ef0d23de208cd3dd001dad3030940c993c94810b964375",
+      "bytes": 1088918,
+      "mtime_ns": 1792434304353399200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv.provenance.json": {
+      "sha256": "507039e51efd0d54f5bfc876d3701ab752b6115e0ae6185533fb22b1b5fdb86f",
+      "bytes": 145691,
+      "mtime_ns": 1792434305289431400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_good_raw.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434269044031800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv": {
+      "sha256": "707d69967505e85df08abb5dbe3e21f0aeea903d064749d59e495e6fb0887b8e",
+      "bytes": 1071709,
+      "mtime_ns": 1792434339449247700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv.provenance.json": {
+      "sha256": "45ea1a82ba59519ecdc1101d57f949bb52d7ae07d3160b28ae19af5f9cd686ea",
+      "bytes": 145687,
+      "mtime_ns": 1792434340390369600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\calibration_heldout_bad_raw.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434305771176700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv": {
+      "sha256": "cd0ff04a1537cdc1c7779990d90f61cc4b28bb85c96b5945c884664c218e9cfb",
+      "bytes": 460175,
+      "mtime_ns": 1792434866309626700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv.provenance.json": {
+      "sha256": "05766d59929301e2c8483ee7781bb15aa5d280fe155230dc08223749c9b5f768",
+      "bytes": 12101,
+      "mtime_ns": 1792434867359404300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_main_final.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434340915461100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv": {
+      "sha256": "33df1cc975827a27bd0676e5b068ad384380f08babfd8b50f4c95252ece53463",
+      "bytes": 921437,
+      "mtime_ns": 1792435497577085200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv.provenance.json": {
+      "sha256": "f8ea836348304ac8f6a8f6eec989bf5e3d60cfaabddc1e3a873dbaf15236ed88",
+      "bytes": 12101,
+      "mtime_ns": 1792435498584627700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_peer_check.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792434867823023400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv": {
+      "sha256": "f1453a1f312d0ca1e2531327037167f631edaf0d950f0a3ffba2bdfe27672fe0",
+      "bytes": 43813060,
+      "mtime_ns": 1792435766984441300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv.provenance.json": {
+      "sha256": "139414e67a8757f4c3f4f35d495c2c08fa58235cde567f411c5456907c0555f1",
+      "bytes": 8211,
+      "mtime_ns": 1792435778032921200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_0\\raw_trajectories.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792435499030937500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv": {
+      "sha256": "ac74aba6e99c3f8e6cbab68df1e355c0f05d0ad82511686a340b485d885843d8",
+      "bytes": 2505583,
+      "mtime_ns": 1792437478039511400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv.provenance.json": {
+      "sha256": "722a7da5b3bb4e4109c9851ecc2e5054a63e3dd46f24d2e85f1661c402c38262",
+      "bytes": 12117,
+      "mtime_ns": 1792437480054393400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_main_final.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792435778522503700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv": {
+      "sha256": "07fe97b359934978236bb19bf16793a8f1c8056649288b51f2c0431decb23943",
+      "bytes": 169475126,
+      "mtime_ns": 1792438366248621300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv.provenance.json": {
+      "sha256": "ee4ddd6ed2c30cbe0d12418b2c50076678f0960230fe3c488edbc08861696cd1",
+      "bytes": 8228,
+      "mtime_ns": 1792438405748231700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_1\\raw_trajectories.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792437481152996900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv": {
+      "sha256": "5b94c2670aac487e8851c1cdb9d681b399e181d6015f2f51dc2c3bc3ee56391b",
+      "bytes": 2193525,
+      "mtime_ns": 1792439907811232600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv.provenance.json": {
+      "sha256": "f2c2c869f05d196dc042e08aeb96b8bfd6095ba20496da57843af9879ea66a64",
+      "bytes": 12135,
+      "mtime_ns": 1792439909404749900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_main_final.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792438406265303800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv": {
+      "sha256": "cd07e381d5cb0bc2540bf21f1789bc95e8c856f823f292f3495f02b67d226f65",
+      "bytes": 202707356,
+      "mtime_ns": 1792440691104162700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv.provenance.json": {
+      "sha256": "e8f29a26e4eb103b38221fc8aaf802d900f14352fe3944a84f23c6bdca75bcbf",
+      "bytes": 8245,
+      "mtime_ns": 1792440730652878500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_trajectories.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792439909914343100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv": {
+      "sha256": "a9fe960fc4fafd59411bf07995c18108f7bc43e9c3408e33f295c72154f710ec",
+      "bytes": 136985016,
+      "mtime_ns": 1792441276776005500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv.provenance.json": {
+      "sha256": "46959d6747abd92a64dfc39d0fd7df8a2d5c7fbe0352da86a9aadc07dc82cf98",
+      "bytes": 8282,
+      "mtime_ns": 1792441304148670100
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\raw\\experiment_2\\raw_exact_trajectories.csv.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mtime_ns": 1792440731326770600
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\analysis_receipt.json": {
+      "sha256": "720c68cf35355d3a2c83eac906e6181161a75ac35ba3c4e9517a039ef982ab01",
+      "bytes": 10929,
+      "mtime_ns": 1792441536513740200
+    },
+    "C:\\Program Files\\R\\R-4.5.3\\bin\\Rscript.exe": {
+      "sha256": "d9134a5beec18cd74a55af84d9099993594d4063208f14be050e78ebbf85c759",
+      "bytes": 154624,
+      "mtime_ns": 1773214416000000000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\calibration\\calibration_validation_checks.csv": {
+      "sha256": "3db1c83c07bb8d75ad5c234e26059254c9799d333ed3cd1e653754fd59df4373",
+      "bytes": 753,
+      "mtime_ns": 1792441309661575500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\calibration\\frozen_credence_message_table.csv": {
+      "sha256": "2708886b9a0880828a1785ecb0a2d02077488affa575ab96befd8ebba106a074",
+      "bytes": 2753,
+      "mtime_ns": 1792441309657464400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\calibration\\heldout_calibration_audit.csv": {
+      "sha256": "acfdafb814664bf04d9bf46f4953f29ab3b7e98d5abbbb5dcca912792d9e0f84",
+      "bytes": 1455,
+      "mtime_ns": 1792441309659446800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_0\\trajectory_summary.csv": {
+      "sha256": "a0dfa0312ce66e20cced3c8e9084f7f94dd74ffd5b71ca2d038ad1bafbdfd9e9",
+      "bytes": 403702,
+      "mtime_ns": 1792441318985301200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_0\\validation_checks.csv": {
+      "sha256": "7f4d19a6b68290c03ba918de4ecef11c9005a10e7524a852df17b940d139969e",
+      "bytes": 1884,
+      "mtime_ns": 1792441327688446200
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1\\endpoint_summary.csv": {
+      "sha256": "605cea59b3201a72e1669e9f0e3c8f7f2716f0ff8f05bf999dc8aa9121678742",
+      "bytes": 2475,
+      "mtime_ns": 1792441371941400700
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1\\paired_contrasts.csv": {
+      "sha256": "3795b8e780219a869aa95b527e2772122671ce663a213dcaf74cbadd49ab7d89",
+      "bytes": 6587,
+      "mtime_ns": 1792441391044205500
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1\\trajectory_chart_data.csv": {
+      "sha256": "2aaf18a3dbd37db7bf767b1bac80dc7d234d0578d728acde6bd34111b2121db9",
+      "bytes": 65503,
+      "mtime_ns": 1792441417392623000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_1\\validation_checks.csv": {
+      "sha256": "2d42ae59989608c9747f6043e84dbed19dfae9553906ad03c5139ac5b2f2986f",
+      "bytes": 2225,
+      "mtime_ns": 1792441434528554300
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2\\endpoint_summary.csv": {
+      "sha256": "d33a62ab6b31dca603de53b4f3690808c17e328981ce9940459a0491f2a1e8a4",
+      "bytes": 2988,
+      "mtime_ns": 1792441487441898400
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2\\paired_policy_effects.csv": {
+      "sha256": "1406399791b1de876ee8beadc14bec0dfd5c77e3b04f751fe96a6cc84be0c3ce",
+      "bytes": 4330,
+      "mtime_ns": 1792441515101872000
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2\\trajectory_chart_data.csv": {
+      "sha256": "6a566bfa1d5da73ca1af8fb904ac76e6065fb1dd22f5a7de15cb526cfc7af7aa",
+      "bytes": 38406,
+      "mtime_ns": 1792441533206013800
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\analysis\\experiment_2\\validation_checks.csv": {
+      "sha256": "85b915388a523ea49df72ef88524073b99715f00b4fc813313816fba68a35efe",
+      "bytes": 1109,
+      "mtime_ns": 1792441535914613900
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\verify_full_reproduction.py": {
+      "sha256": "b8fa0cd7454bb8e80283e9f5a3e8c4573beae98a9718457c6a970885dfabf38f",
+      "bytes": 45131,
+      "mtime_ns": 1792434314873415500
+    }
+  },
+  "completed_utc": "2026-10-19T20:30:30.768392+00:00"
+}

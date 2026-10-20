@@ -1,0 +1,191 @@
+{
+  "repository": "dyjcong1029-hash/ABM-Preemption-vs.-Total-Evidence",
+  "ref": "e105f6217db78222e72633a663871c070d630ed3",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "1c939346901ffcc856f365c8fb339d575f84d51b",
+      "bytes": 1066
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha": "b2947794743d0e0d780f61a285e142792f99352b",
+      "bytes": 13460
+    },
+    {
+      "path": "data/experiment_0/raw_main_final.csv",
+      "git_blob_sha": "099d0c114b755324baeead8b5f760b5e885ed2f6",
+      "bytes": 460210
+    },
+    {
+      "path": "data/experiment_0/raw_peer_check.csv",
+      "git_blob_sha": "5d8ea7665a06382ddc131c1581a31f49396e651e",
+      "bytes": 921472
+    },
+    {
+      "path": "data/experiment_0/trajectory_summary.csv",
+      "git_blob_sha": "8f4ebd7cf5fb339753de2852a532895077d5ed25",
+      "bytes": 403702
+    },
+    {
+      "path": "data/experiment_0/validation_checks.csv",
+      "git_blob_sha": "d06873fdba6a1581532f30d1e28db6ceff61fb0f",
+      "bytes": 1884
+    },
+    {
+      "path": "data/experiment_1/endpoint_summary.csv",
+      "git_blob_sha": "830810b9da454f99e6c8a85d28fffc52ea5db218",
+      "bytes": 2475
+    },
+    {
+      "path": "data/experiment_1/paired_contrasts.csv",
+      "git_blob_sha": "8499af90af1f170ba7aa9136fd3c9c428f21a6fe",
+      "bytes": 6587
+    },
+    {
+      "path": "data/experiment_1/raw_main_final.csv",
+      "git_blob_sha": "2b9c5296f68e7cd04a961d595293114e191b3e89",
+      "bytes": 2505614
+    },
+    {
+      "path": "data/experiment_1/trajectory_chart_data.csv",
+      "git_blob_sha": "8cc72dd6ef827e01a372d9df2749411337c00f90",
+      "bytes": 65503
+    },
+    {
+      "path": "data/experiment_1/validation_checks.csv",
+      "git_blob_sha": "1d4432241c33b9a9f45c8ba7caad6da688271310",
+      "bytes": 2225
+    },
+    {
+      "path": "data/experiment_2/calibration_validation_checks.csv",
+      "git_blob_sha": "664fa5de336c66c229780184a527d8a8a961f10b",
+      "bytes": 753
+    },
+    {
+      "path": "data/experiment_2/endpoint_summary.csv",
+      "git_blob_sha": "06fe7a2daba6cdc2fd1781fbfc6d6974d50753cb",
+      "bytes": 2988
+    },
+    {
+      "path": "data/experiment_2/frozen_credence_message_table.csv",
+      "git_blob_sha": "97593ef4fcd5fe330a6d770f35b7463c337d8aae",
+      "bytes": 2753
+    },
+    {
+      "path": "data/experiment_2/heldout_calibration_audit.csv",
+      "git_blob_sha": "d3a528f62a165ee24993881791e31baa610de08e",
+      "bytes": 1455
+    },
+    {
+      "path": "data/experiment_2/paired_policy_effects.csv",
+      "git_blob_sha": "6e49d262c9863a66af552dc3bdde9d5a7c28f9c7",
+      "bytes": 4330
+    },
+    {
+      "path": "data/experiment_2/raw_main_final.csv",
+      "git_blob_sha": "3d338346ced3015453371f85bfeb9817b474d8fb",
+      "bytes": 2193536
+    },
+    {
+      "path": "data/experiment_2/trajectory_chart_data.csv",
+      "git_blob_sha": "b35924dcec6197ea2300d9b17a7ab56af7e0e6c7",
+      "bytes": 38406
+    },
+    {
+      "path": "data/experiment_2/validation_checks.csv",
+      "git_blob_sha": "9475b98095a17fb99780558416ea63705a2d1cb6",
+      "bytes": 1109
+    },
+    {
+      "path": "figures/experiment_0/figure_1_dynamic_expertise.png",
+      "git_blob_sha": "b2cf622ecda39c57823caa3f6cc5e44b1a0d51a3",
+      "bytes": 14089
+    },
+    {
+      "path": "figures/experiment_0/figure_2_learning_paths.png",
+      "git_blob_sha": "6b0b87752e2255f5d17f8c925a6839bc770b822f",
+      "bytes": 15394
+    },
+    {
+      "path": "figures/experiment_0/figure_3_outcome_distributions.png",
+      "git_blob_sha": "8af9adfe452fc2e5ce30e2671059716ff035d17d",
+      "bytes": 17214
+    },
+    {
+      "path": "figures/experiment_0/figure_4_peer_sharing_effects.png",
+      "git_blob_sha": "8a348886f277b3e5b62a39acf428dba6f625962f",
+      "bytes": 9075
+    },
+    {
+      "path": "figures/experiment_1/figure_1_paired_regret_effects.png",
+      "git_blob_sha": "f053b6eb0948775d54d902984a2864a86cdafe08",
+      "bytes": 83107
+    },
+    {
+      "path": "figures/experiment_1/figure_2_learning_trajectories.png",
+      "git_blob_sha": "1b907e2a1a807e62256288e62afd0ec19e177e4d",
+      "bytes": 134604
+    },
+    {
+      "path": "figures/experiment_1/figure_3_recovery_from_misleading_evidence.png",
+      "git_blob_sha": "c0f09c8c397959bf28c410981a996ca5b9396a02",
+      "bytes": 69648
+    },
+    {
+      "path": "figures/experiment_2/figure_1_main_regret_effect.png",
+      "git_blob_sha": "b5568db5137e13f5143a1dfda28920cc16fc3cdd",
+      "bytes": 37991
+    },
+    {
+      "path": "figures/experiment_2/figure_2_learning_trajectories.png",
+      "git_blob_sha": "1767fd57ad2fbad66d35765810d2b0b7605d3bb2",
+      "bytes": 88005
+    },
+    {
+      "path": "figures/experiment_2/figure_3_calibration_check.png",
+      "git_blob_sha": "e3eb200cc35b2e8c18bc4b02f4150493d77f8eaf",
+      "bytes": 74059
+    },
+    {
+      "path": "models/experiment_0/experiment_0_bandit_base.nlogox",
+      "git_blob_sha": "b4eb30f006f868b1aea1cd295ed0c9b55845dfcc",
+      "bytes": 87738
+    },
+    {
+      "path": "models/experiment_0/experiment_0_bandit_base.nls",
+      "git_blob_sha": "f762f92ff26ee3cf3ca594c0740ae458f7664ac3",
+      "bytes": 19595
+    },
+    {
+      "path": "models/experiment_1/experiment_1_evidence_bandit.nlogox",
+      "git_blob_sha": "de8cf468153f1db85ea71abdc658b805b1924fce",
+      "bytes": 87525
+    },
+    {
+      "path": "models/experiment_1/experiment_1_evidence_bandit.nls",
+      "git_blob_sha": "d98a1377d47c3985d1b9f12a8bf638f6bf3c066d",
+      "bytes": 37172
+    },
+    {
+      "path": "models/experiment_2/experiment_2_opaque_credence_bandit.nlogox",
+      "git_blob_sha": "7579938cbb82f9a3ff7c68234a3507c38db645aa",
+      "bytes": 65787
+    },
+    {
+      "path": "models/experiment_2/experiment_2_opaque_credence_bandit.nls",
+      "git_blob_sha": "a3cf3e3df0d1ef2f7b10f47c638265fa2956569b",
+      "bytes": 40225
+    },
+    {
+      "path": "version 1.1.nlogox",
+      "git_blob_sha": "6b67f362739c74595bfce70d961ab62bb35ca59d",
+      "bytes": 62158
+    },
+    {
+      "path": "version 2.nlogox",
+      "git_blob_sha": "b1ae74d6bec66310942ebdf0b6f7f4388eebe779",
+      "bytes": 66527
+    }
+  ]
+}

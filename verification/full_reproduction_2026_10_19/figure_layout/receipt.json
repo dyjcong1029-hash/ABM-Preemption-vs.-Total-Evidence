@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Presentation-only correction; all statistical tables unchanged.",
+  "changes": [
+    "Increase top/bottom outer margins to prevent clipping.",
+    "Use average-window recovery label, rather than sustained recovery.",
+    "State that medians describe recovered runs."
+  ],
+  "baseline_png_sha256": "e552b8d34b4b6b94745f63713b18b6583f4586a8fecfec24975db10e5a230219",
+  "corrected_png_sha256": "352e8bf831caac376cc77034c612787df766b6522c6a386d8f398302824f09b4",
+  "script_sha256": "73f9c54d0a1fb610c887d5aa3cff8dbd74e6736b3e362082e8917b7edab308dc",
+  "baseline_script_sha256": "f1ce186b73d8a5074eb2546a05743a639a3e6f78104d0f0f41af924bfd6ecf08",
+  "visual_inspection": "Corrected recovery plot inspected: title and explanatory note fully visible."
+}

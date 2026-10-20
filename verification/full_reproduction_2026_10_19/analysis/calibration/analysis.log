@@ -1,0 +1,5 @@
+Calibration checks passed: 13/13
+Minimum estimation cell count: 496
+Held-out TV distance: B-good 0.009680; B-bad 0.010942
+Held-out weighted posterior calibration gap: 0.007398
+Lambda range: -2.478593 to 3.263182 

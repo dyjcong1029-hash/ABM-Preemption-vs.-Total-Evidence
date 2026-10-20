@@ -1,0 +1,19 @@
+Running experiment-0-bandit-smoke (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\smoke_0.csv
+Postflight passed: 1 runs, 1 rows
+Running experiment-1-evidence-smoke (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\smoke_1.csv
+Postflight passed: 6 runs, 6 rows
+Running experiment-2-opaque-smoke (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\smoke_2.csv
+Postflight passed: 6 runs, 6 rows
+Running experiment-0-bandit-peer-check (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\peer_check.csv
+Postflight passed: 4 runs, 4 rows
+Running experiment-1-evidence-trajectories (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\evidence_trajectories.csv
+Postflight passed: 6 runs, 3006 rows
+Running experiment-2-exact-regression-trajectories (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\exact_trajectories.csv
+Postflight passed: 4 runs, 2004 rows
+Running native-diagnostic-0 (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\diagnostic_0.csv
+Postflight passed: 1 runs, 1 rows
+Running native-diagnostic-1 (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\diagnostic_1.csv
+Postflight passed: 6 runs, 6 rows
+Running native-diagnostic-2 (windows-jli) -> C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\diagnostic_2.csv
+Postflight passed: 6 runs, 6 rows
+Native acceptance passed: C:\Users\user\OneDrive\文档\ABM\github_model_polish_2026_10_19\results\full_reproduction_2026_10_19\native\acceptance.json

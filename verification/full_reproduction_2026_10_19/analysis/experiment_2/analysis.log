@@ -1,0 +1,11 @@
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+Analysis status: READY
+Validation checks passed: 21/21
+B-good TE-P post-regret: -0.405800 [-0.548764, -0.271649]
+B-bad TE-P post-regret: -0.478280 [-0.539420, -0.416540]
+Exact-message regression max difference: 4.44e-16 

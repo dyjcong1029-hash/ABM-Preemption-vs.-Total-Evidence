@@ -1,0 +1,2020 @@
+{
+  "status": "passed",
+  "independence": "Raw endpoint reconstruction in Python; no original R analysis sourced. R only supplies the original seeded percentile-bootstrap sampling algorithm.",
+  "rscript_version": "Rscript (R) version 4.5.3 (2026-03-11)",
+  "data_sha256": {
+    "experiment_0\\raw_main_final.csv": "806ad5e66b5921ea8c0bb6fbea3cc511d1ba057e38e41433e3b97994eedb218f",
+    "experiment_1\\raw_main_final.csv": "e50bc63cb89fc1bcd04df75d9beefab6ee18d87534cdf661572c15868e66b57f",
+    "experiment_2\\raw_main_final.csv": "a6bc79c2797c6f4f67fd0873602f60a1a2eb1b144526a8504a49e5c03250e3b4",
+    "experiment_0\\raw_peer_check.csv": "1994878b967ef05a79c6fda86fb06653699bc632180653d74fcab85036677d2b",
+    "experiment_1\\endpoint_summary.csv": "605cea59b3201a72e1669e9f0e3c8f7f2716f0ff8f05bf999dc8aa9121678742",
+    "experiment_1\\paired_contrasts.csv": "3795b8e780219a869aa95b527e2772122671ce663a213dcaf74cbadd49ab7d89",
+    "experiment_2\\endpoint_summary.csv": "d33a62ab6b31dca603de53b4f3690808c17e328981ce9940459a0491f2a1e8a4",
+    "experiment_2\\paired_policy_effects.csv": "1406399791b1de876ee8beadc14bec0dfd5c77e3b04f751fe96a6cc84be0c3ce",
+    "experiment_2\\frozen_credence_message_table.csv": "2708886b9a0880828a1785ecb0a2d02077488affa575ab96befd8ebba106a074"
+  },
+  "checks": [
+    {
+      "check": "E0_run_count",
+      "passed": true,
+      "detail": "1000"
+    },
+    {
+      "check": "E0_unique_run_keys",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E0_fixed_endpoint_budget",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E0_seed_and_world_preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E0_all_exported_invariants",
+      "passed": true,
+      "detail": "['network_structure_valid', 'message_accounting_valid', 'evidence_provenance_valid']"
+    },
+    {
+      "check": "E0_exported_error_bounds",
+      "passed": true,
+      "detail": "maximum=1.8118839761882555e-13"
+    },
+    {
+      "check": "E0_regret_choice_identity",
+      "passed": true,
+      "detail": "6.750155989720952e-14"
+    },
+    {
+      "check": "E1_run_count",
+      "passed": true,
+      "detail": "3000"
+    },
+    {
+      "check": "E1_unique_run_keys",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1_fixed_endpoint_budget",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1_seed_and_world_preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1_all_exported_invariants",
+      "passed": true,
+      "detail": "['expert_packet_unique', 'inbox_empty_at_intervention', 'network_structure_valid', 'message_accounting_valid', 'evidence_provenance_valid', 'expert_evidence_provenance_valid', 'expert_packet_valid', 'intervention_structure_valid']"
+    },
+    {
+      "check": "E1_exported_error_bounds",
+      "passed": true,
+      "detail": "maximum=1.8829382497642655e-13"
+    },
+    {
+      "check": "E1_regret_choice_identity",
+      "passed": true,
+      "detail": "1.7053025658242404e-13"
+    },
+    {
+      "check": "E1_post_regret_choice_identity",
+      "passed": true,
+      "detail": "1.7053025658242404e-13"
+    },
+    {
+      "check": "E1_1000_complete_policy_blocks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1_paired_preintervention_identity",
+      "passed": true,
+      "detail": "maximum range=0.0"
+    },
+    {
+      "check": "E2_run_count",
+      "passed": true,
+      "detail": "3000"
+    },
+    {
+      "check": "E2_unique_run_keys",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2_fixed_endpoint_budget",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2_seed_and_world_preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2_all_exported_invariants",
+      "passed": true,
+      "detail": "['inbox_empty_at_intervention', 'network_structure_valid', 'message_accounting_valid', 'evidence_provenance_valid', 'credence_payload_valid', 'credence_intervention_valid']"
+    },
+    {
+      "check": "E2_exported_error_bounds",
+      "passed": true,
+      "detail": "maximum=2.0605739337042905e-13"
+    },
+    {
+      "check": "E2_regret_choice_identity",
+      "passed": true,
+      "detail": "0.0"
+    },
+    {
+      "check": "E2_post_regret_choice_identity",
+      "passed": true,
+      "detail": "1.0480505352461478e-13"
+    },
+    {
+      "check": "E2_1000_complete_policy_blocks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2_paired_preintervention_identity",
+      "passed": true,
+      "detail": "maximum range=0.0"
+    },
+    {
+      "check": "E0_sharing_pairs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.5665800000000005; published=1.5665800000000001"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.23185333333333333; published=0.23185333333333299"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.93403873684210525; published=0.93403873684210503"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.54696800000000001; published=0.54696800000000001"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=443.66840000000002; published=443.66840000000002"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.99755731785262558; published=0.99755731785262602"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.0032000000000000002; published=0.0032000000000000002"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0; published=0"
+    },
+    {
+      "check": "E1_endpoint_count/B-good/E-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.5915500000000014; published=1.59155"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.21255466666666667; published=0.212554666666667"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.93298736842105268; published=0.93298736842105301"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.54695031578947373; published=0.54695031578947395"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=443.16899999999998; published=443.16899999999998"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.99528762138494054; published=0.99528762138494098"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.0060600000000000003; published=0.0060600000000000003"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0.002; published=0.002"
+    },
+    {
+      "check": "E1_endpoint_count/B-good/E-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.2110200000000015; published=1.21102"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.15873866666666667; published=0.158738666666667"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.94900968421052634; published=0.94900968421052601"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.54770063157894733; published=0.54770063157894699"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=450.77960000000002; published=450.77960000000002"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.99335545927913882; published=0.99335545927913904"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.0070600000000000003; published=0.0070600000000000003"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0; published=0"
+    },
+    {
+      "check": "E1_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.7651099999999977; published=2.76511"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.26846666666666669; published=0.26846666666666702"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.88357431578947365; published=0.88357431578947399"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.4937364210526316; published=0.49373642105263199"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=55.302199999999999; published=55.302199999999999"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.95533920046493026; published=0.95533920046493004"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.047320000000000001; published=0.047320000000000001"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0; published=0"
+    },
+    {
+      "check": "E1_endpoint_count/B-bad/E-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.4627599999999981; published=2.4627599999999998"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.22923733333333332; published=0.22923733333333299"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.89630484210526318; published=0.89630484210526296"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.49437010526315789; published=0.494370105263158"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=49.255200000000002; published=49.255200000000002"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.95854159038186726; published=0.95854159038186704"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.044831999999999997; published=0.044831999999999997"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0; published=0"
+    },
+    {
+      "check": "E1_endpoint_count/B-bad/E-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.0530399999999989; published=2.0530400000000002"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.18086933333333333; published=0.18086933333333299"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.91355621052631575; published=0.91355621052631597"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_payoff",
+      "passed": true,
+      "detail": "recomputed=0.49520252631578948; published=0.49520252631578898"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_b_pulls",
+      "passed": true,
+      "detail": "recomputed=41.0608; published=41.0608"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/final_truth_mass",
+      "passed": true,
+      "detail": "recomputed=0.96219668544599879; published=0.96219668544599901"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/late_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.040680000000000001; published=0.040680000000000001"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/persistent_run_rate",
+      "passed": true,
+      "detail": "recomputed=0; published=0"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=0.024970000000000873; published=0.024970000000000901"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.019298666666666665; published=-0.0192986666666667"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0010513684210526337; published=-0.0010513684210526301"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=-1.7684210526315746e-05; published=-1.7684210526315699e-05"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.49939999999999968; published=-0.49940000000000001"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0022696964676850728; published=-0.0022696964676850698"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Preemption - No Deference/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0028600000000000001; published=0.0028600000000000001"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.35555999999999893; published=-0.35555999999999899"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.073114666666666661; published=-0.073114666666666703"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.014970947368421051; published=0.014970947368421099"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0007326315789473681; published=0.00073263157894736799"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=7.1111999999999984; published=7.1112000000000002"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.004201858573486819; published=-0.0042018585734868198"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - No Deference/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0038600000000000001; published=0.0038600000000000001"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.38052999999999981; published=-0.38052999999999998"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.053816000000000003; published=-0.053816000000000003"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.016022315789473683; published=0.0160223157894737"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=0.00075031578947368379; published=0.00075031578947368401"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=7.610599999999998; published=7.6105999999999998"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0019321621058017455; published=-0.00193216210580175"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0010000000000000002; published=0.001"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.30234999999999945; published=-0.30234999999999901"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.039229333333333331; published=-0.039229333333333297"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.012730526315789473; published=0.012730526315789499"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=0.00063368421052631657; published=0.000633684210526317"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=-6.0469999999999997; published=-6.0469999999999997"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0032023899169370093; published=0.0032023899169370102"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Preemption - No Deference/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0024880000000000002; published=-0.0024880000000000002"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.71206999999999876; published=-0.71206999999999898"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.087597333333333333; published=-0.087597333333333305"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.029981894736842103; published=0.0299818947368421"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0014661052631578949; published=0.0014661052631578899"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=-14.241400000000001; published=-14.241400000000001"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0068574849810686071; published=0.0068574849810686097"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - No Deference/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0066400000000000001; published=-0.0066400000000000001"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.40971999999999936; published=-0.40971999999999897"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.048368000000000001; published=-0.048368000000000001"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.01725136842105263; published=0.017251368421052599"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_payoff/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_payoff/estimate",
+      "passed": true,
+      "detail": "recomputed=0.00083242105263157831; published=0.00083242105263157799"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_b_pulls/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_b_pulls/estimate",
+      "passed": true,
+      "detail": "recomputed=-8.1943999999999999; published=-8.1943999999999999"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/final_truth_mass/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/final_truth_mass/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0036550950641315977; published=0.0036550950641315999"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/late_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/late_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0041520000000000003; published=-0.0041520000000000003"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.7222000000000008; published=1.7222"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=1.529131992111411; published=1.5291319921114099"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.068384861618615747; published=0.068384861618615705"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.31590400000000002; published=0.31590400000000002"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.13606667138621512; published=0.136066671386215"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0060850865338340507; published=0.0060850865338340498"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.92748631578947371; published=0.92748631578947405"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.064384504931006573; published=0.0643845049310066"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.002879362594468022; published=0.0028793625944680198"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.99409199999999998; published=0.99409199999999998"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.030508048414083656; published=0.030508048414083701"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0013643614022949141; published=0.00136436140229491"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.0036820777013640976; published=0.0036820777013640998"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.02291505209688343; published=0.022915052096883399"
+    },
+    {
+      "check": "E2/endpoint/B-good/No Deference/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.001024792283931609; published=0.0010247922839316101"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.518880000000002; published=1.51888"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=2.4597830414127353; published=2.4597830414127402"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.11000484181000113; published=0.110004841810001"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.242592; published=0.242592"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.25490661093151973; published=0.25490661093152001"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.011399770199139382; published=0.011399770199139399"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.9360471578947368; published=0.93604715789473703"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.10356981227000954; published=0.10356981227001"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0046317828130526626; published=0.00463178281305266"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.99026400000000003; published=0.99026400000000003"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.05216124898611596; published=0.052161248986116002"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0023327219704849453; published=0.0023327219704849501"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.0063818797276041644; published=0.0063818797276041601"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.040954451996195247; published=0.040954451996195199"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Preemption/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.0018315387728948906; published=0.00183153877289489"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_regret",
+      "passed": true,
+      "detail": "recomputed=1.1130800000000012; published=1.1130800000000001"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=2.0011807170079066; published=2.0011807170079101"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.089495522369828967; published=0.089495522369828995"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.186032; published=0.186032"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.20489332229979115; published=0.20489332229979099"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0091631079359621309; published=0.0091631079359621292"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.95313347368421053; published=0.95313347368421097"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.084260240716122065; published=0.084260240716122106"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0037682325208348898; published=0.0037682325208348898"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.99424400000000002; published=0.99424400000000002"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.04001197796612313; published=0.040011977966123102"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0017893900529295018; published=0.0017893900529295001"
+    },
+    {
+      "check": "E2_endpoint_count/B-good/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.003578638949366456; published=0.0035786389493664599"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.028855888976250639; published=0.028855888976250601"
+    },
+    {
+      "check": "E2/endpoint/B-good/C-Total Evidence/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.0012904745860416649; published=0.0012904745860416601"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.743259999999998; published=2.7432599999999998"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=1.0498143133836446; published=1.04981431338364"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.046949123369561932; published=0.046949123369561897"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.31797599999999998; published=0.31797599999999998"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.098694806112110137; published=0.098694806112110095"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0044137659098567993; published=0.0044137659098568002"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.88449431578947368; published=0.88449431578947402"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.044202707931942871; published=0.044202707931942899"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.001976805194507868; published=0.0019768051945078702"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.95025599999999999; published=0.95025599999999999"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.038504905134786105; published=0.038504905134786098"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0017219917069712487; published=0.00172199170697125"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/No Deference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.010357864822325796; published=0.010357864822325801"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.023604567351263418; published=0.0236045673512634"
+    },
+    {
+      "check": "E2/endpoint/B-bad/No Deference/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.0010556283435379432; published=0.0010556283435379399"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.5050599999999981; published=2.5050599999999998"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=1.2823341835561564; published=1.2823341835561599"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.057347728086065169; published=0.057347728086065197"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.28301599999999999; published=0.28301599999999999"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.1770988417338944; published=0.17709884173389401"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0079201009770692912; published=0.0079201009770692894"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.89452378947368416; published=0.89452378947368405"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.053993018254996042; published=0.053993018254996"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0024146411825711643; published=0.0024146411825711599"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.95309599999999994; published=0.95309600000000005"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.036893156465501502; published=0.036893156465501502"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0016499121152279445; published=0.0016499121152279399"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Preemption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.0089289274324002039; published=0.0089289274324002004"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.021493024514095838; published=0.0214930245140958"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Preemption/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.00096119727711175358; published=0.00096119727711175401"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_regret",
+      "passed": true,
+      "detail": "recomputed=2.0267799999999987; published=2.02678"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_regret/sd",
+      "passed": true,
+      "detail": "recomputed=1.2077179293169362; published=1.20771792931694"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_regret/se",
+      "passed": true,
+      "detail": "recomputed=0.054010787751959111; published=0.054010787751959097"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/early_wrong_rate",
+      "passed": true,
+      "detail": "recomputed=0.210232; published=0.210232"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/early_wrong_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.15838921827236177; published=0.15838921827236199"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/early_wrong_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0070833811792010539; published=0.0070833811792010504"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.91466189473684212; published=0.91466189473684201"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.050851281234397298; published=0.050851281234397298"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/post_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0022741384316614355; published=0.0022741384316614399"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/late_correct_rate",
+      "passed": true,
+      "detail": "recomputed=0.95865199999999995; published=0.95865199999999995"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/late_correct_rate/sd",
+      "passed": true,
+      "detail": "recomputed=0.03158826574958068; published=0.0315882657495807"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/late_correct_rate/se",
+      "passed": true,
+      "detail": "recomputed=0.0014126701901478148; published=0.00141267019014781"
+    },
+    {
+      "check": "E2_endpoint_count/B-bad/C-Total Evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/final_brier",
+      "passed": true,
+      "detail": "recomputed=0.0072951810611471112; published=0.0072951810611471104"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/final_brier/sd",
+      "passed": true,
+      "detail": "recomputed=0.016646252392212891; published=0.016646252392212901"
+    },
+    {
+      "check": "E2/endpoint/B-bad/C-Total Evidence/final_brier/se",
+      "passed": true,
+      "detail": "recomputed=0.00074444303839213031; published=0.00074444303839212998"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.20331999999999881; published=-0.203319999999999"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.073312000000000002; published=-0.073312000000000002"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0085608421052631584; published=0.0085608421052631601"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0038280000000000007; published=-0.0038279999999999998"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Preemption - No Deference/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0026998020262400668; published=0.0026998020262400699"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.60911999999999966; published=-0.60911999999999999"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.12987199999999999; published=-0.12987199999999999"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.025647157894736844; published=0.025647157894736799"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0001519999999999999; published=0.00015200000000000001"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - No Deference/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.00010343875199764182; published=-0.00010343875199764199"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.40580000000000083; published=-0.40580000000000099"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.056559999999999999; published=-0.056559999999999999"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.017086315789473686; published=0.017086315789473699"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.00398; published=0.00398"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0028032407782377085; published=-0.0028032407782377102"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.23819999999999991; published=-0.2382"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.034959999999999998; published=-0.034959999999999998"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.010029473684210526; published=0.0100294736842105"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0028400000000000014; published=0.0028400000000000001"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Preemption - No Deference/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0014289373899255913; published=-0.00142893738992559"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.71647999999999934; published=-0.71647999999999901"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.10774400000000001; published=-0.10774400000000001"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.030167578947368417; published=0.030167578947368399"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0083960000000000007; published=0.0083960000000000007"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - No Deference/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0030626837611786853; published=-0.00306268376117869"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_regret/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_regret/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.47827999999999948; published=-0.47827999999999898"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/early_wrong_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/early_wrong_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.072784000000000001; published=-0.072784000000000001"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.020138105263157895; published=0.020138105263157902"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/late_correct_rate/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/late_correct_rate/estimate",
+      "passed": true,
+      "detail": "recomputed=0.0055560000000000002; published=0.0055560000000000002"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/final_brier/n",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/final_brier/estimate",
+      "passed": true,
+      "detail": "recomputed=-0.0016337463712530937; published=-0.0016337463712530901"
+    },
+    {
+      "check": "calibration/bin0/lambda",
+      "passed": true,
+      "detail": "recomputed=-2.4785927002857839; published=-2.4785927002857799"
+    },
+    {
+      "check": "calibration/bin0/posterior",
+      "passed": true,
+      "detail": "recomputed=0.077372604020570362; published=0.077372604020570404"
+    },
+    {
+      "check": "calibration/bin1/lambda",
+      "passed": true,
+      "detail": "recomputed=-1.6745763041439088; published=-1.6745763041439099"
+    },
+    {
+      "check": "calibration/bin1/posterior",
+      "passed": true,
+      "detail": "recomputed=0.15781499202551832; published=0.15781499202551799"
+    },
+    {
+      "check": "calibration/bin2/lambda",
+      "passed": true,
+      "detail": "recomputed=-1.0743671775227854; published=-1.0743671775227901"
+    },
+    {
+      "check": "calibration/bin2/posterior",
+      "passed": true,
+      "detail": "recomputed=0.25457345529214109; published=0.25457345529214098"
+    },
+    {
+      "check": "calibration/bin3/lambda",
+      "passed": true,
+      "detail": "recomputed=-0.75240943634695179; published=-0.75240943634695201"
+    },
+    {
+      "check": "calibration/bin3/posterior",
+      "passed": true,
+      "detail": "recomputed=0.32029652351738236; published=0.32029652351738203"
+    },
+    {
+      "check": "calibration/bin4/lambda",
+      "passed": true,
+      "detail": "recomputed=-0.3328342153281415; published=-0.332834215328142"
+    },
+    {
+      "check": "calibration/bin4/posterior",
+      "passed": true,
+      "detail": "recomputed=0.41755117513267631; published=0.41755117513267598"
+    },
+    {
+      "check": "calibration/bin5/lambda",
+      "passed": true,
+      "detail": "recomputed=0.22540972210660282; published=0.22540972210660301"
+    },
+    {
+      "check": "calibration/bin5/posterior",
+      "passed": true,
+      "detail": "recomputed=0.55611503322259137; published=0.55611503322259104"
+    },
+    {
+      "check": "calibration/bin6/lambda",
+      "passed": true,
+      "detail": "recomputed=0.7293601823942395; published=0.72936018239423905"
+    },
+    {
+      "check": "calibration/bin6/posterior",
+      "passed": true,
+      "detail": "recomputed=0.67466485331260928; published=0.67466485331260895"
+    },
+    {
+      "check": "calibration/bin7/lambda",
+      "passed": true,
+      "detail": "recomputed=1.04564132622468; published=1.04564132622468"
+    },
+    {
+      "check": "calibration/bin7/posterior",
+      "passed": true,
+      "detail": "recomputed=0.7399370362041825; published=0.73993703620418205"
+    },
+    {
+      "check": "calibration/bin8/lambda",
+      "passed": true,
+      "detail": "recomputed=1.7014474388196101; published=1.7014474388196099"
+    },
+    {
+      "check": "calibration/bin8/posterior",
+      "passed": true,
+      "detail": "recomputed=0.84572368421052624; published=0.84572368421052602"
+    },
+    {
+      "check": "calibration/bin9/lambda",
+      "passed": true,
+      "detail": "recomputed=3.263181542921751; published=3.2631815429217501"
+    },
+    {
+      "check": "calibration/bin9/posterior",
+      "passed": true,
+      "detail": "recomputed=0.96314389482837992; published=0.96314389482838003"
+    },
+    {
+      "check": "calibration_model_table_identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "R_bootstrap_exit",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=1.449624; published=1.449624"
+    },
+    {
+      "check": "E1/endpoint/B-good/No Deference/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=1.692537; published=1.692537"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=1.3923975; published=1.3923975"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=1.7874997500000001; published=1.7874997500000001"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=1.0526005; published=1.0526005"
+    },
+    {
+      "check": "E1/endpoint/B-good/E-Total Evidence/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=1.39488675; published=1.39488675"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=2.6757097500000002; published=2.6757097500000002"
+    },
+    {
+      "check": "E1/endpoint/B-bad/No Deference/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=2.8561144999999999; published=2.8561144999999999"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=2.3491677499999999; published=2.3491677499999999"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=2.5699044999999998; published=2.5699044999999998"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=1.94584; published=1.94584"
+    },
+    {
+      "check": "E1/endpoint/B-bad/E-Total Evidence/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=2.1679680000000001; published=2.1679680000000001"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=-0.53112075000000003; published=-0.53112075000000003"
+    },
+    {
+      "check": "E1/contrast/B-good/E-Total Evidence - E-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=-0.24125574999999899; published=-0.24125574999999899"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=-0.479755499999999; published=-0.479755499999999"
+    },
+    {
+      "check": "E1/contrast/B-bad/E-Total Evidence - E-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=-0.340099499999999; published=-0.340099499999999"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=-0.54876400000000203; published=-0.54876400000000203"
+    },
+    {
+      "check": "E2/contrast/B-good/C-Total Evidence - C-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=-0.27164899999999997; published=-0.27164899999999997"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_regret/ci_low",
+      "passed": true,
+      "detail": "recomputed=-0.53942025000000005; published=-0.53942025000000005"
+    },
+    {
+      "check": "E2/contrast/B-bad/C-Total Evidence - C-Preemption/post_regret/ci_high",
+      "passed": true,
+      "detail": "recomputed=-0.41653999999999902; published=-0.41653999999999902"
+    }
+  ],
+  "key_results": [
+    {
+      "experiment": 0,
+      "world": "B-good",
+      "n_runs": 500,
+      "expert_truth_mass_at_25": 0.6935480926790634,
+      "lay_truth_mass_at_25": 0.6410587028262539,
+      "share_expert_above_lay": 0.604,
+      "mean_regret": 2.100450000000001
+    },
+    {
+      "experiment": 0,
+      "world": "B-bad",
+      "n_runs": 500,
+      "expert_truth_mass_at_25": 0.6993392479010918,
+      "lay_truth_mass_at_25": 0.6378307715676322,
+      "share_expert_above_lay": 0.692,
+      "mean_regret": 3.2978499999999973
+    },
+    {
+      "experiment": 0,
+      "world": "B-good",
+      "sharing_regret_on_minus_off": -3.715140000000014,
+      "n_pairs": 500
+    },
+    {
+      "experiment": 0,
+      "world": "B-bad",
+      "sharing_regret_on_minus_off": -2.689550000000001,
+      "n_pairs": 500
+    },
+    {
+      "experiment": 1,
+      "world": "B-good",
+      "comparison": "E-Total Evidence - E-Preemption",
+      "n_pairs": 500,
+      "estimate": -0.3805299999999998
+    },
+    {
+      "experiment": 1,
+      "world": "B-bad",
+      "comparison": "E-Total Evidence - E-Preemption",
+      "n_pairs": 500,
+      "estimate": -0.40971999999999936
+    },
+    {
+      "experiment": 2,
+      "world": "B-good",
+      "comparison": "C-Total Evidence - C-Preemption",
+      "n_pairs": 500,
+      "estimate": -0.4058000000000008
+    },
+    {
+      "experiment": 2,
+      "world": "B-bad",
+      "comparison": "C-Total Evidence - C-Preemption",
+      "n_pairs": 500,
+      "estimate": -0.4782799999999995
+    }
+  ],
+  "bootstrap_scope": "Exact published CI replay for six E1 regret levels and four main paired regret contrasts. E0 audit intervals use explicitly labelled independent audit seeds; no published CI target is available for E0.",
+  "trajectory_scope": "No full raw trajectories read. This endpoint audit does not verify recovery delays, full trajectory summaries, or the 33/21 trajectory-dependent original checks."
+}

@@ -1,0 +1,9 @@
+"metric","max_absolute_difference","mismatch_count_1e_10"
+"current_lay_correct_choice_rate",0,0
+"current_lay_b_share",0,0
+"mean_lay_q",0.000000000000000444089209850063,0
+"mean_lay_posterior_truth_mass",0.000000000000000444089209850063,0
+"mean_lay_cumulative_regret",0,0
+"mean_lay_post_intervention_regret",0,0
+"expert_posterior_truth_mass",0,0
+"expert_total_pulls",0,0

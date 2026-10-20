@@ -1,0 +1,19 @@
+"world","expert_status","policy","n_runs","censored_rate","median_recovery_delay_uncensored"
+"B-bad","Correct","E-Preemption",161,0,1
+"B-bad","Correct","E-Total Evidence",161,0,1
+"B-bad","Correct","No Deference",161,0,1
+"B-bad","Incorrect","E-Preemption",31,0,34
+"B-bad","Incorrect","E-Total Evidence",31,0,21
+"B-bad","Incorrect","No Deference",31,0,1
+"B-bad","Tie","E-Preemption",8,0,19
+"B-bad","Tie","E-Total Evidence",8,0,1
+"B-bad","Tie","No Deference",8,0,1
+"B-good","Correct","E-Preemption",136,0,1
+"B-good","Correct","E-Total Evidence",136,0,1
+"B-good","Correct","No Deference",136,0,1
+"B-good","Incorrect","E-Preemption",55,0,45
+"B-good","Incorrect","E-Total Evidence",55,0,9
+"B-good","Incorrect","No Deference",55,0,1
+"B-good","Tie","E-Preemption",9,0,1
+"B-good","Tie","E-Total Evidence",9,0,1
+"B-good","Tie","No Deference",9,0,1

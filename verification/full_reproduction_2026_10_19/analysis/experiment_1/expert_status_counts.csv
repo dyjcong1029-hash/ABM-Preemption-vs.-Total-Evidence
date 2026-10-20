@@ -1,0 +1,7 @@
+"world","expert_status","n_paired_blocks"
+"B-bad","Correct",417
+"B-good","Correct",346
+"B-bad","Incorrect",66
+"B-good","Incorrect",134
+"B-bad","Tie",17
+"B-good","Tie",20

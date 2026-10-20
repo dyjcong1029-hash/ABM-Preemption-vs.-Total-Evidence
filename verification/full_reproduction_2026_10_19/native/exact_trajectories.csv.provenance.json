@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "engine": "NetLogo 7.0.3 native BehaviorSpace",
+  "backend": "windows-jli",
+  "install": "C:\\Program Files\\NetLogo 7.0.3",
+  "experiment": "experiment-2-exact-regression-trajectories",
+  "command": [
+    "C:\\Program Files\\NetLogo 7.0.3\\runtime\\bin\\java.exe",
+    "-Xmx1536m",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.awt.headless=true",
+    "-Dnetlogo.libraries.disabled=true",
+    "-Djava.util.prefs.PreferencesFactory=WorkspacePreferencesFactory",
+    "-Dnetlogo.extensions.dir=C:\\Program Files\\NetLogo 7.0.3\\extensions",
+    "-Dnetlogo.models.dir=C:\\Program Files\\NetLogo 7.0.3\\models",
+    "--add-exports=java.base/java.lang=ALL-UNNAMED",
+    "--add-exports=java.desktop/sun.awt=ALL-UNNAMED",
+    "--add-exports=java.desktop/sun.java2d=ALL-UNNAMED",
+    "-classpath",
+    "C:\\Program Files\\NetLogo 7.0.3\\app\\netlogo-7.0.3.jar;scripts\\java_support",
+    "org.nlogo.headless.Main",
+    "--model",
+    "models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox",
+    "--experiment",
+    "experiment-2-exact-regression-trajectories",
+    "--table",
+    "results\\full_reproduction_2026_10_19\\native\\exact_trajectories.csv",
+    "--threads",
+    "4",
+    "--setup-file",
+    "results\\full_reproduction_2026_10_19\\native\\exact_trajectories.csv.setup.xml"
+  ],
+  "working_directory": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19",
+  "output": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native\\exact_trajectories.csv",
+  "log": "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native\\exact_trajectories.csv.log",
+  "threads": 4,
+  "seeds": [
+    310001
+  ],
+  "seed_subset_only": true,
+  "started_utc": "2026-10-19T18:19:42.659607+00:00",
+  "sources": {
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nlogox": {
+      "sha256": "fcd321612eb2d26f933bfaca8435d4b185c8872fb659ae3cf952cfad839fc7e0",
+      "bytes": 65787
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\run_netlogo.py": {
+      "sha256": "54bb763a0f38bb9b600fe58a8ec1fd7d12b37340ede0622e4bae3a0937f39082",
+      "bytes": 14903
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\native_checks.py": {
+      "sha256": "403d6a06419e2336fc376719f019f9505a1dc2099a8280b3720e57df845687ae",
+      "bytes": 20822
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory.java": {
+      "sha256": "cfbc15f4de0bc2828f709fe8ec5d776ddc1805a29e657daef41af31b9efe1429",
+      "bytes": 1621
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory$MemoryPreferences.class": {
+      "sha256": "474412adc9fc5f6e2900036e1981df184edcd3544aabee7aafd9d0f08c93c00b",
+      "bytes": 2629
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\scripts\\java_support\\WorkspacePreferencesFactory.class": {
+      "sha256": "c738f97e8b22fd9c4f30ee32b9da6d21abe180022d75a0122e8080ab9be8566c",
+      "bytes": 692
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\models\\experiment_2\\experiment_2_opaque_credence_bandit.nls": {
+      "sha256": "ec45d92a64092cdb8496ee81904745131da1af3b2b79e4cc77e5f328dbfacd1b",
+      "bytes": 40225
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\results\\full_reproduction_2026_10_19\\native\\exact_trajectories.csv.setup.xml": {
+      "sha256": "973b567d8390ea5aec876818c21c0e26c0d068117c88213ce849a1d76acecaef",
+      "bytes": 1903
+    },
+    "C:\\Users\\user\\OneDrive\\\u6587\u6863\\ABM\\github_model_polish_2026_10_19\\source_manifest.json": {
+      "sha256": "2e48a25b4ff24785a8aaca08ea53867c4a881bde7d99681e237c1ea00e7dc0e4",
+      "bytes": 6117
+    }
+  },
+  "engine_jar": {
+    "path": "C:\\Program Files\\NetLogo 7.0.3\\app\\netlogo-7.0.3.jar",
+    "sha256": "1efbad9dea772c747fa39b6f639cdac3727a12fffb878a61510e3de8d75f32af"
+  },
+  "jvm_release": "JAVA_VERSION=\"17.0.2\"\nMODULES=\"java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.smartcardio java.transaction.xa java.sql java.sql.rowset java.xml.crypto jdk.accessibility jdk.internal.jvmstat jdk.attach jdk.charsets jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.crypto.mscapi jdk.dynalink jdk.internal.ed jdk.editpad jdk.httpserver jdk.incubator.foreign jdk.incubator.vector jdk.internal.le jdk.internal.opt jdk.jartool jdk.javadoc jdk.management jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jpackage jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.nio.mapmode jdk.random jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported jdk.unsupported.desktop jdk.xml.dom jdk.zipfs\"\n",
+  "exit_code": 0,
+  "postflight": {
+    "passed": true,
+    "runs": 4,
+    "rows": 2004,
+    "expected_ticks": 500,
+    "trajectory": true,
+    "native_version": "NetLogo 7.0.3",
+    "checks": [
+      "exact run grid",
+      "complete step sequence",
+      "required columns",
+      "finite metrics",
+      "reported validity and numeric identities",
+      "pull and available message accounting"
+    ]
+  },
+  "table_sha256": "8fec47ce216208eefca9bc3a0138f9bfb07d9158793fdcabe30beef5ffbf6c9a",
+  "elapsed_seconds": 29.76955560001079,
+  "completed_utc": "2026-10-19T18:20:12.492608+00:00"
+}

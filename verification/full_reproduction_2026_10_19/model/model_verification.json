@@ -1,0 +1,172 @@
+{
+  "passed": true,
+  "scope": "static source + restricted parsed-source deterministic execution + exact mathematics",
+  "upstream_identity": {
+    "repository": "dyjcong1029-hash/ABM-Preemption-vs.-Total-Evidence",
+    "commit": "e105f6217db78222e72633a663871c070d630ed3",
+    "scientific_files_checked": 23,
+    "excluded_editable_explanation": "README.md"
+  },
+  "models": [
+    {
+      "experiment": 0,
+      "embedded_source_equal": true,
+      "grid_run_counts": {
+        "experiment-0-bandit-smoke": 1,
+        "experiment-0-bandit-main-final": 1000,
+        "experiment-0-bandit-trajectories": 400,
+        "experiment-0-bandit-peer-check": 2000
+      },
+      "mathematics": {
+        "parsed_source_Bayes_cases": 441,
+        "exact_oracle": "Fraction likelihoods",
+        "A_uninformative": true,
+        "Thompson_expression_and_boundaries": true,
+        "predictive_B_success": ".45 + .10*q (derived; not the action probability)"
+      },
+      "control_flow_projection": {
+        "method": "parsed go control flow; named agent/environment/event calls stubbed",
+        "expert_pulls": 125,
+        "student_pulls": 5000,
+        "last_delivered_round": 499,
+        "intervention_after_round25_delivery_before_round26_action": false,
+        "not_claimed": "NetLogo agent scheduling/compiler correctness; see native fixtures"
+      },
+      "evidence_policy_subset": {
+        "applicable": false
+      },
+      "communication_subset": {
+        "parsed_message_handler_duplicate_replay": true,
+        "payload_exactly_own_current_arm_outcome_and_source_id": true,
+        "no_forwarded_payload_in_this_queue_procedure": true,
+        "not_claimed": "Runtime agent identity and queue counts; see native fixtures"
+      },
+      "information_paths": {
+        "protected_evidence_procedure_call_closures": [
+          "posterior-q",
+          "update-belief-from-result",
+          "deliver-peer-messages",
+          "queue-first-hand-messages"
+        ],
+        "decision_q_depends_only_on_belief_llr": true,
+        "allowed_truth_uses": "environment rewards and scoring/display instrumentation",
+        "limit": "Conservative source-level check of named paths; not whole-program noninterference or full social Bayesian inference"
+      }
+    },
+    {
+      "experiment": 1,
+      "embedded_source_equal": true,
+      "grid_run_counts": {
+        "experiment-1-evidence-smoke": 6,
+        "experiment-1-evidence-main-final": 3000,
+        "experiment-1-evidence-trajectories": 1200
+      },
+      "mathematics": {
+        "parsed_source_Bayes_cases": 441,
+        "exact_oracle": "Fraction likelihoods",
+        "A_uninformative": true,
+        "Thompson_expression_and_boundaries": true,
+        "predictive_B_success": ".45 + .10*q (derived; not the action probability)"
+      },
+      "control_flow_projection": {
+        "method": "parsed go control flow; named agent/environment/event calls stubbed",
+        "expert_pulls": 125,
+        "student_pulls": 5000,
+        "last_delivered_round": 499,
+        "intervention_after_round25_delivery_before_round26_action": true,
+        "not_claimed": "NetLogo agent scheduling/compiler correctness; see native fixtures"
+      },
+      "evidence_policy_subset": {
+        "parsed_source_policy_and_continuation_cases": 550,
+        "exact_oracle": "rational likelihood odds; no random sampling",
+        "not_claimed": "Raw expert packet construction/overlap rejection; see native fixtures"
+      },
+      "communication_subset": {
+        "parsed_message_handler_duplicate_replay": true,
+        "payload_exactly_own_current_arm_outcome_and_source_id": true,
+        "no_forwarded_payload_in_this_queue_procedure": true,
+        "not_claimed": "Runtime agent identity and queue counts; see native fixtures"
+      },
+      "information_paths": {
+        "protected_evidence_procedure_call_closures": [
+          "posterior-q",
+          "update-decision-belief-from-result",
+          "observe-new-evidence",
+          "archive-evidence-result",
+          "deliver-peer-messages",
+          "queue-first-hand-messages"
+        ],
+        "decision_q_depends_only_on_belief_llr": true,
+        "allowed_truth_uses": "environment rewards and scoring/display instrumentation",
+        "limit": "Conservative source-level check of named paths; not whole-program noninterference or full social Bayesian inference"
+      }
+    },
+    {
+      "experiment": 2,
+      "embedded_source_equal": true,
+      "grid_run_counts": {
+        "experiment-2-calibration-estimate-good": 50000,
+        "experiment-2-calibration-estimate-bad": 50000,
+        "experiment-2-calibration-heldout-good": 10000,
+        "experiment-2-calibration-heldout-bad": 10000,
+        "experiment-2-opaque-smoke": 6,
+        "experiment-2-opaque-main-final": 3000,
+        "experiment-2-opaque-trajectories": 1200,
+        "experiment-2-exact-regression-trajectories": 800
+      },
+      "mathematics": {
+        "parsed_source_Bayes_cases": 441,
+        "exact_oracle": "Fraction likelihoods",
+        "A_uninformative": true,
+        "Thompson_expression_and_boundaries": true,
+        "predictive_B_success": ".45 + .10*q (derived; not the action probability)"
+      },
+      "control_flow_projection": {
+        "method": "parsed go control flow; named agent/environment/event calls stubbed",
+        "expert_pulls": 125,
+        "student_pulls": 5000,
+        "last_delivered_round": 499,
+        "intervention_after_round25_delivery_before_round26_action": true,
+        "not_claimed": "NetLogo agent scheduling/compiler correctness; see native fixtures"
+      },
+      "evidence_policy_subset": {
+        "applicable": false
+      },
+      "communication_subset": {
+        "parsed_message_handler_duplicate_replay": true,
+        "payload_exactly_own_current_arm_outcome_and_source_id": true,
+        "no_forwarded_payload_in_this_queue_procedure": true,
+        "not_claimed": "Runtime agent identity and queue counts; see native fixtures"
+      },
+      "information_paths": {
+        "protected_evidence_procedure_call_closures": [
+          "posterior-q",
+          "update-decision-belief-from-result",
+          "observe-new-evidence",
+          "archive-evidence-result",
+          "deliver-peer-messages",
+          "queue-first-hand-messages"
+        ],
+        "decision_q_depends_only_on_belief_llr": true,
+        "allowed_truth_uses": "environment rewards and scoring/display instrumentation",
+        "limit": "Conservative source-level check of named paths; not whole-program noninterference or full social Bayesian inference",
+        "opaque_recipient_body_parsed_and_executed": true,
+        "opaque_same_message_local_evidence_invariant_to_hidden_expert_state": true
+      },
+      "frozen_message_table": {
+        "bins": 10,
+        "source_equals_CSV": true,
+        "Jeffreys_smoothing_and_LLR_recomputed": true,
+        "estimate_and_heldout_seed_grids_disjoint": true,
+        "limit": "Does not regenerate calibration trajectories; heldout data checked separately"
+      }
+    }
+  ],
+  "requires_separate_native_acceptance": [
+    "NetLogo compilation",
+    "actual agent contexts and ring topology",
+    "runtime message scheduling",
+    "all six main method/world paths and evidence intervention invariants"
+  ],
+  "interpretation_boundary": "Local evidence updating; no proof of full Bayesian social inference from neighbors arm choices."
+}

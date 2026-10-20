@@ -1,0 +1,15 @@
+test_B_failure_with_wrong_sign_fails_exact_rational_oracle (test_verify_model.ModelAcceptanceMutations.test_B_failure_with_wrong_sign_fails_exact_rational_oracle) ... ok
+test_P_incorrectly_retaining_local_data_is_detected (test_verify_model.ModelAcceptanceMutations.test_P_incorrectly_retaining_local_data_is_detected) ... ok
+test_dropping_peer_delivery_breaks_parsed_control_flow (test_verify_model.ModelAcceptanceMutations.test_dropping_peer_delivery_breaks_parsed_control_flow) ... ok
+test_duplicate_message_reprocessing_is_detected (test_verify_model.ModelAcceptanceMutations.test_duplicate_message_reprocessing_is_detected) ... ok
+test_hiding_true_world_inside_called_reporter_is_detected (test_verify_model.ModelAcceptanceMutations.test_hiding_true_world_inside_called_reporter_is_detected) ... ok
+test_opaque_recipient_cannot_read_private_expert_q (test_verify_model.ModelAcceptanceMutations.test_opaque_recipient_cannot_read_private_expert_q) ... ok
+test_passing_on_an_inbox_instead_of_own_result_is_detected (test_verify_model.ModelAcceptanceMutations.test_passing_on_an_inbox_instead_of_own_result_is_detected) ... ok
+test_pinned_scientific_release_passes_all_static_checks (test_verify_model.ModelAcceptanceMutations.test_pinned_scientific_release_passes_all_static_checks) ... ok
+test_real_likelihood_error_is_detected_without_hash_shortcut (test_verify_model.ModelAcceptanceMutations.test_real_likelihood_error_is_detected_without_hash_shortcut) ... ok
+test_unrecognized_syntax_fails_closed_and_comments_are_not_code (test_verify_model.ModelAcceptanceMutations.test_unrecognized_syntax_fails_closed_and_comments_are_not_code) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.379s
+
+OK
